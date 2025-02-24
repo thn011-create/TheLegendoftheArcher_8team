@@ -7,18 +7,16 @@ public class PlayerController : BaseController
     
     public Joystick joy;
     private Camera camera; // 카메라 변수 선언
-    private GameManager gameManager;
 
-    public void Init(GameManager gameManager)
+    protected override void Start()
     {
-        this.gameManager = gameManager;
-        camera = Camera.main;// 메인 카메라 가져오기
+        base.Start(); // 부모 클래스의 Start() 실행
+        camera = Camera.main; // 메인 카메라 가져오기
         if (camera == null)
         {
             Debug.LogError(" 메인 카메라를 찾을 수 없습니다!", gameObject);
         }
     }
-
 
     protected override void HandleAction()
     {
