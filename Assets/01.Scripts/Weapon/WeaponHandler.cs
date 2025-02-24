@@ -1,18 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
+using static DesignEnums;
 
 public class WeaponHandler : MonoBehaviour
 {
-    [Header("Attack Info")]
-    [SerializeField] private float delay = 1f;
-    [SerializeField] private float weaponSize = 1f;
-    [SerializeField] private float power = 1f;
-    [SerializeField] private float speed = 1f;
-    [SerializeField] private float attackRange = 10f;
+    [Header("이미지들")]
+    [SerializeField] List<Sprite> images;
+
+    [Header("Key값")]
+    [SerializeField] int key;
+
+    [Header("Weapon Info")]
+
+    [SerializeField] int imageIndex;
+    [SerializeField] string itemName;
+    [SerializeField] Grade grade;
+    [SerializeField] float damage;
+    [SerializeField] string description;
+
+    [SerializeField] float delay;
+    [SerializeField] float speed;
+    [SerializeField] float attackRange;
+    
+    public int Key { get => key; set => key = value; }
+    public int ImageIdx { get => imageIndex; set => imageIndex = value; }
+    public string ItemName { get => itemName; set => itemName = value; }
+    public Grade Grade { get => grade; set => grade = value; }
+    public float Damage { get => damage; set => damage = value; }
+    public string Description { get => description; set => description = value; }
     public float Delay { get => delay; set => delay = value; }
-    public float WeaponSize { get => weaponSize; set => weaponSize = value; }
-    public float Power { get => power; set => power = value; }
     public float Speed { get => speed; set => speed = value; }
     public float AttackRange { get => attackRange; set => attackRange = value; }
 
@@ -26,6 +44,7 @@ public class WeaponHandler : MonoBehaviour
     public float KnockbackPower { get => knockbackPower; set => knockbackPower = value; }
     public float KnockbackTime { get => knockbackTime; set => knockbackTime = value; }
 
+
     [Header("Flip")]
     [SerializeField] private Transform flip;
 
@@ -34,25 +53,43 @@ public class WeaponHandler : MonoBehaviour
 
     private static readonly int IsAttack = Animator.StringToHash("IsAttack");
 
-    //public BaseController Controller { get; private set; }
 
-    private Animator animator;
-    //private SpriteRenderer weaponRenderer;
+    Animator animator;
+    SpriteRenderer weaponRenderer;
+    DataManager dataManager;
 
-
-
-    //protected virtual void Awake()
-    //{
-        
-    //}
+    protected virtual void Awake()
+    {
+        dataManager.Initialize();
+    }
 
     protected virtual void Start()
     {
         //Controller = GetComponentInParent<BaseController>();
         animator = GetComponentInChildren<Animator>();
-        //weaponRenderer = GetComponentInChildren<SpriteRenderer>();
+        weaponRenderer = GetComponentInChildren<SpriteRenderer>();
         animator.speed = 1f / delay;
-        transform.localScale = Vector3.one * WeaponSize;
+        
+
+        LoadData(1000);
+
+    }
+
+    protected void LoadData(int key)
+    {
+
+        var data = dataManager.WeaponInfoLoader.GetByKey(key);
+        //imageIndex = data.index;
+        itemName = data.Name;
+        grade = data.Grade;
+        description = data.Description;
+        //delay = 
+        //weaponSize = 
+        speed = data.Speed;
+        //attackRange = 
+        //isOnKnockback = data.;
+        //knockbackPower = data;
+        //knockbackTime = data;
     }
 
     public virtual void Attack()
