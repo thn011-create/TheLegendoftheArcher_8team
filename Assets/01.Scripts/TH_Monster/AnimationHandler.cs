@@ -10,6 +10,7 @@ public class AnimationHandler : MonoBehaviour, IAnimationHandler
     public static readonly int IsAttacking = Animator.StringToHash("IsAttack");
     public static readonly int IsHitting = Animator.StringToHash("IsHit");
     public static readonly int IsDying = Animator.StringToHash("IsDie");
+    private static readonly int IsDamage = Animator.StringToHash("IsDamage");
 
     private void Awake()
     {
@@ -38,5 +39,8 @@ public class AnimationHandler : MonoBehaviour, IAnimationHandler
     {
         animator.SetBool(IsHitting, false);
     }
-
+    public void Damage()
+    {
+        animator.SetBool(IsDamage, true);
+    }
 }
