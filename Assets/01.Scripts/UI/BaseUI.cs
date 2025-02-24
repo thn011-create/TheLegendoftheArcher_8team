@@ -7,14 +7,15 @@ public class BaseUI : MonoBehaviour
 {
     protected RectTransform rectTransform;
     protected UIManager uiManager;
-
-    // Start is called before the first frame update
+    public UIState uIState;
+    
+    
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         

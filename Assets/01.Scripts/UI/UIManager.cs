@@ -3,9 +3,21 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 
+
+public enum UIState
+{
+    //Game Scene
+    GameMission, // 클리어 조건
+    SelectSkill, // 능력 선택
+    InGame, // 인게임
+    GameOver, // 게임오버
+}
+
 public class UIManager : MonoBehaviour
 {
     private static UIManager instance;
+
+    private UIState currentState;
     
     public static UIManager Instance
     {
