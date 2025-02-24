@@ -15,6 +15,8 @@ public enum UIState
 
 public class UIManager : MonoBehaviour
 {
+    private GameManager gameManager;
+
     private static UIManager instance;
 
     private UIState currentState;
@@ -73,4 +75,29 @@ public class UIManager : MonoBehaviour
             uiDictionary[currentState].ShowUI();
         }
     }
+
+    // 게임 시작
+    public void SetPlayGame()
+    {
+        ChangeState(UIState.InGame);
+    }
+
+    // 다음 웨이브
+    public void ChangeWave(int currentWaveIndex)
+    {
+
+    }
+
+    // hp바
+
+    public void ChangePlayerHP(float currentHP, float maxHP)
+    { }
+
+    // 게임 오버
+    public void SetGameOver()
+    {
+        ChangeState(UIState.GameOver);
+    }
+
+
 }
