@@ -533,6 +533,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &849400904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 849400906}
+  - component: {fileID: 849400905}
+  m_Layer: 0
+  m_Name: EnemyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &849400905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849400904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89c8eff4b7a07c4288c0aa1d1e2e912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWaveIndex: 0
+  enemyPrefabs:
+  - {fileID: 2898466594723352262, guid: 8823df3cec8e0144f9eb549c749aa9a4, type: 3}
+  - {fileID: 6335177055578721425, guid: 4a25ead22de84d148b98e1b1c936d78d, type: 3}
+  - {fileID: 4452842820046348919, guid: 4d131bc63718d8443aeb1ef17655464a, type: 3}
+  - {fileID: 8273866081770108100, guid: 047ff68917a2c1f4387a9020c756c8a6, type: 3}
+  - {fileID: 860876182921614581, guid: 78a4dcacdbc968c41ab4c8baa2af28ee, type: 3}
+  spawnAreas:
+  - serializedVersion: 2
+    x: -9
+    y: -4
+    width: 4
+    height: 8
+  - serializedVersion: 2
+    x: 5
+    y: -4
+    width: 4
+    height: 8
+  gizmoColor: {r: 1, g: 0, b: 0, a: 0.3}
+  timeBetweenSpawns: 0.2
+  timeBetweenWaves: 1
+--- !u!4 &849400906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849400904}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &962030490
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,9 +1137,6 @@ MonoBehaviour:
   chracterRendere: {fileID: 1359461972}
   weaponPivot: {fileID: 1146777642}
   WeaponPrefab: {fileID: 5922578520239452610, guid: fe73485d1f4763d489bce4e380584c73, type: 3}
-  Etarget:
-    serializedVersion: 2
-    m_Bits: 0
   joy: {fileID: 1212784351}
 --- !u!61 &1856602117
 BoxCollider2D:
@@ -1157,3 +1219,4 @@ SceneRoots:
   - {fileID: 602513758}
   - {fileID: 1222931942}
   - {fileID: 133185577}
+  - {fileID: 849400906}
