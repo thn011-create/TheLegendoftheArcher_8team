@@ -5,13 +5,14 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float speed = 5f;
     public Joystick joy;
     Animator animatorMove;
+    private PlayerStats playerStats;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animatorMove = GetComponent<Animator>();
+        playerStats = GetComponent<PlayerStats>();
     }
 
     void Update()
@@ -32,7 +33,7 @@ public class PlayerMove : MonoBehaviour
             animatorMove.SetBool("IsMove", false);
             //АјАн
         }
-        rb.velocity = moveDir * speed;
+        rb.velocity = moveDir * playerStats.MoveSpeed;
 
     }
 }

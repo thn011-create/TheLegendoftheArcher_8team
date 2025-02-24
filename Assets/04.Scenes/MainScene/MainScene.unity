@@ -412,6 +412,7 @@ GameObject:
   - component: {fileID: 1359461971}
   - component: {fileID: 1359461972}
   - component: {fileID: 1359461973}
+  - component: {fileID: 1359461976}
   - component: {fileID: 1359461974}
   - component: {fileID: 1359461975}
   m_Layer: 0
@@ -500,7 +501,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04676dfecb1be4e4488f37e5ef7b2fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
   joy: {fileID: 1212784351}
 --- !u!50 &1359461974
 Rigidbody2D:
@@ -550,6 +550,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1359461976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359461970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faeefed0add851442ae87701fdf72436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerName: Player
+  level: 1
+  attackDamage: 10
+  moveSpeed: 5
+  currentHealth: 100
+  maxHealth: 100
+  experience: 0
 --- !u!1001 &1802204506
 PrefabInstance:
   m_ObjectHideFlags: 0
