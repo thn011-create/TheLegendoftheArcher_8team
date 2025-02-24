@@ -4,11 +4,11 @@ using UnityEngine;
 
 public interface ICharacter
 {
-    public string Name { get; set; }
-    public int Level { get; set; }
-    public int AttackDamage { get; set; }
-    public float MoveSpeed { get; set; }
-    public int CurrentHealth { get; set; }
-    public int MaxHealth { get; set; }
-    public float Experience { get; set; }
+    string Name { get; set; }
+    int Level { get; set; }
+    int AttackDamage { get; set; }
+    float MoveSpeed { get; set; }
+    int CurrentHealth { get; set; }
+    int MaxHealth { get; set; }
+    float Experience { get; set; }
 }

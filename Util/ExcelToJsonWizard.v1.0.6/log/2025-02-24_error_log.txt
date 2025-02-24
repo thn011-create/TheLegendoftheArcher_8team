@@ -1,0 +1,11 @@
+2025-02-24 오전 9:52:01: Empty values detected in file 'excel_files\AbilityTable.xlsx'. Default values were used.
+2025-02-24 오전 9:52:01: Error converting value '' for variable 'Grade' in sheet 'WeaponInfo' of file 'excel_files\WeaponInfo.xlsx': Empty values are not supported for Enum types. Variable 'Grade' in sheet 'WeaponInfo' of file 'excel_files\WeaponInfo.xlsx' contains an empty value.
+   at ExcelToJsonWizard.Program.ConvertToType(String value, String type, String variableName, String logFilePath, String excelPath, String sheetName)
+2025-02-24 오전 9:52:01: Error processing sheet WeaponInfo in file excel_files\WeaponInfo.xlsx: Empty values are not supported for Enum types. Variable 'Grade' in sheet 'WeaponInfo' of file 'excel_files\WeaponInfo.xlsx' contains an empty value.
+   at ExcelToJsonWizard.Program.ConvertToType(String value, String type, String variableName, String logFilePath, String excelPath, String sheetName)
+   at ExcelToJsonWizard.Program.GenerateClassAndJsonFromExcel(String excelPath, String loaderDir, String jsonDir, String logFilePath, Boolean allowMultipleSheets, Boolean useResources, String resourcesInternalPath)
+2025-02-24 오전 9:54:12: Error converting value '' for variable 'Grade' in sheet 'WeaponInfo' of file 'excel_files\WeaponInfo.xlsx': Empty values are not supported for Enum types. Variable 'Grade' in sheet 'WeaponInfo' of file 'excel_files\WeaponInfo.xlsx' contains an empty value.
+   at ExcelToJsonWizard.Program.ConvertToType(String value, String type, String variableName, String logFilePath, String excelPath, String sheetName)
+2025-02-24 오전 9:54:12: Error processing sheet WeaponInfo in file excel_files\WeaponInfo.xlsx: Empty values are not supported for Enum types. Variable 'Grade' in sheet 'WeaponInfo' of file 'excel_files\WeaponInfo.xlsx' contains an empty value.
+   at ExcelToJsonWizard.Program.ConvertToType(String value, String type, String variableName, String logFilePath, String excelPath, String sheetName)
+   at ExcelToJsonWizard.Program.GenerateClassAndJsonFromExcel(String excelPath, String loaderDir, String jsonDir, String logFilePath, Boolean allowMultipleSheets, Boolean useResources, String resourcesInternalPath)
