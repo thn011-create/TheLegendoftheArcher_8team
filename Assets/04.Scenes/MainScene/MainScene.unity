@@ -611,7 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 587bb9b5cc4aa324ea0181994476b8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiState: 0
+  uiState: 1
 --- !u!1 &839178484
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,7 +759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a1fdbfc84d693d4488efdbf78c1972c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiState: 0
+  uiState: 3
 --- !u!224 &1212784350 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8135886326569738822, guid: 56fae09712773584fb63896d473a98ee, type: 3}
@@ -1202,7 +1202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7e63e5ff73a87245841f92a11146783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiState: 0
+  uiState: 2
+  waveText: {fileID: 2020948772}
 --- !u!1 &1664516522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1443,7 +1444,7 @@ GameObject:
   - component: {fileID: 1891126638}
   - component: {fileID: 1891126637}
   m_Layer: 5
-  m_Name: WaveText
+  m_Name: WaveText1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1678,7 +1679,7 @@ GameObject:
   - component: {fileID: 2020948773}
   - component: {fileID: 2020948772}
   m_Layer: 5
-  m_Name: WaveNumText
+  m_Name: WaveText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

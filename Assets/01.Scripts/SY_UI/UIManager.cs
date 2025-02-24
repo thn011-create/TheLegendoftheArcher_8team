@@ -24,6 +24,8 @@ public class UIManager : MonoBehaviour
     // UI 딕셔너리
     private Dictionary<UIState, BaseUI> uiDictionary = new Dictionary<UIState, BaseUI>();
 
+    InGameUI InGameUI;
+
     public static UIManager Instance
     {
         get
@@ -85,13 +87,16 @@ public class UIManager : MonoBehaviour
     // 다음 웨이브
     public void ChangeWave(int currentWaveIndex)
     {
-
+        InGameUI.UpdateWaveText(currentWaveIndex);
     }
 
-    // hp바
+
+    // hp바 (구현 예정) - 슬라이드로 안 하고 다른 방식으로 할 것 같습니다.
 
     public void ChangePlayerHP(float currentHP, float maxHP)
-    { }
+    {
+        
+    }
 
     // 게임 오버
     public void SetGameOver()

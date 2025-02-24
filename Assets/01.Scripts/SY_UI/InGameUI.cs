@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InGameUI : BaseUI
 {
-    // Start is called before the first frame update
+    [SerializeField] private Text waveText;
+    //[SerializeField] private Slider hpSlider;
+
+    
     void Start()
     {
         uiState = UIState.InGame;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateWaveText(int wave)
     {
-        
+        waveText.text = wave.ToString();
     }
 }
