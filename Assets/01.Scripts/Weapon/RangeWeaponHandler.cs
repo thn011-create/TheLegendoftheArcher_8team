@@ -8,22 +8,20 @@ using UnityEngine;
 public class RangeWeaponHandler : WeaponHandler
 {
     [Header("Range Attack Data")]
-    [SerializeField] private Transform projectileSpawnPosition;
-    [SerializeField] private int bulletIndex;
-    [SerializeField] private float bulletSize = 1f;
-    [SerializeField] private float duration;
-    [SerializeField] private float spread;
-    [SerializeField] private int numberofProjectilesPerShot;
-    [SerializeField] private float multipleProjectileAngle;
-    [SerializeField] private Color projectileColor;
+    [SerializeField] Transform projectileSpawnPosition;
+    [SerializeField] float bulletSize = 1f;
+    [SerializeField] float spread;
+    [SerializeField] int numberofProjectilesPerShot;
+    [SerializeField] float multipleProjectileAngle;
+    [SerializeField] Color projectileColor;
 
-    public int BulletIndex { get { return bulletIndex; } }
     public float BulletSize { get { return bulletSize; } }
-    public float Duration { get { return duration; } }
     public float Spread { get { return spread; } }
     public int NumberofProjectilesPerShot { get { return numberofProjectilesPerShot; } }
     public float MultipleProjectileAngle { get { return multipleProjectileAngle; } }
     public Color ProjectileColor { get { return projectileColor; } }
+
+
 
 
     private ProjectileManager projectileManager;
@@ -60,7 +58,7 @@ public class RangeWeaponHandler : WeaponHandler
             angle += randomSpread;
 
             // 투사체 생성
-            //CreateProjectile(Controller.LookDirection, angle);
+            CreateProjectile(Controller.LookDirection.normalized, angle);
         }
     }
 
@@ -75,7 +73,8 @@ public class RangeWeaponHandler : WeaponHandler
         projectileManager.ShootBullet(
             this,  // 현재 무기 핸들러 전달
             projectileSpawnPosition.position,  // 투사체가 생성될 위치
-            RotateVector2(_lookDir, angle));   // 방향을 회전시켜 적용
+            RotateVector2(_lookDir, angle)   // 방향을 회전시켜 적용
+            );
     }
 
     /// <summary>

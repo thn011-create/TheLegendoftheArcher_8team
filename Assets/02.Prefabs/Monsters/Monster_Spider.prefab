@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9204647734740923608}
   - component: {fileID: 2168770236764799418}
   - component: {fileID: 4446620053497647867}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: Monster_Spider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 4578907924385766847}
   - component: {fileID: 5944950991607156552}
   - component: {fileID: 4526760808044526456}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4785221044713049316}
   - component: {fileID: 7983526625171486052}
   - component: {fileID: 4791708171907324662}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: Monster_Sniper
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 5838043852948839887}
   - component: {fileID: 5201505142428737150}
   - component: {fileID: 3533144319892649601}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 410270207052787073}
   - component: {fileID: 6129028934837957124}
   - component: {fileID: 6248601826753639347}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 6427397775427911386}
   - component: {fileID: 3474461422189410045}
   - component: {fileID: 808978138636459015}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: Monster_Soldier
   m_TagString: Enemy
   m_Icon: {fileID: 0}

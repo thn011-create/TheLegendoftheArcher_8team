@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6657702147254765406}
   - component: {fileID: 9111494447514890395}
   - component: {fileID: 2758667687721083141}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: Monster_Wasp
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 121979645764648045}
   - component: {fileID: 6253920335461450554}
   - component: {fileID: 1990886900520786011}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

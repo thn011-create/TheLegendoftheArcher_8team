@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3371312404477869343}
   - component: {fileID: 1918236646981806531}
   - component: {fileID: 6208060559518516337}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 5408135035986962665}
   - component: {fileID: 5101577143428514509}
   - component: {fileID: 6022621859116815248}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: Monster_Hornet
   m_TagString: Enemy
   m_Icon: {fileID: 0}
