@@ -26,35 +26,38 @@ public class WeaponHandler : MonoBehaviour
     public float KnockbackPower { get => knockbackPower; set => knockbackPower = value; }
     public float KnockbackTime { get => knockbackTime; set => knockbackTime = value; }
 
+    [Header("Flip")]
+    [SerializeField] private Transform flip;
+
+    [Header("AudioClip")]
+    public AudioClip attackSoundClip;
+
     private static readonly int IsAttack = Animator.StringToHash("IsAttack");
 
     //public BaseController Controller { get; private set; }
 
     private Animator animator;
-    private SpriteRenderer weaponRenderer;
+    //private SpriteRenderer weaponRenderer;
 
-    public AudioClip attackSoundClip;
 
-    protected virtual void Awake()
-    {
-        //Controller = GetComponentInParent<BaseController>();
-        animator = GetComponentInChildren<Animator>();
-        weaponRenderer = GetComponentInChildren<SpriteRenderer>();
 
-        animator.speed = 1f / delay;
-        transform.localScale = Vector3.one * WeaponSize;
-    }
+    //protected virtual void Awake()
+    //{
+        
+    //}
 
     protected virtual void Start()
     {
-        
+        //Controller = GetComponentInParent<BaseController>();
+        animator = GetComponentInChildren<Animator>();
+        //weaponRenderer = GetComponentInChildren<SpriteRenderer>();
+        animator.speed = 1f / delay;
+        transform.localScale = Vector3.one * WeaponSize;
     }
 
     public virtual void Attack()
     {
         AttackAnimation();
-
-
     }
 
     public virtual void AttackAnimation()
@@ -64,7 +67,10 @@ public class WeaponHandler : MonoBehaviour
 
     public virtual void Rotate(bool isFlip)
     {
-        weaponRenderer.flipY = isFlip;
+        //weaponRenderer.flipY = isFlip;
+
+        float scaleX = isFlip ? -1f : 1f;
+        flip.localScale = new Vector3(scaleX, 1f, 1f);
     }
 
 }
