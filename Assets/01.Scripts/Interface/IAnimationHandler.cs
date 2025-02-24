@@ -7,7 +7,7 @@ public interface IAnimationHandler
     public static readonly int IsMoving;
     public static readonly int IsAttacking;
     public static readonly int IsHitting;
-    public static readonly int Isdying;
+    public static readonly int IsDying;
 
     public void Move(Vector2 obj); // 움직일 때 Move 애니메이션 재생
     public void Hit(); // 맞을 때 Hit 애니메이션 재생
