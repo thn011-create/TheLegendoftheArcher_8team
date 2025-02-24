@@ -61,6 +61,7 @@ public class WeaponHandler : MonoBehaviour
 
     protected virtual void Awake()
     {
+        dataManager = DataManager.Instance;
         dataManager.Initialize();
     }
 
@@ -72,7 +73,7 @@ public class WeaponHandler : MonoBehaviour
         animator.speed = 1f / delay;
 
 
-        LoadData(1000);
+        LoadData(key);
 
     }
 
@@ -80,19 +81,19 @@ public class WeaponHandler : MonoBehaviour
     {
 
         var data = dataManager.WeaponInfoLoader.GetByKey(key);
-        //imageIndex = data.index;
+        imageIndex = data.SpriteIndex;
         itemName = data.Name;
         grade = data.Grade;
+        damage = data.Damage;
         description = data.Description;
-        //delay = 
-        //weaponSize = 
+        delay = data.Delay;
         speed = data.Speed;
-        //attackRange = 
-        //isOnKnockback = data.;
-        //knockbackPower = data;
-        //knockbackTime = data;
+        attackRange = data.AttackRange;
+        isOnKnockback = data.isOnKnockback;
+        knockbackPower = data.KnockbackPower;
+        knockbackTime = data.KnockbackTime;
 
-        FindImage();
+        weaponRenderer.sprite = FindImage(imageIndex);
     }
 
     /// <summary>
