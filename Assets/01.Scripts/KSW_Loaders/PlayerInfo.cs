@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class PlayerInfo : MonoBehaviour
 {
-    DataManager dataManager;
-
-    List<WeaponInfo> weapons;
-
-    private void Awake()
+    // Start is called before the first frame update
+    void Start()
     {
-        dataManager = DataManager.Instance;
+        
     }
 
-    private void Start()
+    // Update is called once per frame
+    void Update()
     {
-        weapons = dataManager.WeaponInfoLoader.ItemsList;
+        
     }
-    
-
 }

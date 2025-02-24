@@ -10,9 +10,4 @@ public static class DesignEnums
         Legendary = 3,
         Artifact = 4,
     }
-    public enum MonsterGrade
-    {
-        Common = 0,
-        Boss = 1,
-    }
 }
