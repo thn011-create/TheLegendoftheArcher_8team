@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class InGameUI : BaseUI
 {
+    // 웨이브 넘버
     [SerializeField] private Text waveText;
     //[SerializeField] private Slider hpSlider;
 

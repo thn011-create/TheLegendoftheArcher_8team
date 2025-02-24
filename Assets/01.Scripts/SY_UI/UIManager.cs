@@ -10,6 +10,7 @@ public enum UIState
     GameMission, // 클리어 조건
     SelectSkill, // 능력 선택
     InGame, // 인게임
+    Pause, // 게임 일시정지
     GameOver, // 게임오버
 }
 
