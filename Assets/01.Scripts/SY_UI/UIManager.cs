@@ -105,5 +105,11 @@ public class UIManager : MonoBehaviour
         ChangeState(UIState.GameOver);
     }
 
+    // 게임 일시정지 상태
+
+    public void SetPause() 
+    {
+        ChangeState(UIState.Pause);
+    }
 
 }
