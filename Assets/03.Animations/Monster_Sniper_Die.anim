@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Monster_Spider_Die
+  m_Name: Monster_Sniper_Die
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,9 +21,15 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 928805172, guid: 3ea460b74355fbc4fa3c1962f3f2c106, type: 3}
-    - time: 0.083333336
-      value: {fileID: 928805172, guid: 3ea460b74355fbc4fa3c1962f3f2c106, type: 3}
+      value: {fileID: -1765383449, guid: 5b33b50ede0da5a47a4bfa148dcf8d3c, type: 3}
+    - time: 0.16666667
+      value: {fileID: -1245327130, guid: 5b33b50ede0da5a47a4bfa148dcf8d3c, type: 3}
+    - time: 0.33333334
+      value: {fileID: -15279490, guid: 5b33b50ede0da5a47a4bfa148dcf8d3c, type: 3}
+    - time: 0.5
+      value: {fileID: -1006245750, guid: 5b33b50ede0da5a47a4bfa148dcf8d3c, type: 3}
+    - time: 0.6666667
+      value: {fileID: -1697596543, guid: 5b33b50ede0da5a47a4bfa148dcf8d3c, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,14 +52,17 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 928805172, guid: 3ea460b74355fbc4fa3c1962f3f2c106, type: 3}
-    - {fileID: 928805172, guid: 3ea460b74355fbc4fa3c1962f3f2c106, type: 3}
+    - {fileID: -1765383449, guid: 5b33b50ede0da5a47a4bfa148dcf8d3c, type: 3}
+    - {fileID: -1245327130, guid: 5b33b50ede0da5a47a4bfa148dcf8d3c, type: 3}
+    - {fileID: -15279490, guid: 5b33b50ede0da5a47a4bfa148dcf8d3c, type: 3}
+    - {fileID: -1006245750, guid: 5b33b50ede0da5a47a4bfa148dcf8d3c, type: 3}
+    - {fileID: -1697596543, guid: 5b33b50ede0da5a47a4bfa148dcf8d3c, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.16666667
+    m_StopTime: 0.75
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

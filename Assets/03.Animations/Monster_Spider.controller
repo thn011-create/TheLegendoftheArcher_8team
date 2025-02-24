@@ -195,7 +195,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MainSprite
+  m_Name: Monster_Spider
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: IsMove
