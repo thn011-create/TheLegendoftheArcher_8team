@@ -11,7 +11,8 @@ public class InGameUI : BaseUI
     // pause 버튼
     [SerializeField] private Button pauseButton;
 
-    //[SerializeField] private Slider hpSlider;
+    // hp 슬라이더
+    [SerializeField] private Slider hpSlider;
 
 
     void Start()
@@ -20,9 +21,16 @@ public class InGameUI : BaseUI
         pauseButton.onClick.AddListener(() => UIManager.Instance.ChangeState(UIState.Pause));
     }
 
+
+
     public void UpdateWaveText(int wave)
     {
         waveText.text = wave.ToString();
+    }
+
+    public void UpdateHPSlider(float percentage)
+    {
+        hpSlider.value = percentage;
     }
 
     public void OnClickPauseButton() 

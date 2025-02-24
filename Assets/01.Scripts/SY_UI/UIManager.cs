@@ -92,11 +92,11 @@ public class UIManager : MonoBehaviour
     }
 
 
-    // hp바 (구현 예정) - 슬라이드로 안 하고 다른 방식으로 할 것 같습니다.
+    // hp바 
 
     public void ChangePlayerHP(float currentHP, float maxHP)
     {
-        
+        InGameUI.UpdateHPSlider(currentHP/maxHP);
     }
 
     // 게임 오버
