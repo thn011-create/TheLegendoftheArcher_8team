@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 808978138636459015}
   m_Layer: 7
   m_Name: Monster_Soldier
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
