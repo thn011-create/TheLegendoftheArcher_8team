@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using UnityEngine;
 using static DesignEnums;
@@ -12,23 +13,22 @@ public class WeaponHandler : MonoBehaviour
     [Header("Key값")]
     [SerializeField] int key;
 
-    [Header("Weapon Info")]
+    [Header("Weapon Info - 자동 입력")]
+    [SerializeField, ReadOnly(false)] int imageIndex;
+    [SerializeField, ReadOnly(false)] string itemName;
+    [SerializeField, ReadOnly(false)] Grade grade;
+    [SerializeField, ReadOnly(false)] int damage;
+    [SerializeField, ReadOnly(false)] string description;
 
-    [SerializeField] int imageIndex;
-    [SerializeField] string itemName;
-    [SerializeField] Grade grade;
-    [SerializeField] float damage;
-    [SerializeField] string description;
-
-    [SerializeField] float delay;
-    [SerializeField] float speed;
-    [SerializeField] float attackRange;
+    [SerializeField, ReadOnly(false)] float delay;
+    [SerializeField, ReadOnly(false)] float speed;
+    [SerializeField, ReadOnly(false)] float attackRange;
     
     public int Key { get => key; set => key = value; }
     public int ImageIdx { get => imageIndex; set => imageIndex = value; }
     public string ItemName { get => itemName; set => itemName = value; }
     public Grade Grade { get => grade; set => grade = value; }
-    public float Damage { get => damage; set => damage = value; }
+    public int Damage { get => damage; set => damage = value; }
     public string Description { get => description; set => description = value; }
     public float Delay { get => delay; set => delay = value; }
     public float Speed { get => speed; set => speed = value; }
@@ -36,17 +36,17 @@ public class WeaponHandler : MonoBehaviour
 
     public LayerMask target;
 
-    [Header("Knock Back Info")]
-    [SerializeField] private bool isOnKnockback = false;
-    [SerializeField] private float knockbackPower = 0.1f;
-    [SerializeField] private float knockbackTime = 0.5f;
+    [Header("Knockback Info - 자동 입력")]
+    [SerializeField, ReadOnly(false)] bool isOnKnockback = false;
+    [SerializeField, ReadOnly(false)] float knockbackPower = 0.1f;
+    [SerializeField, ReadOnly(false)] float knockbackTime = 0.5f;
     public bool IsOnKnockback { get => isOnKnockback; set => isOnKnockback = value; }
     public float KnockbackPower { get => knockbackPower; set => knockbackPower = value; }
     public float KnockbackTime { get => knockbackTime; set => knockbackTime = value; }
 
 
     [Header("Flip")]
-    [SerializeField] private Transform flip;
+    [SerializeField, ReadOnly(false)] Transform flip;
 
     [Header("AudioClip")]
     public AudioClip attackSoundClip;
@@ -90,6 +90,8 @@ public class WeaponHandler : MonoBehaviour
         //isOnKnockback = data.;
         //knockbackPower = data;
         //knockbackTime = data;
+
+
     }
 
     public virtual void Attack()
