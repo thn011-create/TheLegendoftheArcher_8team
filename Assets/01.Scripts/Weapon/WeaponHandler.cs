@@ -17,7 +17,7 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField, ReadOnly(false)] int imageIndex;
     [SerializeField, ReadOnly(false)] string itemName;
     [SerializeField, ReadOnly(false)] Grade grade;
-    [SerializeField, ReadOnly(false)] float damage;
+    [SerializeField, ReadOnly(false)] int damage;
     [SerializeField, ReadOnly(false)] string description;
 
     [SerializeField, ReadOnly(false)] float delay;
@@ -28,7 +28,7 @@ public class WeaponHandler : MonoBehaviour
     public int ImageIdx { get => imageIndex; set => imageIndex = value; }
     public string ItemName { get => itemName; set => itemName = value; }
     public Grade Grade { get => grade; set => grade = value; }
-    public float Damage { get => damage; set => damage = value; }
+    public int Damage { get => damage; set => damage = value; }
     public string Description { get => description; set => description = value; }
     public float Delay { get => delay; set => delay = value; }
     public float Speed { get => speed; set => speed = value; }
