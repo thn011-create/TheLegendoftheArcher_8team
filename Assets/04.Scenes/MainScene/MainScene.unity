@@ -607,7 +607,7 @@ Transform:
   m_GameObject: {fileID: 1146777641}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -770,7 +770,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 200
   m_Sprite: {fileID: -699591863, guid: 1f598ff385333d94bab60d5051825275, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1071,6 +1071,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chracterRendere: {fileID: 1359461972}
   weaponPivot: {fileID: 1146777642}
+  WeaponPrefab: {fileID: 5922578520239452610, guid: fe73485d1f4763d489bce4e380584c73, type: 3}
+  Etarget:
+    serializedVersion: 2
+    m_Bits: 0
   joy: {fileID: 1212784351}
 --- !u!61 &1856602117
 BoxCollider2D:

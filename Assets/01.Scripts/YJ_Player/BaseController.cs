@@ -129,7 +129,6 @@ public class BaseController : MonoBehaviour
         if (isAttacking && timeSinceLastAttack > weaponHandler.Delay)
         {
             timeSinceLastAttack = 0;
-            Debug.Log("버튼누름");
             Attack();
         }
     }
