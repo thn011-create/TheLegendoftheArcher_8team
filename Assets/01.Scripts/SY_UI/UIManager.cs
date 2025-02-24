@@ -40,7 +40,7 @@ public class UIManager : MonoBehaviour
             BaseUI[] UIs = GetComponentsInChildren<BaseUI>(true);
             foreach (BaseUI ui in UIs)
             {
-                uiDictionary.Add(ui.uiState, ui);
+                uiDictionary.TryAdd(ui.uiState, ui);
                 ui.HideUI();
             }
 

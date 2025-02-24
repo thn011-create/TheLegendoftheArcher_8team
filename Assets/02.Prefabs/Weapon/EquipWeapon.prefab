@@ -321,13 +321,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e63a22b6ef1d904bba6513aa291d329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
-  name: 
+  images:
+  - {fileID: -471939493, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 31788645, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 1019925772, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 1963508388, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 1998588396, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -1129074373, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -962378447, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 82664124, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 2114066780, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -1545302863, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -846279725, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -40409270, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 1518479254, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -833107966, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 1037379487, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 765773864, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -467619574, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -1591617992, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -274783793, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 196145610, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -1643045767, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -1931921217, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -719624003, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -1554187936, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 641089777, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -572014262, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 309481246, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 1332242925, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -220789669, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -1296556137, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 1760742393, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -528923431, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 1736720071, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 1185938969, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -1334657366, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 1885163630, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 1706239428, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 1558858654, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -1605485927, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 634623300, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 1279908855, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -224028262, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -821312199, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 1095560582, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 696862949, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 1934089343, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -1570669881, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 1190740563, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: 339559552, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -1004916948, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  - {fileID: -1982886633, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
+  key: 0
+  imageIndex: 0
+  itemName: 
   grade: 0
   damage: 0
   description: 
   delay: 0.5
-  weaponSize: 1
   speed: 10
   attackRange: 10
   target:
