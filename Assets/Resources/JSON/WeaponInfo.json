@@ -12,7 +12,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.1,
       "KnockbackTime": 0.5,
-      "SpriteIndex": 20
+      "SpriteIndex": 20,
+      "Equip": false
     },
     {
       "key": 1001,
@@ -26,7 +27,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.2,
       "KnockbackTime": 0.5,
-      "SpriteIndex": 40
+      "SpriteIndex": 40,
+      "Equip": false
     },
     {
       "key": 1002,
@@ -40,7 +42,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.4,
       "KnockbackTime": 0.5,
-      "SpriteIndex": 0
+      "SpriteIndex": 0,
+      "Equip": false
     },
     {
       "key": 1003,
@@ -54,7 +57,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.7,
       "KnockbackTime": 0.5,
-      "SpriteIndex": 30
+      "SpriteIndex": 30,
+      "Equip": false
     },
     {
       "key": 1004,
@@ -68,7 +72,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.9,
       "KnockbackTime": 0.5,
-      "SpriteIndex": 10
+      "SpriteIndex": 10,
+      "Equip": false
     },
     {
       "key": 2000,
@@ -82,7 +87,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.15,
       "KnockbackTime": 0.55,
-      "SpriteIndex": 21
+      "SpriteIndex": 21,
+      "Equip": false
     },
     {
       "key": 2001,
@@ -96,7 +102,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.25,
       "KnockbackTime": 0.55,
-      "SpriteIndex": 41
+      "SpriteIndex": 41,
+      "Equip": false
     },
     {
       "key": 2002,
@@ -110,7 +117,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.45,
       "KnockbackTime": 0.55,
-      "SpriteIndex": 1
+      "SpriteIndex": 1,
+      "Equip": false
     },
     {
       "key": 2003,
@@ -124,7 +132,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.75,
       "KnockbackTime": 0.55,
-      "SpriteIndex": 31
+      "SpriteIndex": 31,
+      "Equip": false
     },
     {
       "key": 2004,
@@ -138,7 +147,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.95,
       "KnockbackTime": 0.55,
-      "SpriteIndex": 11
+      "SpriteIndex": 11,
+      "Equip": false
     },
     {
       "key": 3000,
@@ -152,7 +162,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.3,
       "KnockbackTime": 0.65,
-      "SpriteIndex": 22
+      "SpriteIndex": 22,
+      "Equip": false
     },
     {
       "key": 3001,
@@ -166,7 +177,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.4,
       "KnockbackTime": 0.65,
-      "SpriteIndex": 42
+      "SpriteIndex": 42,
+      "Equip": false
     },
     {
       "key": 3002,
@@ -180,7 +192,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.6,
       "KnockbackTime": 0.65,
-      "SpriteIndex": 2
+      "SpriteIndex": 2,
+      "Equip": false
     },
     {
       "key": 3003,
@@ -194,7 +207,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.8,
       "KnockbackTime": 0.65,
-      "SpriteIndex": 32
+      "SpriteIndex": 32,
+      "Equip": false
     },
     {
       "key": 3004,
@@ -208,7 +222,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 1.1,
       "KnockbackTime": 0.65,
-      "SpriteIndex": 12
+      "SpriteIndex": 12,
+      "Equip": false
     },
     {
       "key": 4000,
@@ -222,7 +237,8 @@
       "isOnKnockback": false,
       "KnockbackPower": 0,
       "KnockbackTime": 0,
-      "SpriteIndex": 23
+      "SpriteIndex": 23,
+      "Equip": false
     },
     {
       "key": 4001,
@@ -236,7 +252,8 @@
       "isOnKnockback": false,
       "KnockbackPower": 0,
       "KnockbackTime": 0,
-      "SpriteIndex": 43
+      "SpriteIndex": 43,
+      "Equip": false
     },
     {
       "key": 4002,
@@ -250,7 +267,8 @@
       "isOnKnockback": false,
       "KnockbackPower": 0,
       "KnockbackTime": 0,
-      "SpriteIndex": 3
+      "SpriteIndex": 3,
+      "Equip": false
     },
     {
       "key": 4003,
@@ -264,7 +282,8 @@
       "isOnKnockback": false,
       "KnockbackPower": 0,
       "KnockbackTime": 0,
-      "SpriteIndex": 33
+      "SpriteIndex": 33,
+      "Equip": false
     },
     {
       "key": 4004,
@@ -278,7 +297,8 @@
       "isOnKnockback": false,
       "KnockbackPower": 0,
       "KnockbackTime": 0,
-      "SpriteIndex": 13
+      "SpriteIndex": 13,
+      "Equip": false
     },
     {
       "key": 5000,
@@ -292,7 +312,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.05,
       "KnockbackTime": 0.45,
-      "SpriteIndex": 24
+      "SpriteIndex": 24,
+      "Equip": false
     },
     {
       "key": 5001,
@@ -306,7 +327,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.15,
       "KnockbackTime": 0.45,
-      "SpriteIndex": 44
+      "SpriteIndex": 44,
+      "Equip": false
     },
     {
       "key": 5002,
@@ -320,7 +342,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.35,
       "KnockbackTime": 0.45,
-      "SpriteIndex": 4
+      "SpriteIndex": 4,
+      "Equip": false
     },
     {
       "key": 5003,
@@ -334,7 +357,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.65,
       "KnockbackTime": 0.45,
-      "SpriteIndex": 34
+      "SpriteIndex": 34,
+      "Equip": false
     },
     {
       "key": 5004,
@@ -348,7 +372,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.85,
       "KnockbackTime": 0.45,
-      "SpriteIndex": 14
+      "SpriteIndex": 14,
+      "Equip": false
     },
     {
       "key": 6000,
@@ -362,7 +387,8 @@
       "isOnKnockback": false,
       "KnockbackPower": 0,
       "KnockbackTime": 0,
-      "SpriteIndex": 25
+      "SpriteIndex": 25,
+      "Equip": false
     },
     {
       "key": 6001,
@@ -376,7 +402,8 @@
       "isOnKnockback": false,
       "KnockbackPower": 0,
       "KnockbackTime": 0,
-      "SpriteIndex": 45
+      "SpriteIndex": 45,
+      "Equip": false
     },
     {
       "key": 6002,
@@ -390,7 +417,8 @@
       "isOnKnockback": false,
       "KnockbackPower": 0,
       "KnockbackTime": 0,
-      "SpriteIndex": 5
+      "SpriteIndex": 5,
+      "Equip": false
     },
     {
       "key": 6003,
@@ -404,7 +432,8 @@
       "isOnKnockback": false,
       "KnockbackPower": 0,
       "KnockbackTime": 0,
-      "SpriteIndex": 35
+      "SpriteIndex": 35,
+      "Equip": false
     },
     {
       "key": 6004,
@@ -418,7 +447,8 @@
       "isOnKnockback": false,
       "KnockbackPower": 0,
       "KnockbackTime": 0,
-      "SpriteIndex": 15
+      "SpriteIndex": 15,
+      "Equip": false
     },
     {
       "key": 7000,
@@ -432,7 +462,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.1,
       "KnockbackTime": 0.5,
-      "SpriteIndex": 26
+      "SpriteIndex": 26,
+      "Equip": false
     },
     {
       "key": 7001,
@@ -446,7 +477,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.2,
       "KnockbackTime": 0.5,
-      "SpriteIndex": 46
+      "SpriteIndex": 46,
+      "Equip": false
     },
     {
       "key": 7002,
@@ -460,7 +492,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.4,
       "KnockbackTime": 0.5,
-      "SpriteIndex": 6
+      "SpriteIndex": 6,
+      "Equip": false
     },
     {
       "key": 7003,
@@ -474,7 +507,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.7,
       "KnockbackTime": 0.5,
-      "SpriteIndex": 36
+      "SpriteIndex": 36,
+      "Equip": false
     },
     {
       "key": 7004,
@@ -488,7 +522,8 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.9,
       "KnockbackTime": 0.5,
-      "SpriteIndex": 16
+      "SpriteIndex": 16,
+      "Equip": false
     }
   ]
 }
