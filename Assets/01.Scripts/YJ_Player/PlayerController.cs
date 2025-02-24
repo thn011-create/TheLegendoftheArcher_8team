@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerController : BaseController
 {
-    
+    private Transform target; // 공격할 타겟(적)
+    private float attackCooldown = 1.0f; // 공격 쿨다운
+    private float lastAttackTime = 0.0f; // 마지막 공격 시간
+
     public Joystick joy;
     private Camera camera; // 카메라 변수 선언
     private GameManager gameManager;
@@ -12,48 +15,66 @@ public class PlayerController : BaseController
     public void Init(GameManager gameManager)
     {
         this.gameManager = gameManager;
-        camera = Camera.main;// 메인 카메라 가져오기
-        if (camera == null)
-        {
-            Debug.LogError(" 메인 카메라를 찾을 수 없습니다!", gameObject);
-        }
+        camera = Camera.main;
     }
 
 
     protected override void HandleAction()
     {
-       
-        float horizontal = joy.Horizontal; 
-        float vertial = joy.Vertical; 
-           
-        
-        if(horizontal != 0f || vertial != 0f)
-        {
-            movementDirection = new Vector2(horizontal, vertial); // 조이스틱 입력값을 기반으로 이동 방향 설정
-            isAttacking = false;
-        }
-        else
-        {
-            movementDirection = Vector2.zero;
-            isAttacking = true;
-        }
-        // 마우스 위치 가져오기
-        //Vector2 mousePosition = Input.mousePosition;
-        //Vector2 worldPos = camera.ScreenToWorldPoint(mousePosition); // 마우스 위치를 월드 좌표로 변환
+        // 1. 조이스틱 입력 처리
+        float h = joy.Horizontal; // Input.GetAxisRaw("Horizontal");
+        float v = joy.Vertical; // Input.GetAxisRaw("Vertical");
+        movementDirection = new Vector2(h, v).normalized; ;
 
-        //// 캐릭터의 위치를 기준으로 마우스 방향 벡터 계산
-        //lookDirection = (worldPos - (Vector2)transform.position);
-
-        //// 마우스와 캐릭터의 거리가 너무 가까우면 바라보는 방향을 유지
-        //if (lookDirection.magnitude < .9f)
+        //if (movementDirection.magnitude > 0.1f) // 입력이 일정 이상일 때만 방향 갱신
         //{
-        //    lookDirection = Vector2.zero; // 최소 거리 이하일 경우 방향 초기화
+        //    lookDirection = movementDirection.normalized; // 이동 방향으로 바라보기
         //}
         //else
         //{
-        //    lookDirection = lookDirection.normalized; // 방향 벡터를 정규화 (크기를 1로 유지)
+        //    // 2. 가장 가까운 적 찾기 (입력이 없을 때만)
+        //    FindNearestTarget();
+        //    if (target != null)
+        //    {
+        //        lookDirection = (target.position - transform.position).normalized; // 적 방향으로 회전
+        //    }
         //}
 
+        //// 3. 공격 쿨다운 체크 후 공격 실행
+        //if (target != null && Time.time - lastAttackTime >= attackCooldown)
+        //{
+        //    Attack();
+        //    lastAttackTime = Time.time; // 공격 시간 업데이트
+        //}
+    }
 
+
+    // 가장 가까운 적 찾기
+    private void FindNearestTarget()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy"); // "Enemy" 태그를 가진 모든 적 찾기
+        float minDistance = float.MaxValue;
+        Transform nearestEnemy = null;
+
+        foreach (GameObject enemy in enemies)
+        {
+            float distance = Vector2.Distance(transform.position, enemy.transform.position);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                nearestEnemy = enemy.transform;
+            }
+        }
+
+        target = nearestEnemy; // 가장 가까운 적을 타겟으로 설정
+    }
+
+    protected override void Attack()
+    {
+        if (lookDirection != Vector2.zero)
+        {
+            Debug.Log("적을 향해 공격!");
+            // 여기에 무기 발사 로직 추가 (예: 발사체 생성)
+        }
     }
 }
