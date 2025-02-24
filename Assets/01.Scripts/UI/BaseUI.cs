@@ -7,7 +7,7 @@ public class BaseUI : MonoBehaviour
 {
     protected RectTransform rectTransform;
     protected UIManager uiManager;
-    public UIState uIState;
+    public UIState uiState;
     
 
     // UI È°¼ºÈ­
