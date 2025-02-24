@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using Unity.VisualScripting;
 using UnityEngine;
 using static DesignEnums;
 
@@ -17,6 +18,7 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField, ReadOnly(false)] int imageIndex;
     [SerializeField, ReadOnly(false)] string itemName;
     [SerializeField, ReadOnly(false)] Grade grade;
+    [SerializeField, ReadOnly(false)] bool equip;
     [SerializeField, ReadOnly(false)] int damage;
     [SerializeField, ReadOnly(false)] string description;
 
@@ -28,6 +30,7 @@ public class WeaponHandler : MonoBehaviour
     public int ImageIdx { get => imageIndex; set => imageIndex = value; }
     public string ItemName { get => itemName; set => itemName = value; }
     public Grade Grade { get => grade; set => grade = value; }
+    public bool Equipe { get => equip; set => equip = value; }
     public int Damage { get => damage; set => damage = value; }
     public string Description { get => description; set => description = value; }
     public float Delay { get => delay; set => delay = value; }
@@ -46,7 +49,7 @@ public class WeaponHandler : MonoBehaviour
 
 
     [Header("Flip")]
-    [SerializeField, ReadOnly(false)] Transform flip;
+    [SerializeField] Transform flip;
 
     [Header("AudioClip")]
     public AudioClip attackSoundClip;
@@ -57,41 +60,68 @@ public class WeaponHandler : MonoBehaviour
     Animator animator;
     SpriteRenderer weaponRenderer;
     DataManager dataManager;
+    public BaseController Controller { get; private set; }
+
+
 
     protected virtual void Awake()
     {
+        dataManager = DataManager.Instance;
         dataManager.Initialize();
     }
 
     protected virtual void Start()
     {
-        //Controller = GetComponentInParent<BaseController>();
+        Controller = GetComponentInParent<BaseController>();
         animator = GetComponentInChildren<Animator>();
         weaponRenderer = GetComponentInChildren<SpriteRenderer>();
         animator.speed = 1f / delay;
-        
 
-        LoadData(1000);
+
+        LoadData(key);
 
     }
 
     protected void LoadData(int key)
     {
-
         var data = dataManager.WeaponInfoLoader.GetByKey(key);
-        //imageIndex = data.index;
+        Debug.Assert(!(null == data), "키 값을 확인하세요.");
+
+        imageIndex = data.SpriteIndex;
         itemName = data.Name;
         grade = data.Grade;
+        //equip = data.Equip;
+        damage = data.Damage;
         description = data.Description;
-        //delay = 
-        //weaponSize = 
+        delay = data.Delay;
         speed = data.Speed;
-        //attackRange = 
-        //isOnKnockback = data.;
-        //knockbackPower = data;
-        //knockbackTime = data;
+        attackRange = data.AttackRange;
+        isOnKnockback = data.isOnKnockback;
+        knockbackPower = data.KnockbackPower;
+        knockbackTime = data.KnockbackTime;
 
+        string imageName = "fantasy_weapons_pack1_noglow_";
+        weaponRenderer.sprite = FindImage(imageName, imageIndex);
+    }
 
+    /// <summary>
+    /// 무기 이미지 찾는 함수
+    /// </summary>
+    /// <param name="name">파일 이름</param>
+    /// <param name="idx">이미지 인덱스</param>
+    /// <returns></returns>
+    protected Sprite FindImage(string name, int idx)
+    {
+        foreach (Sprite img in images)
+        {
+            Debug.Log(img.name);
+            if ($"{name}{idx.ToString()}" == img.name)
+            {
+                return img;
+            }
+        }
+
+        return null;
     }
 
     public virtual void Attack()

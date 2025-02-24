@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using UnityEngine;
 
 public class EnemyController : BaseController
 {
     private EnemyManager enemyManager;
     private Transform target;
 
-    [SerializeField] private float followRange = 15f;
+    [SerializeField] private float followRange = 3f;
 
     public void Init(EnemyManager enemyManager, Transform target)
     {
@@ -69,6 +68,22 @@ public class EnemyController : BaseController
     {
         base.Death();
         enemyManager.RemoveEnemyOnDeath(this);
+    }
+
+    protected override void MoveMent(Vector2 direction)
+    {
+
+        direction = direction * enemyStats.MoveSpeed; // 기본 이동 속도 적용
+        Debug.Log($"Applying Velocity: {direction}");
+        // 넉백 지속 중이면 이동 속도를 줄이고 넉백 벡터를 추가
+        if (knockbackDuration > 0.0f)
+        {
+            direction *= 0.2f; // 이동 속도를 20%로 줄임
+            direction += knockback; // 넉백 반영
+        }
+
+        _rigidbody.velocity = direction; // Rigidbody2D에 적용
+        animationHandler.Move(direction);
     }
 }
 
