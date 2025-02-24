@@ -35,6 +35,7 @@ public class BaseController : MonoBehaviour
         if (WeaponPrefab != null)
         {
             weaponHandler = Instantiate(WeaponPrefab, weaponPivot);
+            weaponHandler.Key = 2000;
         }
         else
         {
