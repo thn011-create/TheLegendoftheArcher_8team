@@ -9,15 +9,23 @@ public class BaseUI : MonoBehaviour
     protected UIManager uiManager;
     public UIState uIState;
     
-    
-    void Start()
+
+    // UI 활성화
+    public virtual void ShowUI()
     {
-        
+        gameObject.SetActive(true);
+    }
+
+    // UI 비활성화
+
+    public virtual void HideUI()
+    {
+        gameObject?.SetActive(false);
     }
 
     
-    void Update()
-    {
-        
-    }
+    
+
+    
+    
 }
