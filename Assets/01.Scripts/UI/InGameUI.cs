@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameMissionUI : BaseUI
+public class InGameUI : BaseUI
 {
     // Start is called before the first frame update
     void Start()
     {
-        uiState = UIState.GameMission;
+        uiState = UIState.SelectSkill;
     }
 
     // Update is called once per frame
