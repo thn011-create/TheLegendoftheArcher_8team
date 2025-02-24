@@ -21,8 +21,8 @@ public class BaseController : MonoBehaviour
     protected AnimationHandler animationHandler;
     protected PlayerStats statHandler;
 
-    //[SerializeField] public WeaponHandler WeaponPrefab;
-    //protected WeaponHandler weaponHandler;
+    [SerializeField] public WeaponHandler WeaponPrefab;
+    protected WeaponHandler weaponHandler;
 
     protected bool isAttacking;
     private float timeSinceLastAttack = float.MaxValue;
@@ -32,14 +32,15 @@ public class BaseController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>(); // Rigidbody2D 컴포넌트 가져오기
         animationHandler = GetComponent<AnimationHandler>();
         statHandler = GetComponent<PlayerStats>();
-        //if (WeaponPrefab != null)
-        //{
-        //    weaponHandler = Instantiate(WeaponPrefab, weaponPivot);
-        //}
-        //else
-        //{
-        //    weaponHandler = GetComponentInChildren<WeaponHandler>();
-        //}
+        if (WeaponPrefab != null)
+        {
+            weaponHandler = Instantiate(WeaponPrefab, weaponPivot);
+            weaponHandler.Key = 2000;
+        }
+        else
+        {
+            weaponHandler = GetComponentInChildren<WeaponHandler>();
+        }
     }
 
     protected virtual void Start()
@@ -50,8 +51,8 @@ public class BaseController : MonoBehaviour
     protected virtual void Update()
     {
         HandleAction(); // 사용자 입력을 처리하는 함수 (자식 클래스에서 구현)
-        //Rotate(lookDirection); // 캐릭터가 바라보는 방향을 회전
-        //HandleAttackDelay();
+        Rotate(lookDirection); // 캐릭터가 바라보는 방향을 회전
+        HandleAttackDelay();
     }
 
     protected virtual void FixedUpdate() // 물리 연산이 필요할 때 일정한 간격으로 호출
@@ -101,11 +102,11 @@ public class BaseController : MonoBehaviour
         chracterRendere.flipX = isLeft;
 
         // 무기의 회전 적용
-        //if (weaponPivot != null)
-        //{
-        //    weaponPivot.rotation = Quaternion.Euler(0f, 0f, rotZ);
-        //}
-        //weaponHandler?.Rotate(isLeft);
+        if (weaponPivot != null)
+        {
+            weaponPivot.rotation = Quaternion.Euler(0f, 0f, rotZ);
+        }
+        weaponHandler?.Rotate(isLeft);
     }
 
     // 넉백 적용 함수
@@ -120,24 +121,23 @@ public class BaseController : MonoBehaviour
     private void HandleAttackDelay()
     {
 
-        //if (weaponHandler == null)
-        //    return;
-        //if (timeSinceLastAttack <= weaponHandler.Delay)
-        //{
-        //    timeSinceLastAttack += Time.deltaTime;
-        //}
-        //if (isAttacking && timeSinceLastAttack > weaponHandler.Delay)
-        //{
-        //    timeSinceLastAttack = 0;
-        //    Debug.Log("버튼누름");
-        //    Attack();
-        //}
+        if (weaponHandler == null)
+            return;
+        if (timeSinceLastAttack <= weaponHandler.Delay)
+        {
+            timeSinceLastAttack += Time.deltaTime;
+        }
+        if (isAttacking && timeSinceLastAttack > weaponHandler.Delay)
+        {
+            timeSinceLastAttack = 0;
+            Attack();
+        }
     }
 
     protected virtual void Attack()
     {
-        //if (lookDirection != Vector2.zero)
-        //    weaponHandler?.Attack();
+        if (lookDirection != Vector2.zero)
+            weaponHandler?.Attack();
     }
 
     public virtual void Death()

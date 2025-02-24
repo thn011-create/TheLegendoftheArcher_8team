@@ -6,6 +6,7 @@ using System.IO;
 
 public class SaveManager
 {
+    string filePath = "Resources/JSON";
     public void SaveToJson(SaveData saveData, string filePath)
     {
         string json = JsonConvert.SerializeObject(saveData, Formatting.Indented);
