@@ -252,6 +252,7 @@ GameObject:
   - component: {fileID: 462451945}
   - component: {fileID: 462451947}
   - component: {fileID: 462451946}
+  - component: {fileID: 462451948}
   m_Layer: 5
   m_Name: CloseText
   m_TagString: Untagged
@@ -320,6 +321,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 462451944}
   m_CullTransparentMesh: 1
+--- !u!114 &462451948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462451944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 518c0afda94c77b488de9060afcac4a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 462451946}
+  blinkSpeed: 1
+  maxAlpha: 0.8
+  minAlpha: 0
 --- !u!1 &535475233
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,7 +349,7 @@ GameObject:
   - component: {fileID: 535475236}
   - component: {fileID: 535475235}
   m_Layer: 5
-  m_Name: Image
+  m_Name: RewardImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -703,7 +720,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &962030491
 RectTransform:
   m_ObjectHideFlags: 0
@@ -925,7 +942,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1359461971
 Transform:
   m_ObjectHideFlags: 0
