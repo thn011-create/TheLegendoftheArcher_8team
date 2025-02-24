@@ -8,6 +8,7 @@ public class PlayerController : BaseController
     private float attackCooldown = 1.0f; // 공격 쿨다운
     private float lastAttackTime = 0.0f; // 마지막 공격 시간
 
+    public LayerMask Etarget;
     public Joystick joy;
     private Camera camera; // 카메라 변수 선언
     private GameManager gameManager;
