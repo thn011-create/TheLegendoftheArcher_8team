@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 2631793993529994856}
   - component: {fileID: 2172336655949596377}
   - component: {fileID: 4785221044713049316}
-  - component: {fileID: 7983526625171486052}
   - component: {fileID: 4791708171907324662}
+  - component: {fileID: 7593477505830468840}
+  - component: {fileID: 7867998344332673924}
   m_Layer: 12
   m_Name: Monster_Sniper
   m_TagString: Enemy
@@ -128,20 +129,6 @@ MonoBehaviour:
   currentHealth: 100
   maxHealth: 100
   experience: 0
---- !u!114 &7983526625171486052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 860876182921614581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c504f469dca9b9746ab27e3bb1c9af69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthChangeDelay: 0.5
-  damageClip: {fileID: 0}
 --- !u!114 &4791708171907324662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,6 +141,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48819f759ff2784aa845a9435e935a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7593477505830468840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860876182921614581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fffb5421c9ce6da4083f158914dbd6a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chracterRendere: {fileID: 5201505142428737150}
+  weaponPivot: {fileID: 0}
+  knockback: {x: 0, y: 0}
+  knockbackDuration: 0
+  WeaponPrefab: {fileID: 0}
+  followRange: 3
+--- !u!114 &7867998344332673924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860876182921614581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b174dde1215e33a46b0bd6844576bb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthChangeDelay: 0.5
+  damageClip: {fileID: 0}
 --- !u!1 &7663591754654553890
 GameObject:
   m_ObjectHideFlags: 0
