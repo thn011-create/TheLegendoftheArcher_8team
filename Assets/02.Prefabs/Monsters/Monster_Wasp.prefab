@@ -42,11 +42,10 @@ GameObject:
   - component: {fileID: 937127251971352049}
   - component: {fileID: 2318519198940190288}
   - component: {fileID: 7963604790079316177}
+  - component: {fileID: 6657702147254765406}
   - component: {fileID: 2758667687721083141}
-  - component: {fileID: -6501171725417085374}
-  - component: {fileID: -8290013401217672528}
-  - component: {fileID: -7669083723930584907}
-  - component: {fileID: -4115043634511994643}
+  - component: {fileID: -3066317796630852101}
+  - component: {fileID: 5141048499372295216}
   m_Layer: 12
   m_Name: Monster_Wasp
   m_TagString: Enemy
@@ -127,7 +126,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.16687074}
@@ -143,6 +142,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.73374146}
   m_EdgeRadius: 0
+--- !u!114 &6657702147254765406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2898466594723352262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b96f47b305ddcb4468e2e4b80b4f864b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyname: Wasp
+  level: 1
+  attackDamage: 10
+  moveSpeed: 2
+  currentHealth: 100
+  maxHealth: 100
+  experience: 0
 --- !u!114 &2758667687721083141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,57 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48819f759ff2784aa845a9435e935a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-6501171725417085374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2898466594723352262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faeefed0add851442ae87701fdf72436, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerName: Player
-  level: 1
-  attackDamage: 10
-  attackSpeed: 1
-  moveSpeed: 2
-  currentHealth: 100
-  maxHealth: 100
-  experience: 0
-  experienceToNextLevel: 100
-  extraProjectiles: 0
-  criticalChance: 10
-  criticalDamage: 100
---- !u!114 &-8290013401217672528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2898466594723352262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b48819f759ff2784aa845a9435e935a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-7669083723930584907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2898466594723352262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c504f469dca9b9746ab27e3bb1c9af69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthChangeDelay: 0.5
-  damageClip: {fileID: 0}
---- !u!114 &-4115043634511994643
+--- !u!114 &-3066317796630852101
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,10 +189,23 @@ MonoBehaviour:
   weaponPivot: {fileID: 3622389148964537067}
   knockback: {x: 0, y: 0}
   knockbackDuration: 0
-  WeaponPrefab: {fileID: 5922578520239452610, guid: fe73485d1f4763d489bce4e380584c73, type: 3}
+  WeaponPrefab: {fileID: 1481014989831272378, guid: a31d21766b233444a904756e915d652b, type: 3}
   timeSinceLastAttack: 3.4028235e+38
-  target: {fileID: 7586286333223084344, guid: 7040ce9f758fed34284f4d1dc200b22e, type: 3}
-  followRange: 3
+  followRange: 5
+--- !u!114 &5141048499372295216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2898466594723352262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b174dde1215e33a46b0bd6844576bb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthChangeDelay: 0.5
+  damageClip: {fileID: 0}
 --- !u!1 &3589650860656098233
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ public class BaseController : MonoBehaviour
 
     protected AnimationHandler animationHandler;
     protected PlayerStats statHandler;
-    
+    protected EnemyStats enemyStats;
 
     [SerializeField] public WeaponHandler WeaponPrefab;
     protected WeaponHandler _weaponHandler;
@@ -33,7 +33,7 @@ public class BaseController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>(); // Rigidbody2D 컴포넌트 가져오기
         animationHandler = GetComponent<AnimationHandler>();
         statHandler = GetComponent<PlayerStats>();
-        
+        enemyStats = GetComponent<EnemyStats>();
         if (WeaponPrefab != null)
         {
             _weaponHandler = Instantiate(WeaponPrefab, weaponPivot);

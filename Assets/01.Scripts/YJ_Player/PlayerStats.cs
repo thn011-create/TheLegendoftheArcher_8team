@@ -43,19 +43,4 @@ public class PlayerStats : MonoBehaviour, ICharacter
         experienceToNextLevel *= 1.2f; // 다음 레벨업 필요 경험치 증가
         //skillUI.ShowSkillSelection();
     }
-
-    public void TakeDamage(int damage)
-    {
-        CurrentHealth -= damage;
-
-        if (currentHealth > 0)
-            return;
-        
-        if (CurrentHealth <= 0)
-        {
-            // 죽었을 때 호출되는 함수
-            Destroy(gameObject, 2f);
-        }
-    }
-
 }

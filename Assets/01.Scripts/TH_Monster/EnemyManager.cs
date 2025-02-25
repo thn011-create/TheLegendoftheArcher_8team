@@ -88,7 +88,7 @@ public class EnemyManager : GameManager
         // 적 생성 및 리스트에 추가
         GameObject spawnedEnemy = Instantiate(randomPrefab, new Vector3(randomPosition.x, randomPosition.y), Quaternion.identity);
         EnemyController enemyController = spawnedEnemy.GetComponent<EnemyController>();
-        enemyController.Init(this, gameManager.player.transform);
+        enemyController.Init(this, gameManager.player.transform, weaponHandler);
 
         activeEnemies.Add(enemyController);
     }

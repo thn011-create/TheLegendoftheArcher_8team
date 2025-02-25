@@ -6,13 +6,11 @@ public class AnimationHandler : MonoBehaviour, IAnimationHandler
 {
     Animator animator;
 
-    // 문자열로 비교하는 것보다 숫자로 비교하는 게 더 좋기 때문에 
-    // 문자열을 해쉬값으로 변환해주는 것.
     public static readonly int IsMoving = Animator.StringToHash("IsMove");
     public static readonly int IsAttacking = Animator.StringToHash("IsAttack");
-    public static readonly int IsDamage = Animator.StringToHash("IsHit");
+    public static readonly int IsHitting = Animator.StringToHash("IsHit");
     public static readonly int IsDying = Animator.StringToHash("IsDie");
-    
+    private static readonly int IsDamage = Animator.StringToHash("IsDamage");
 
     private void Awake()
     {
@@ -31,14 +29,9 @@ public class AnimationHandler : MonoBehaviour, IAnimationHandler
     {
         animator.SetBool(IsAttacking, true);
     }
-    public void Damage()
+    public void Hit()
     {
-        animator.SetBool(IsDamage, true);
-    }
-
-    public void InvincibilityEnd()
-    {
-        animator.SetBool(IsDamage, false);
+        animator.SetBool(IsHitting, true);
     }
 
     public void Die()
@@ -46,4 +39,13 @@ public class AnimationHandler : MonoBehaviour, IAnimationHandler
         animator.SetBool(IsDying, true); ;
     }
 
+
+    public void InvincibilityEnd()
+    {
+        animator.SetBool(IsHitting, false);
+    }
+    public void Damage()
+    {
+        animator.SetBool(IsDamage, true);
+    }
 }

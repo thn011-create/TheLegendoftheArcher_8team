@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-
         if (!isFirstLoading)
         {
             StartGame();
@@ -45,7 +44,6 @@ public class GameManager : MonoBehaviour
         {
             isFirstLoading = false;
         }
-
     }
 
     public void StartGame()
