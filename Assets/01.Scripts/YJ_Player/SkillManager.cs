@@ -35,7 +35,7 @@ public class SkillManager : MonoBehaviour
     public List<SkillData> GetRandomSkills(int count)
     {
         List<SkillData> availableSkills = new List<SkillData>(allSkills);
-        //availableSkills.Shuffle();
+        availableSkills.Shuffle();
 
         return availableSkills.GetRange(0, Mathf.Min(count, availableSkills.Count));
     }
