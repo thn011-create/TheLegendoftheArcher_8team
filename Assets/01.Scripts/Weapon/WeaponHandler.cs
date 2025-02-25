@@ -127,7 +127,7 @@ public class WeaponHandler : MonoBehaviour
 
     public virtual void Rotate(bool isFlip)
     {
-        //weaponRenderer.flipY = isFlip;
+        weaponRenderer.flipY = isFlip;
 
         float scaleX = isFlip ? -1f : 1f;
         flip.localScale = new Vector3(scaleX, 1f, 1f);
