@@ -6,9 +6,9 @@ public interface ICharacter
 {
     string Name { get; set; }
     int Level { get; set; }
-    int AttackDamage { get; set; }
+    float AttackDamage { get; set; }
     float MoveSpeed { get; set; }
-    int CurrentHealth { get; set; }
-    int MaxHealth { get; set; }
+    float CurrentHealth { get; set; }
+    float MaxHealth { get; set; }
     float Experience { get; set; }
 }
