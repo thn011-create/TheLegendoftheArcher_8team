@@ -90,7 +90,7 @@ public class WeaponHandler : MonoBehaviour
         imageIndex = data.SpriteIndex;
         itemName = data.Name;
         grade = data.Grade;
-        //equip = data.Equip;
+        equip = data.Equip;
         damage = data.Damage;
         description = data.Description;
         delay = data.Delay;
