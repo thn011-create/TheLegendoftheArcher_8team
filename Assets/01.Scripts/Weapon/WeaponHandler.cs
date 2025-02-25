@@ -57,9 +57,9 @@ public class WeaponHandler : MonoBehaviour
     private static readonly int IsAttack = Animator.StringToHash("IsAttack");
 
 
-    Animator animator;
-    SpriteRenderer weaponRenderer;
-    DataManager dataManager;
+    protected Animator animator;
+    protected SpriteRenderer weaponRenderer;
+    protected DataManager dataManager;
     public BaseController Controller { get; private set; }
 
 
