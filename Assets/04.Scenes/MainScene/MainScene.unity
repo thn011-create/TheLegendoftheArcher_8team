@@ -1237,6 +1237,7 @@ MonoBehaviour:
   knockback: {x: 0, y: 0}
   knockbackDuration: 0
   WeaponPrefab: {fileID: 5922578520239452610, guid: fe73485d1f4763d489bce4e380584c73, type: 3}
+  timeSinceLastAttack: 3.4028235e+38
   joy: {fileID: 1212784351}
 --- !u!61 &1856602117
 BoxCollider2D:

@@ -26,7 +26,7 @@ public class BaseController : MonoBehaviour
     protected WeaponHandler _weaponHandler;
 
     protected bool isAttacking;
-    private float timeSinceLastAttack = float.MaxValue;
+    public float timeSinceLastAttack = float.MaxValue;
 
     protected virtual void Awake()
     {
@@ -120,7 +120,7 @@ public class BaseController : MonoBehaviour
         knockback = -(other.position - transform.position).normalized * power;
     }
 
-    private void HandleAttackDelay()
+    public virtual void HandleAttackDelay()
     {
 
         if (_weaponHandler == null)
@@ -129,7 +129,7 @@ public class BaseController : MonoBehaviour
         {
             timeSinceLastAttack += Time.deltaTime;
         }
-        if (isAttacking && timeSinceLastAttack > _weaponHandler.Delay)
+        if (isAttacking && timeSinceLastAttack > (1f/_weaponHandler.Delay))
         {
             timeSinceLastAttack = 0;
             Attack();
