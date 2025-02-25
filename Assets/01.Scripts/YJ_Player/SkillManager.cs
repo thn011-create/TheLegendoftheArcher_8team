@@ -18,33 +18,21 @@ public class SkillManager : MonoBehaviour
 
     // 랜덤한 스킬 선택 (중복 허용)
     public List<AbilityTable> GetRandomSkills()
-
     {
         List<AbilityTable> availableSkills = DataManager.Instance.AbilityTableLoader.ItemsList;
-        //availableSkills.Shuffle();
         List<AbilityTable> returnSkills = new List<AbilityTable>();
-        int[] random = new int[3];
-        int j = 0;
-        while (true)
+
+        HashSet<int> randomIndexes = new HashSet<int>();
+        while (randomIndexes.Count < 3)
         {
-            random[j] = Random.Range(0, availableSkills.Count);
-            j++;
-            if (j >= 3)
-            {
-                if (random[0] == random[1] || random[0] == random[2] || random[1] == random[2])
-                {
-                    j = 0;
-                }
-                else
-                {
-                    break;
-                }
-            }
+            randomIndexes.Add(Random.Range(0, availableSkills.Count));
         }
-        for (int i = 0; i < 3; i++)
+
+        foreach (int index in randomIndexes)
         {
-            returnSkills.Add(availableSkills[i]);
+            returnSkills.Add(availableSkills[index]);
         }
+
         return returnSkills;
     }
 
