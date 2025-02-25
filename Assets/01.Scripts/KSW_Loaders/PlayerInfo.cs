@@ -10,7 +10,7 @@ public class PlayerInfo
     public int MaxHealth;
 }
 
-public class PlayerInfoLoader
+public class PlayerInfoLoader : MonoBehaviour
 {
     public PlayerInfo PlayerInfo { get; private set; }
 

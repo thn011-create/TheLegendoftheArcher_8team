@@ -2,111 +2,163 @@
   "Items": [
     {
       "key": 1,
-      "Name": "AttackBoost",
-      "Description": "데미지 {0}% 증가",
-      "MinValue": 0.15,
-      "MaxValue": 0.3,
+      "Name": "AttackBoostSmall",
+      "Description": "데미지 15% 증가",
+      "Value": 15,
       "MaxCount": 9999,
-      "ApperanceRate": 0.084
+      "skillType": 0
     },
     {
       "key": 2,
-      "Name": "AttackSpeedBoost",
-      "Description": "공격 속도 {0}% 증가",
-      "MinValue": 0.125,
-      "MaxValue": 0.25,
+      "Name": "AttackBoost",
+      "Description": "데미지 30% 증가",
+      "Value": 30,
       "MaxCount": 9999,
-      "ApperanceRate": 0.084
+      "skillType": 0
     },
     {
       "key": 3,
-      "Name": "CriticalRate",
-      "Description": "크리티컬 확률 {0}% 증가",
-      "MinValue": 0.05,
-      "MaxValue": 0.1,
-      "MaxCount": 20,
-      "ApperanceRate": 0.084
+      "Name": "AttackSpeedBoostSmall",
+      "Description": "공격 속도 12.5% 증가",
+      "Value": 12.5,
+      "MaxCount": 9999,
+      "skillType": 1
     },
     {
       "key": 4,
-      "Name": "CriticalDamage",
-      "Description": "크리티컬 데미지 {0}% 증가",
-      "MinValue": 0.2,
-      "MaxValue": 0.4,
+      "Name": "AttackSpeedBoost",
+      "Description": "공격 속도 25% 증가",
+      "Value": 25,
       "MaxCount": 9999,
-      "ApperanceRate": 0.084
+      "skillType": 1
     },
     {
       "key": 5,
-      "Name": "HPBoost",
-      "Description": "최대체력 {0}% 증가",
-      "MinValue": 0.15,
-      "MaxValue": 0.2,
-      "MaxCount": 9999,
-      "ApperanceRate": 0.083
+      "Name": "MoveSpeedSmall",
+      "Description": "이동 속도 5% 증가",
+      "Value": 5,
+      "MaxCount": 5,
+      "skillType": 2
     },
     {
       "key": 6,
-      "Name": "HeadShoot",
-      "Description": "헤드샷 확률 {0}% 증가",
-      "MinValue": 0.05,
-      "MaxValue": 0.15,
-      "MaxCount": 20,
-      "ApperanceRate": 0.083
+      "Name": "MoveSpeed",
+      "Description": "이동 속도 10% 증가",
+      "Value": 10,
+      "MaxCount": 3,
+      "skillType": 2
     },
     {
       "key": 7,
-      "Name": "EvasionMaster",
-      "Description": "회피율 {0}% 증가",
-      "MinValue": 0.05,
-      "MaxValue": 0.1,
-      "MaxCount": 5,
-      "ApperanceRate": 0.083
+      "Name": "CriticalRateSmall",
+      "Description": "크리티컬 확률 5% 증가",
+      "Value": 5,
+      "MaxCount": 10,
+      "skillType": 3
     },
     {
       "key": 8,
-      "Name": "Berserker",
-      "Description": "잃은 체력 1%당, 데미지 {0}% 증가",
-      "MinValue": 0.12,
-      "MaxValue": 0.12,
-      "MaxCount": 10,
-      "ApperanceRate": 0.083
+      "Name": "CriticalRate",
+      "Description": "크리티컬 확률 10% 증가",
+      "Value": 10,
+      "MaxCount": 5,
+      "skillType": 3
     },
     {
       "key": 9,
-      "Name": "HealBoost",
-      "Description": "체력 회복 {0}% 증가",
-      "MinValue": 0.1,
-      "MaxValue": 0.2,
-      "MaxCount": 4,
-      "ApperanceRate": 0.083
+      "Name": "CriticalDamageSmall",
+      "Description": "크리티컬 데미지 20% 증가",
+      "Value": 20,
+      "MaxCount": 9999,
+      "skillType": 3
     },
     {
       "key": 10,
-      "Name": "HealDropRate",
-      "Description": "체력 회복 아이템 드롭률 {0}% 증가",
-      "MinValue": 0.03,
-      "MaxValue": 0.03,
-      "MaxCount": 10,
-      "ApperanceRate": 0.083
+      "Name": "CriticalDamage",
+      "Description": "크리티컬 데미지 40% 증가",
+      "Value": 40,
+      "MaxCount": 9999,
+      "skillType": 3
     },
     {
       "key": 11,
-      "Name": "Thirst of Blood",
-      "Description": "데미지의 {0}%만큼 체력 회복",
-      "MinValue": 0.1,
-      "MaxValue": 0.15,
-      "MaxCount": 5,
-      "ApperanceRate": 0.083
+      "Name": "HPBoostSmall",
+      "Description": "최대체력 15% 증가",
+      "Value": 15,
+      "MaxCount": 9999,
+      "skillType": 4
     },
     {
       "key": 12,
-      "Name": "AdditionalArrow",
-      "Description": "투사체 개수 {0}개 만큼 추가 발사",
-      "MinValue": 1,
-      "MaxValue": 4,
+      "Name": "HPBoost",
+      "Description": "최대체력 20% 증가",
+      "Value": 20,
+      "MaxCount": 9999,
+      "skillType": 4
+    },
+    {
+      "key": 13,
+      "Name": "HeadShotSmall",
+      "Description": "헤드샷 확률 5% 증가",
+      "Value": 5,
+      "MaxCount": 11,
+      "skillType": 5
+    },
+    {
+      "key": 14,
+      "Name": "HeadShot",
+      "Description": "헤드샷 확률 15% 증가",
+      "Value": 15,
+      "MaxCount": 3,
+      "skillType": 5
+    },
+    {
+      "key": 15,
+      "Name": "EvasionMasterSmall",
+      "Description": "회피율 5% 증가",
+      "Value": 5,
+      "MaxCount": 2,
+      "skillType": 6
+    },
+    {
+      "key": 16,
+      "Name": "EvasionMaster",
+      "Description": "회피율 10% 증가",
+      "Value": 10,
+      "MaxCount": 3,
+      "skillType": 6
+    },
+    {
+      "key": 17,
+      "Name": "HealBoost",
+      "Description": "체력 회복 5% 증가",
+      "Value": 5,
       "MaxCount": 4,
-      "ApperanceRate": 0.083
+      "skillType": 4
+    },
+    {
+      "key": 18,
+      "Name": "HealDropRate",
+      "Description": "체력 회복 아이템 드롭률 3% 증가",
+      "Value": 3,
+      "MaxCount": 10,
+      "skillType": 4
+    },
+    {
+      "key": 19,
+      "Name": "Thirst of Blood",
+      "Description": "데미지의 3%만큼 체력 회복",
+      "Value": 3,
+      "MaxCount": 5,
+      "skillType": 4
+    },
+    {
+      "key": 20,
+      "Name": "AdditionalArrow",
+      "Description": "투사체 개수 1개 추가 발사",
+      "Value": 1,
+      "MaxCount": 4,
+      "skillType": 7
     }
   ]
 }

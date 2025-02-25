@@ -66,6 +66,11 @@ public class WeaponInfo
     /// </summary>
     public int SpriteIndex;
 
+    /// <summary>
+    /// 착용여부
+    /// </summary>
+    public bool Equip;
+
 }
 public class WeaponInfoLoader
 {

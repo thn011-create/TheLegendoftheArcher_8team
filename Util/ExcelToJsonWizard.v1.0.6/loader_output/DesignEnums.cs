@@ -15,4 +15,15 @@ public static class DesignEnums
         Common = 0,
         Boss = 1,
     }
+    public enum SkillType
+    {
+        DamageUp = 0,
+        AttackSpeedUp = 1,
+        MoveSpeedUp = 2,
+        Critical = 3,
+        Heal = 4,
+        HeadShot = 5,
+        Evasion = 6,
+        ExtraProjectile = 7,
+    }
 }
