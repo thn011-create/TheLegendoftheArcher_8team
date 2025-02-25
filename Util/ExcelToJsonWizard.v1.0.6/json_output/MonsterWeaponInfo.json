@@ -1,0 +1,28 @@
+{
+  "Items": [
+    {
+      "key": 9000,
+      "Name": "SniperWeapon",
+      "Damage": 20,
+      "Delay": 0.7,
+      "Speed": 7,
+      "AttackRange": 10,
+      "isOnKnockback": true,
+      "KnockbackPower": 0.4,
+      "KnockbackTime": 0.6,
+      "SpriteName": "bullets\u002Bplasma_2"
+    },
+    {
+      "key": 9001,
+      "Name": "SoliderWeapon",
+      "Damage": 10,
+      "Delay": 1,
+      "Speed": 5,
+      "AttackRange": 7,
+      "isOnKnockback": true,
+      "KnockbackPower": 0.2,
+      "KnockbackTime": 0.3,
+      "SpriteName": "RPG-round_2"
+    }
+  ]
+}
