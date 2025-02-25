@@ -3,19 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
 using System.IO;
+using System;
 
 public class SaveManager
 {
-    string filePath = "Resources/JSON";
-    public void SaveToJson(SaveData saveData, string filePath)
+    
+    public static string filePath;
+    // JSON 파일로 저장
+    public static void SaveToJson(SaveData saveData, string filePath)
     {
         string json = JsonConvert.SerializeObject(saveData, Formatting.Indented);
         File.WriteAllText(filePath, json);
     }
 
-    public SaveData LoadFromJson(string filePath)
+    public static SaveData LoadFromJson(string filePath)
     {
-        string json = File.ReadAllText(filePath);
-        return JsonConvert.DeserializeObject<SaveData>(json);
+        if (File.Exists(filePath))
+        {
+            string json = File.ReadAllText(filePath);
+            return JsonConvert.DeserializeObject<SaveData>(json);
+        }
+        else
+        {
+            Debug.LogError("파일을 찾을 수 없습니다: " + filePath);
+            return null;
+        }
+        
     }
+
+    
 }

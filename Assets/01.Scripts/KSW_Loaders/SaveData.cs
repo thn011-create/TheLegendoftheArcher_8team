@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class SaveData
 {
     public string Name { get; set; }
@@ -14,29 +15,29 @@ public class SaveData
 
     //인터페이스는 직렬화가 불가능하기 때문에 
     //public Player PlayerStat { get; set; }  // ICharacter 대신 Player를 사용
-    //Todo : player 클래스 추가되면 위 작업 수행
     public PlayerStats PlayerStats { get; set; }
 
-
-
-    public SaveData CreateDefault()
+    //public SaveData(string name, int AttackDamage, int MoveSpeed, int MaxHealth, 
+    //    List<WeaponInfo> weapons, PlayerStats playerStats) 
+    //{
+    //
+    //}
+    
+    public SaveData CreateDefault(PlayerStats playerStats)
     {
         return new SaveData
         {
             Name = "Default_Name",
-
-            AttackDamage = PlayerStats.AttackDamage,
-            MoveSpeed = PlayerStats.MoveSpeed,
-            MaxHealth = PlayerStats.MaxHealth,
-
-
-            Weapons = new List<WeaponInfo>()
-
+            AttackDamage = playerStats.AttackDamage,
+            MoveSpeed = playerStats.MoveSpeed,
+            MaxHealth = playerStats.MaxHealth,
+            Weapons = new List<WeaponInfo>(),
+            PlayerStats = playerStats
         };
     }
 
     /*public void CreateSaveWeponData()
     {
-        Weapons = GameManager.Instance.inventory.ToWeaponData();
+        
     }*/
 }

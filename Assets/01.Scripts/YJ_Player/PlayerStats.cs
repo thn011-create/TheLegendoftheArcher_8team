@@ -1,4 +1,7 @@
+using System.IO;
+using System;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayerStats : MonoBehaviour, ICharacter
 {
@@ -17,4 +20,22 @@ public class PlayerStats : MonoBehaviour, ICharacter
     public int CurrentHealth { get => currentHealth; set => currentHealth = value; }
     public int MaxHealth { get => maxHealth; set => maxHealth = value; }
     public float Experience { get => experience; set => experience = value; }
+
+    
+
+    public SaveData ToSaveData()
+    {
+        return new SaveData
+        {
+            Name = "Default_Name",
+            AttackDamage = AttackDamage,
+            MoveSpeed = MoveSpeed,
+            MaxHealth = MaxHealth,
+            Weapons = new List<WeaponInfo>(),
+            PlayerStats = this
+        };
+    }
+
+    SaveData saveData = new SaveData().CreateDefault(playerStats);
+    SaveManager.SaveToJson(saveData, Application.dataPath + "/Resources/saveData.json");
 }
