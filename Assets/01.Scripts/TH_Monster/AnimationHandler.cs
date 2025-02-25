@@ -46,8 +46,4 @@ public class AnimationHandler : MonoBehaviour, IAnimationHandler
         animator.SetBool(IsDying, true); ;
     }
 
-    public void Damage()
-    {
-        animator.SetBool(IsDamage, true);
-    }
 }
