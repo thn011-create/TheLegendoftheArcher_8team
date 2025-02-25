@@ -8,28 +8,43 @@ public class ResourceController : MonoBehaviour
     [SerializeField] private float healthChangeDelay = .5f;
 
     private BaseController baseController;
-    private PlayerStats statHandler;
+    private PlayerStats PlayerStats;
+    private EnemyStats EnemyStats;
     private AnimationHandler animationHandler;
 
     private float timeSinceLastChange = float.MaxValue;
 
     public float CurrentHealth { get; private set; }
-    public float MaxHealth => statHandler.CurrentHealth;
-    
+
+    public float MaxHealth => PlayerStats != null ? PlayerStats.CurrentHealth :
+                          EnemyStats != null ? EnemyStats.CurrentHealth : 0;
+
     public AudioClip damageClip;
 
     private Action<float, float> OnChangeHealth;
 
     private void Awake()
     {
-        statHandler = GetComponent<PlayerStats>();
+        PlayerStats = GetComponent<PlayerStats>();
+        EnemyStats = GetComponent<EnemyStats>();
         animationHandler = GetComponent<AnimationHandler>();
         baseController = GetComponent<BaseController>();
     }
 
     private void Start()
     {
-        CurrentHealth = statHandler.CurrentHealth;
+        if (PlayerStats != null)  // 플레이어일 경우
+        {
+            CurrentHealth = PlayerStats.CurrentHealth;
+        }
+        else if (EnemyStats != null)  // 적일 경우
+        {
+            CurrentHealth = EnemyStats.CurrentHealth;
+        }
+        else
+        {
+            Debug.LogError($"{gameObject.name}에 PlayerStats 또는 EnemyStats가 없습니다!");
+        }
     }
 
     private void Update()

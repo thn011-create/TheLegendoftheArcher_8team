@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4785221044713049316}
   - component: {fileID: 4791708171907324662}
   - component: {fileID: -7516720784915468938}
-  - component: {fileID: 2004688513675112981}
+  - component: {fileID: 3598534730122846107}
   m_Layer: 12
   m_Name: Monster_Sniper
   m_TagString: Enemy
@@ -159,8 +159,9 @@ MonoBehaviour:
   knockback: {x: 0, y: 0}
   knockbackDuration: 0
   WeaponPrefab: {fileID: 5922578520239452610, guid: fe73485d1f4763d489bce4e380584c73, type: 3}
+  timeSinceLastAttack: 3.4028235e+38
   followRange: 5
---- !u!114 &2004688513675112981
+--- !u!114 &3598534730122846107
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,7 +170,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 860876182921614581}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b174dde1215e33a46b0bd6844576bb67, type: 3}
+  m_Script: {fileID: 11500000, guid: c504f469dca9b9746ab27e3bb1c9af69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5

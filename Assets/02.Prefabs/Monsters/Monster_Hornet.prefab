@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8131674833415446106}
   m_Layer: 12
   m_Name: WeaponPivot
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 6208060559518516337}
   m_Layer: 12
   m_Name: MainSprite
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 5408135035986962665}
   - component: {fileID: 6022621859116815248}
   - component: {fileID: 8432660849864740146}
-  - component: {fileID: 2594504199741797444}
+  - component: {fileID: 4008430824869494798}
   m_Layer: 12
   m_Name: Monster_Hornet
   m_TagString: Enemy
@@ -296,8 +296,9 @@ MonoBehaviour:
   knockback: {x: 0, y: 0}
   knockbackDuration: 0
   WeaponPrefab: {fileID: 5922578520239452610, guid: fe73485d1f4763d489bce4e380584c73, type: 3}
+  timeSinceLastAttack: 3.4028235e+38
   followRange: 5
---- !u!114 &2594504199741797444
+--- !u!114 &4008430824869494798
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -306,7 +307,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6335177055578721425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b174dde1215e33a46b0bd6844576bb67, type: 3}
+  m_Script: {fileID: 11500000, guid: c504f469dca9b9746ab27e3bb1c9af69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5

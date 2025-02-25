@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9204647734740923608}
   - component: {fileID: 4446620053497647867}
   - component: {fileID: 9199792879375299439}
-  - component: {fileID: -8794588061431616146}
+  - component: {fileID: 3218713448304833111}
   m_Layer: 12
   m_Name: Monster_Spider
   m_TagString: Enemy
@@ -159,8 +159,9 @@ MonoBehaviour:
   knockback: {x: 0, y: 0}
   knockbackDuration: 0
   WeaponPrefab: {fileID: 5922578520239452610, guid: fe73485d1f4763d489bce4e380584c73, type: 3}
+  timeSinceLastAttack: 3.4028235e+38
   followRange: 5
---- !u!114 &-8794588061431616146
+--- !u!114 &3218713448304833111
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,7 +170,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4452842820046348919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b174dde1215e33a46b0bd6844576bb67, type: 3}
+  m_Script: {fileID: 11500000, guid: c504f469dca9b9746ab27e3bb1c9af69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
