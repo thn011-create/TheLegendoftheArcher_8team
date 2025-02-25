@@ -50,6 +50,9 @@ public class SkillManager : MonoBehaviour
             case SkillData.SkillType.ExtraProjectile:
                 player.ExtraProjectiles += 1; // 발사체 수 증가 (스킬당 +1)
                 break;
+            case SkillData.SkillType.MoveSpeedUp:
+                player.MoveSpeed += skill.value;
+                break;
             case SkillData.SkillType.Heal: // 체력회복 , 최대 체력 증가
                 if(skill.name.Equals("최대체력증가"))
                 {

@@ -22,14 +22,9 @@ public class AbilityTable
     public string Description;
 
     /// <summary>
-    /// 최소값
+    /// 증가율
     /// </summary>
-    public float MinValue;
-
-    /// <summary>
-    /// 최대값
-    /// </summary>
-    public float MaxValue;
+    public float Value;
 
     /// <summary>
     /// 중복가능횟수
@@ -37,9 +32,9 @@ public class AbilityTable
     public int MaxCount;
 
     /// <summary>
-    /// 등장 확률
+    /// 스킬타입
     /// </summary>
-    public float ApperanceRate;
+    public DesignEnums.SkillType skillType;
 
 }
 public class AbilityTableLoader
