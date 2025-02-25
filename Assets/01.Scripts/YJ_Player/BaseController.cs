@@ -26,7 +26,7 @@ public class BaseController : MonoBehaviour
     protected WeaponHandler _weaponHandler;
 
     protected bool isAttacking;
-    private float timeSinceLastAttack = float.MaxValue;
+    public float timeSinceLastAttack = float.MaxValue;
 
     protected virtual void Awake()
     {
@@ -79,7 +79,7 @@ public class BaseController : MonoBehaviour
     {
         
         direction = direction * statHandler.MoveSpeed; // 기본 이동 속도 적용
-        Debug.Log($"Applying Velocity: {direction}");
+        //Debug.Log($"Applying Velocity: {direction}");
         // 넉백 지속 중이면 이동 속도를 줄이고 넉백 벡터를 추가
         if (knockbackDuration > 0.0f)
         {
@@ -120,7 +120,7 @@ public class BaseController : MonoBehaviour
         knockback = -(other.position - transform.position).normalized * power;
     }
 
-    private void HandleAttackDelay()
+    public virtual void HandleAttackDelay()
     {
 
         if (_weaponHandler == null)
@@ -129,7 +129,7 @@ public class BaseController : MonoBehaviour
         {
             timeSinceLastAttack += Time.deltaTime;
         }
-        if (isAttacking && timeSinceLastAttack > _weaponHandler.Delay)
+        if (isAttacking && timeSinceLastAttack > (1f/_weaponHandler.Delay))
         {
             timeSinceLastAttack = 0;
             Attack();
