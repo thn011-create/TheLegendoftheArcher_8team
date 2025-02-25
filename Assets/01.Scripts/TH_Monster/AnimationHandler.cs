@@ -18,7 +18,12 @@ public class AnimationHandler : MonoBehaviour, IAnimationHandler
     }
     public void Move(Vector2 obj)
     {
-        animator.SetBool(IsMoving, obj.magnitude > .5f);
+        if (IsMoving > 0)
+        {
+            animator.SetBool(IsMoving, obj.magnitude > .5f);
+        }
+        else if (IsMoving <= 0)
+            return;
     }
     public void Attack()
     {
