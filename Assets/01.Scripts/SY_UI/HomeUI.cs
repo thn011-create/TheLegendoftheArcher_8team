@@ -21,7 +21,10 @@ public class HomeUI : BaseUI
     
     void Update()
     {
-        
+        if (Input.GetKeyUp(KeyCode.Escape))
+        { 
+            // °ÔÀÓ Á¾·á ÆË¾÷ ¶ç¿ì±â
+        }
     }
 
     public void OnClickStartBtn() 
