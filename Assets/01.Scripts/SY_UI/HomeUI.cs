@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DG.Tweening; // DOTween 라이브러리를 사용 선언
+
 
 public class HomeUI : BaseUI
 {
