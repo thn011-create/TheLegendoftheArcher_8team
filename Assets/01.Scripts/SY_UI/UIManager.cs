@@ -54,6 +54,8 @@ public class UIManager : MonoBehaviour
                 Debug.Log($"등록된 UI: {ui.uiState}");
             }
 
+            currentState = UIState.SelectSkill;
+            ChangeState(UIState.InGame);
             // 씬 추가시 DontDestroyOnLoad 추가 예정
 
             // DontDestroyOnLoad(gameObject);

@@ -37,8 +37,11 @@ public class InGameUI : BaseUI
         hpSlider.value = percentage;
     }
 
+    
+
     public void OnClickPauseButton() 
     {
-        
+        base.HideUI();
+        //base.ShowUI(UIState.Pause);
     }
 }
