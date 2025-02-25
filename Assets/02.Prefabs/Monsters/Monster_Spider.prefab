@@ -159,7 +159,8 @@ MonoBehaviour:
   knockback: {x: 0, y: 0}
   knockbackDuration: 0
   WeaponPrefab: {fileID: 5922578520239452610, guid: fe73485d1f4763d489bce4e380584c73, type: 3}
-  followRange: 5
+  timeSinceLastAttack: 3.4028235e+38
+  followRange: 10
 --- !u!114 &-8794588061431616146
 MonoBehaviour:
   m_ObjectHideFlags: 0
