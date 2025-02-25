@@ -581,6 +581,7 @@ MonoBehaviour:
     width: 4
     height: 8
   gizmoColor: {r: 1, g: 0, b: 0, a: 0.3}
+  activeEnemies: []
   timeBetweenSpawns: 0.2
   timeBetweenWaves: 1
 --- !u!4 &849400906
@@ -702,7 +703,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1146777642}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WeaponPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -866,7 +867,7 @@ GameObject:
   - component: {fileID: 1359461971}
   - component: {fileID: 1359461972}
   - component: {fileID: 1359461975}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1146,7 +1147,7 @@ GameObject:
   - component: {fileID: 1856602115}
   - component: {fileID: 1856602114}
   - component: {fileID: 1856602113}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1229,6 +1230,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chracterRendere: {fileID: 1359461972}
   weaponPivot: {fileID: 1146777642}
+  knockback: {x: 0, y: 0}
+  knockbackDuration: 0
   WeaponPrefab: {fileID: 5922578520239452610, guid: fe73485d1f4763d489bce4e380584c73, type: 3}
   joy: {fileID: 1212784351}
 --- !u!61 &1856602117
