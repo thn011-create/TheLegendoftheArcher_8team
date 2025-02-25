@@ -23,19 +23,5 @@ public class PlayerStats : MonoBehaviour, ICharacter
 
     
 
-    public SaveData ToSaveData()
-    {
-        return new SaveData
-        {
-            Name = "Default_Name",
-            AttackDamage = AttackDamage,
-            MoveSpeed = MoveSpeed,
-            MaxHealth = MaxHealth,
-            Weapons = new List<WeaponInfo>(),
-            PlayerStats = this
-        };
-    }
-
-    SaveData saveData = new SaveData().CreateDefault(playerStats);
-    SaveManager.SaveToJson(saveData, Application.dataPath + "/Resources/saveData.json");
+    
 }
