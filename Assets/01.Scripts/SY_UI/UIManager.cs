@@ -51,7 +51,7 @@ public class UIManager : MonoBehaviour
 
             foreach (BaseUI ui in UIs)
             {
-                Debug.Log($"등록된 UI: {ui.uiState}");
+                //Debug.Log($"등록된 UI: {ui.uiState}");
             }
 
             currentState = UIState.SelectSkill;
@@ -66,7 +66,7 @@ public class UIManager : MonoBehaviour
     // UI 상태 변경
     public void ChangeState(UIState nextState) // 변경될 UI 상태
     {
-        Debug.Log($"[ChangeState] 현재 상태: {currentState}, 변경될 상태: {nextState}");
+        //Debug.Log($"[ChangeState] 현재 상태: {currentState}, 변경될 상태: {nextState}");
 
         // 변화 없으면 return
         if (currentState == nextState) return;
@@ -90,7 +90,7 @@ public class UIManager : MonoBehaviour
     // 게임 시작
     public void SetPlayGame()
     {
-        Debug.Log("[SetPlayGame] 호출됨!");
+        //Debug.Log("[SetPlayGame] 호출됨!");
         ChangeState(UIState.InGame);
         
     }

@@ -136,7 +136,7 @@ public class ProjectileController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.layer);
+        //Debug.Log(collision.gameObject.layer);
         // 레벨 충돌 레이어에 닿았는지 확인
         if (levelCollisionLayer.value ==
             (levelCollisionLayer.value | (1 << collision.gameObject.layer)))

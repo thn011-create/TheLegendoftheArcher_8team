@@ -26,6 +26,11 @@ public class PlayerController : BaseController
         float v = joy.Vertical;
         movementDirection = new Vector2(h, v).normalized;
 
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            statHandler.GainExperience(90);
+            
+        }
         if (movementDirection.magnitude > 0.1f)
         {
             // 조이스틱 방향을 바라봄
