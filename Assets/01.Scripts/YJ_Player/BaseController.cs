@@ -15,37 +15,39 @@ public class BaseController : MonoBehaviour
     protected Vector2 lookDirection = Vector2.zero; // 바라보는 방향
     public Vector2 LookDirection { get { return lookDirection; } } // 바라보는 방향 반환 (Getter)
 
-    private Vector2 knockback = Vector2.zero; // 넉백 벡터
-    private float knockbackDuration = 0.0f; // 넉백 지속 시간
+    public Vector2 knockback = Vector2.zero; // 넉백 벡터
+    public float knockbackDuration = 0.0f; // 넉백 지속 시간
 
     protected AnimationHandler animationHandler;
     protected PlayerStats statHandler;
+    protected EnemyStats enemyStats;
 
     [SerializeField] public WeaponHandler WeaponPrefab;
-    protected WeaponHandler weaponHandler;
+    protected WeaponHandler _weaponHandler;
 
     protected bool isAttacking;
-    private float timeSinceLastAttack = float.MaxValue;
+    public float timeSinceLastAttack = float.MaxValue;
 
     protected virtual void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>(); // Rigidbody2D 컴포넌트 가져오기
         animationHandler = GetComponent<AnimationHandler>();
         statHandler = GetComponent<PlayerStats>();
+        enemyStats = GetComponent<EnemyStats>();
         if (WeaponPrefab != null)
         {
-            weaponHandler = Instantiate(WeaponPrefab, weaponPivot);
-            weaponHandler.Key = 2000;
+            _weaponHandler = Instantiate(WeaponPrefab, weaponPivot);
         }
         else
         {
-            weaponHandler = GetComponentInChildren<WeaponHandler>();
+            _weaponHandler = GetComponentInChildren<WeaponHandler>();
         }
     }
 
     protected virtual void Start()
     {
         // Start()는 자식 클래스에서 오버라이드 가능하도록 비워둠
+        
     }
 
     protected virtual void Update()
@@ -73,11 +75,11 @@ public class BaseController : MonoBehaviour
     }
 
     // 이동 처리 함수
-    private void MoveMent(Vector2 direction)
+    protected virtual void MoveMent(Vector2 direction)
     {
-
+        
         direction = direction * statHandler.MoveSpeed; // 기본 이동 속도 적용
-        Debug.Log($"Applying Velocity: {direction}");
+        //Debug.Log($"Applying Velocity: {direction}");
         // 넉백 지속 중이면 이동 속도를 줄이고 넉백 벡터를 추가
         if (knockbackDuration > 0.0f)
         {
@@ -106,7 +108,7 @@ public class BaseController : MonoBehaviour
         {
             weaponPivot.rotation = Quaternion.Euler(0f, 0f, rotZ);
         }
-        weaponHandler?.Rotate(isLeft);
+        _weaponHandler?.Rotate(isLeft);
     }
 
     // 넉백 적용 함수
@@ -118,16 +120,16 @@ public class BaseController : MonoBehaviour
         knockback = -(other.position - transform.position).normalized * power;
     }
 
-    private void HandleAttackDelay()
+    public virtual void HandleAttackDelay()
     {
 
-        if (weaponHandler == null)
+        if (_weaponHandler == null)
             return;
-        if (timeSinceLastAttack <= weaponHandler.Delay)
+        if (timeSinceLastAttack <= _weaponHandler.Delay)
         {
             timeSinceLastAttack += Time.deltaTime;
         }
-        if (isAttacking && timeSinceLastAttack > weaponHandler.Delay)
+        if (isAttacking && timeSinceLastAttack > (1f/_weaponHandler.Delay))
         {
             timeSinceLastAttack = 0;
             Attack();
@@ -137,7 +139,7 @@ public class BaseController : MonoBehaviour
     protected virtual void Attack()
     {
         if (lookDirection != Vector2.zero)
-            weaponHandler?.Attack();
+            _weaponHandler?.Attack();
     }
 
     public virtual void Death()
@@ -155,7 +157,7 @@ public class BaseController : MonoBehaviour
         {
             componet.enabled = false;
         }
-
+        animationHandler.Die();
         Destroy(gameObject, 2f);
     }
 

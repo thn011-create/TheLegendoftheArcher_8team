@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int currentWaveIndex = 0;
 
     private EnemyManager enemyManager;
-    //private UIManager uiManager;
+    private UIManager uiManager;
     public static bool isFirstLoading = true;
 
     private void Awake()
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
         player = FindObjectOfType<PlayerController>();
         player.Init(this);
 
-        //uiManager = FindObjectOfType<UIManager>();
+        uiManager = FindObjectOfType<UIManager>();
 
         _playerResourceController = player.GetComponent<ResourceController>();
         //_playerResourceController.RemoveHealthChangeEvent(uiManager.ChangePlayerHP);

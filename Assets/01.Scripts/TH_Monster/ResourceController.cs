@@ -15,7 +15,7 @@ public class ResourceController : MonoBehaviour
 
     public float CurrentHealth { get; private set; }
     public float MaxHealth => statHandler.CurrentHealth;
-
+    
     public AudioClip damageClip;
 
     private Action<float, float> OnChangeHealth;

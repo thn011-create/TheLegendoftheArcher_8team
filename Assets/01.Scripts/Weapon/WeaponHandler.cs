@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using Unity.VisualScripting;
 using UnityEngine;
 using static DesignEnums;
 
@@ -17,6 +18,7 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField, ReadOnly(false)] int imageIndex;
     [SerializeField, ReadOnly(false)] string itemName;
     [SerializeField, ReadOnly(false)] Grade grade;
+    [SerializeField, ReadOnly(false)] bool equip;
     [SerializeField, ReadOnly(false)] int damage;
     [SerializeField, ReadOnly(false)] string description;
 
@@ -28,6 +30,7 @@ public class WeaponHandler : MonoBehaviour
     public int ImageIdx { get => imageIndex; set => imageIndex = value; }
     public string ItemName { get => itemName; set => itemName = value; }
     public Grade Grade { get => grade; set => grade = value; }
+    public bool Equipe { get => equip; set => equip = value; }
     public int Damage { get => damage; set => damage = value; }
     public string Description { get => description; set => description = value; }
     public float Delay { get => delay; set => delay = value; }
@@ -57,6 +60,8 @@ public class WeaponHandler : MonoBehaviour
     Animator animator;
     SpriteRenderer weaponRenderer;
     DataManager dataManager;
+    public BaseController Controller { get; private set; }
+
 
 
     protected virtual void Awake()
@@ -67,7 +72,7 @@ public class WeaponHandler : MonoBehaviour
 
     protected virtual void Start()
     {
-        //Controller = GetComponentInParent<BaseController>();
+        Controller = GetComponentInParent<BaseController>();
         animator = GetComponentInChildren<Animator>();
         weaponRenderer = GetComponentInChildren<SpriteRenderer>();
         animator.speed = 1f / delay;
@@ -79,11 +84,13 @@ public class WeaponHandler : MonoBehaviour
 
     protected void LoadData(int key)
     {
-
         var data = dataManager.WeaponInfoLoader.GetByKey(key);
+        Debug.Assert(!(null == data), "키 값을 확인하세요.");
+
         imageIndex = data.SpriteIndex;
         itemName = data.Name;
         grade = data.Grade;
+        equip = data.Equip;
         damage = data.Damage;
         description = data.Description;
         delay = data.Delay;
@@ -93,20 +100,22 @@ public class WeaponHandler : MonoBehaviour
         knockbackPower = data.KnockbackPower;
         knockbackTime = data.KnockbackTime;
 
-        weaponRenderer.sprite = FindImage(imageIndex);
+        string imageName = "fantasy_weapons_pack1_noglow_";
+        weaponRenderer.sprite = FindImage(imageName, imageIndex);
     }
 
     /// <summary>
     /// 무기 이미지 찾는 함수
     /// </summary>
+    /// <param name="name">파일 이름</param>
     /// <param name="idx">이미지 인덱스</param>
     /// <returns></returns>
-    Sprite FindImage(int idx)
+    protected Sprite FindImage(string name, int idx)
     {
         foreach (Sprite img in images)
         {
-            Debug.Log(img.name);
-            if ($"fantasy_weapons_pack1_noglow_{idx.ToString()}" == img.name)
+            //Debug.Log(img.name);
+            if ($"{name}{idx.ToString()}" == img.name)
             {
                 return img;
             }
@@ -127,7 +136,7 @@ public class WeaponHandler : MonoBehaviour
 
     public virtual void Rotate(bool isFlip)
     {
-        //weaponRenderer.flipY = isFlip;
+        weaponRenderer.flipY = isFlip;
 
         float scaleX = isFlip ? -1f : 1f;
         flip.localScale = new Vector3(scaleX, 1f, 1f);
