@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2905205927311848870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8860378180014898574}
+  m_Layer: 7
+  m_Name: WeaponPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8860378180014898574
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2905205927311848870}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4769786203078047946}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3954251205598419130
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +42,7 @@ GameObject:
   - component: {fileID: 410270207052787073}
   - component: {fileID: 6129028934837957124}
   - component: {fileID: 6248601826753639347}
-  m_Layer: 12
+  m_Layer: 7
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,9 +150,9 @@ GameObject:
   - component: {fileID: 4709773047910386091}
   - component: {fileID: 6427397775427911386}
   - component: {fileID: 808978138636459015}
-  - component: {fileID: -6785687907079599508}
-  - component: {fileID: 6625448009026366321}
-  m_Layer: 12
+  - component: {fileID: -7310597091106060031}
+  - component: {fileID: 3153628878956577386}
+  m_Layer: 7
   m_Name: Monster_Soldier
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -142,6 +173,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 410270207052787073}
+  - {fileID: 8860378180014898574}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2799371939739120825
@@ -247,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48819f759ff2784aa845a9435e935a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-6785687907079599508
+--- !u!114 &-7310597091106060031
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -260,12 +292,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chracterRendere: {fileID: 6129028934837957124}
-  weaponPivot: {fileID: 0}
+  weaponPivot: {fileID: 8860378180014898574}
   knockback: {x: 0, y: 0}
   knockbackDuration: 0
-  WeaponPrefab: {fileID: 0}
-  followRange: 3
---- !u!114 &6625448009026366321
+  WeaponPrefab: {fileID: 5922578520239452610, guid: fe73485d1f4763d489bce4e380584c73, type: 3}
+  followRange: 20
+--- !u!114 &3153628878956577386
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

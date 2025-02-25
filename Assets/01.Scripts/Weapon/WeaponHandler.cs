@@ -90,7 +90,7 @@ public class WeaponHandler : MonoBehaviour
         imageIndex = data.SpriteIndex;
         itemName = data.Name;
         grade = data.Grade;
-        //equip = data.Equip;
+        equip = data.Equip;
         damage = data.Damage;
         description = data.Description;
         delay = data.Delay;
@@ -136,7 +136,7 @@ public class WeaponHandler : MonoBehaviour
 
     public virtual void Rotate(bool isFlip)
     {
-        //weaponRenderer.flipY = isFlip;
+        weaponRenderer.flipY = isFlip;
 
         float scaleX = isFlip ? -1f : 1f;
         flip.localScale = new Vector3(scaleX, 1f, 1f);

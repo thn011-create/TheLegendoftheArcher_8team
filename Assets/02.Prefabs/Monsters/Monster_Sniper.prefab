@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2172336655949596377}
   - component: {fileID: 4785221044713049316}
   - component: {fileID: 4791708171907324662}
-  - component: {fileID: 7593477505830468840}
-  - component: {fileID: 7867998344332673924}
-  m_Layer: 12
+  - component: {fileID: -7516720784915468938}
+  - component: {fileID: 2004688513675112981}
+  m_Layer: 7
   m_Name: Monster_Sniper
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -36,6 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5838043852948839887}
+  - {fileID: 8476054329163104547}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2631793993529994856
@@ -141,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48819f759ff2784aa845a9435e935a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7593477505830468840
+--- !u!114 &-7516720784915468938
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,12 +155,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chracterRendere: {fileID: 5201505142428737150}
-  weaponPivot: {fileID: 0}
+  weaponPivot: {fileID: 8476054329163104547}
   knockback: {x: 0, y: 0}
   knockbackDuration: 0
-  WeaponPrefab: {fileID: 0}
-  followRange: 3
---- !u!114 &7867998344332673924
+  WeaponPrefab: {fileID: 5922578520239452610, guid: fe73485d1f4763d489bce4e380584c73, type: 3}
+  followRange: 20
+--- !u!114 &2004688513675112981
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,6 +174,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
   damageClip: {fileID: 0}
+--- !u!1 &2396758372713426252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8476054329163104547}
+  m_Layer: 7
+  m_Name: WeaponPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8476054329163104547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2396758372713426252}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 611816659966926743}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7663591754654553890
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +216,7 @@ GameObject:
   - component: {fileID: 5838043852948839887}
   - component: {fileID: 5201505142428737150}
   - component: {fileID: 3533144319892649601}
-  m_Layer: 12
+  m_Layer: 7
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

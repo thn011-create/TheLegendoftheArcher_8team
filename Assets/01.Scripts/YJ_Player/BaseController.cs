@@ -23,7 +23,7 @@ public class BaseController : MonoBehaviour
     protected EnemyStats enemyStats;
 
     [SerializeField] public WeaponHandler WeaponPrefab;
-    protected WeaponHandler weaponHandler;
+    protected WeaponHandler _weaponHandler;
 
     protected bool isAttacking;
     private float timeSinceLastAttack = float.MaxValue;
@@ -36,12 +36,11 @@ public class BaseController : MonoBehaviour
         enemyStats = GetComponent<EnemyStats>();
         if (WeaponPrefab != null)
         {
-            weaponHandler = Instantiate(WeaponPrefab, weaponPivot);
-            weaponHandler.Key = 2000;
+            _weaponHandler = Instantiate(WeaponPrefab, weaponPivot);
         }
         else
         {
-            weaponHandler = GetComponentInChildren<WeaponHandler>();
+            _weaponHandler = GetComponentInChildren<WeaponHandler>();
         }
     }
 
@@ -109,7 +108,7 @@ public class BaseController : MonoBehaviour
         {
             weaponPivot.rotation = Quaternion.Euler(0f, 0f, rotZ);
         }
-        weaponHandler?.Rotate(isLeft);
+        _weaponHandler?.Rotate(isLeft);
     }
 
     // 넉백 적용 함수
@@ -124,13 +123,13 @@ public class BaseController : MonoBehaviour
     private void HandleAttackDelay()
     {
 
-        if (weaponHandler == null)
+        if (_weaponHandler == null)
             return;
-        if (timeSinceLastAttack <= weaponHandler.Delay)
+        if (timeSinceLastAttack <= _weaponHandler.Delay)
         {
             timeSinceLastAttack += Time.deltaTime;
         }
-        if (isAttacking && timeSinceLastAttack > weaponHandler.Delay)
+        if (isAttacking && timeSinceLastAttack > _weaponHandler.Delay)
         {
             timeSinceLastAttack = 0;
             Attack();
@@ -140,7 +139,7 @@ public class BaseController : MonoBehaviour
     protected virtual void Attack()
     {
         if (lookDirection != Vector2.zero)
-            weaponHandler?.Attack();
+            _weaponHandler?.Attack();
     }
 
     public virtual void Death()
@@ -158,7 +157,7 @@ public class BaseController : MonoBehaviour
         {
             componet.enabled = false;
         }
-
+        animationHandler.Die();
         Destroy(gameObject, 2f);
     }
 

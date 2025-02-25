@@ -18,6 +18,7 @@ public class EnemyManager : GameManager
     [SerializeField]
     private Color gizmoColor = new Color(1, 0, 0, 0.3f); // 기즈모 색상
 
+    [SerializeField]
     private List<EnemyController> activeEnemies = new List<EnemyController>(); // 현재 활성화된 적들
 
     private bool enemySpawnComplite;
@@ -26,6 +27,7 @@ public class EnemyManager : GameManager
     [SerializeField] private float timeBetweenWaves = 1f;
 
     GameManager gameManager;
+    WeaponHandler weaponHandler;
 
     public void Init(GameManager gameManager)
     {
@@ -86,7 +88,7 @@ public class EnemyManager : GameManager
         // 적 생성 및 리스트에 추가
         GameObject spawnedEnemy = Instantiate(randomPrefab, new Vector3(randomPosition.x, randomPosition.y), Quaternion.identity);
         EnemyController enemyController = spawnedEnemy.GetComponent<EnemyController>();
-        enemyController.Init(this, gameManager.player.transform);
+        enemyController.Init(this, gameManager.player.transform, weaponHandler);
 
         activeEnemies.Add(enemyController);
     }
