@@ -10,5 +10,5 @@ public class SkillData : ScriptableObject
     public SkillType type;
     public int value; // 예: 공격력 증가량, 발사체 추가 개수 등
 
-    public enum SkillType { DamageUp, AttackSpeedUp, ExtraProjectile, Heal , Critical}
+    public enum SkillType { DamageUp, AttackSpeedUp,MoveSpeedUp , ExtraProjectile, Heal , Critical ,HeadShot , Evasion}
 }
