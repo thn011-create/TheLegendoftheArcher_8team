@@ -1,18 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InGameUI : BaseUI
 {
-    // Start is called before the first frame update
-    void Start()
+    // 웨이브 넘버
+    [SerializeField] private Text waveText;
+
+    // pause 버튼
+    [SerializeField] private Button pauseButton;
+
+    // hp 슬라이더
+    [SerializeField] private Slider hpSlider;
+
+    private void Awake()
     {
         uiState = UIState.InGame;
     }
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
         
+        pauseButton.onClick.AddListener(() => UIManager.Instance.ChangeState(UIState.Pause));
+    }
+
+
+
+    public void UpdateWaveText(int wave)
+    {
+        waveText.text = wave.ToString();
+    }
+
+    public void UpdateHPSlider(float percentage)
+    {
+        hpSlider.value = percentage;
+    }
+
+    
+
+    public void OnClickPauseButton() 
+    {
+        base.HideUI();
+        //base.ShowUI(UIState.Pause);
     }
 }
