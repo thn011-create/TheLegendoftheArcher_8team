@@ -49,6 +49,10 @@ public class UIManager : MonoBehaviour
                 ui.HideUI();
             }
 
+            foreach (BaseUI ui in UIs)
+            {
+                Debug.Log($"등록된 UI: {ui.uiState}");
+            }
 
             // 씬 추가시 DontDestroyOnLoad 추가 예정
 
@@ -60,13 +64,15 @@ public class UIManager : MonoBehaviour
     // UI 상태 변경
     public void ChangeState(UIState nextState) // 변경될 UI 상태
     {
+        Debug.Log($"[ChangeState] 현재 상태: {currentState}, 변경될 상태: {nextState}");
+
         // 변화 없으면 return
         if (currentState == nextState) return;
 
-        // 딕셔너리에서 현재 상태와 같은 UI가 있다면 숨김
+        //딕셔너리에서 현재 상태와 같은 UI가 있다면 숨김
         if (uiDictionary.ContainsKey(currentState))
         {
-            uiDictionary[currentState].HideUI();
+           uiDictionary[currentState].HideUI();
         }
 
         // 변경될 ui로 상태 변경
@@ -82,7 +88,9 @@ public class UIManager : MonoBehaviour
     // 게임 시작
     public void SetPlayGame()
     {
+        Debug.Log("[SetPlayGame] 호출됨!");
         ChangeState(UIState.InGame);
+        
     }
 
     // 다음 웨이브

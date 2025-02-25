@@ -14,10 +14,14 @@ public class InGameUI : BaseUI
     // hp 슬라이더
     [SerializeField] private Slider hpSlider;
 
+    private void Awake()
+    {
+        uiState = UIState.InGame;
+    }
 
     void Start()
     {
-        uiState = UIState.InGame;
+        
         pauseButton.onClick.AddListener(() => UIManager.Instance.ChangeState(UIState.Pause));
     }
 
