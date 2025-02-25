@@ -79,7 +79,7 @@ public class BaseController : MonoBehaviour
     {
         
         direction = direction * statHandler.MoveSpeed; // 기본 이동 속도 적용
-        Debug.Log($"Applying Velocity: {direction}");
+        //Debug.Log($"Applying Velocity: {direction}");
         // 넉백 지속 중이면 이동 속도를 줄이고 넉백 벡터를 추가
         if (knockbackDuration > 0.0f)
         {

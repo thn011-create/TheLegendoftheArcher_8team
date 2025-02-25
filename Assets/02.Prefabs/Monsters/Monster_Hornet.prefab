@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8131674833415446106}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: WeaponPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 3371312404477869343}
   - component: {fileID: 1918236646981806531}
   - component: {fileID: 6208060559518516337}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 6022621859116815248}
   - component: {fileID: 8432660849864740146}
   - component: {fileID: 2594504199741797444}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: Monster_Hornet
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.18}
@@ -296,7 +296,7 @@ MonoBehaviour:
   knockback: {x: 0, y: 0}
   knockbackDuration: 0
   WeaponPrefab: {fileID: 5922578520239452610, guid: fe73485d1f4763d489bce4e380584c73, type: 3}
-  followRange: 20
+  followRange: 5
 --- !u!114 &2594504199741797444
 MonoBehaviour:
   m_ObjectHideFlags: 0
