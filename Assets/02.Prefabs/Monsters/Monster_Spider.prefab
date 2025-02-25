@@ -158,7 +158,8 @@ MonoBehaviour:
   weaponPivot: {fileID: 5344820948522139907}
   knockback: {x: 0, y: 0}
   knockbackDuration: 0
-  WeaponPrefab: {fileID: 5922578520239452610, guid: fe73485d1f4763d489bce4e380584c73, type: 3}
+  WeaponPrefab: {fileID: 1481014989831272378, guid: a31d21766b233444a904756e915d652b, type: 3}
+  timeSinceLastAttack: 3.4028235e+38
   followRange: 5
 --- !u!114 &-8794588061431616146
 MonoBehaviour:

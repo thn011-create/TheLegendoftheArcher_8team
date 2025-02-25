@@ -9,14 +9,13 @@ using static DesignEnums;
 /// </summary>
 public class E_RangeWeaponHandler : RangeWeaponHandler
 {
-    [Header("Range Attack Data")]
-
-    private ProjectileManager projectileManager;
 
     protected override void Start()
     {
         base.Start();
         projectileManager = ProjectileManager.Instance;
+        dataManager = DataManager.Instance;
+        dataManager.Initialize();
     }
 
     // 공격을 실행하는 함수 (부모 클래스의 Attack()을 오버라이드)
@@ -49,15 +48,11 @@ public class E_RangeWeaponHandler : RangeWeaponHandler
         }
     }
 
-    protected void LoadData(int key)
+    protected override void LoadData(int key)
     {
-        var data = dataManager.WeaponInfoLoader.GetByKey(key);
+        var data = dataManager.MonsterWeaponInfoLoader.GetByKey(key);
         Debug.Assert(!(null == data), "키 값을 확인하세요.");
-
-        ImageIndex = data.SpriteIndex;
         ItemName = data.Name;
-        
-        
         Damage = data.Damage;
         
         Delay = data.Delay;
@@ -67,7 +62,22 @@ public class E_RangeWeaponHandler : RangeWeaponHandler
         KnockbackPower = data.KnockbackPower;
         KnockbackTime = data.KnockbackTime;
 
-        string imageName = "fantasy_weapons_pack1_noglow_";
-        weaponRenderer.sprite = FindImage(imageName, imageIndex);
+        string imageName = data.SpriteName;
+
+        weaponRenderer.sprite = FindImage("null_weapone");
     }
+
+    protected Sprite FindImage(string name)
+    {
+        foreach (Sprite img in images)
+        {
+            //Debug.Log(img.name);
+            if (name == img.name)
+            {
+                return img;
+            }
+        }
+        return null;
+    }
+
 }

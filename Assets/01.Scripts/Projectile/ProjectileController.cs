@@ -67,7 +67,7 @@ public class ProjectileController : MonoBehaviour
     /// <param name="direction">방향</param>
     /// <param name="weaponHandler">무기</param>
     /// <param name="projectileManager">발사체 매니저</param>
-    public void Init(Vector2 direction, RangeWeaponHandler weaponHandler, ProjectileManager projectileManager)
+    public void Init(Vector2 direction, RangeWeaponHandler weaponHandler, ProjectileManager projectileManager, int key)
     {
         this.projectileManager = projectileManager;
 
@@ -93,6 +93,17 @@ public class ProjectileController : MonoBehaviour
         // Sprite
         string imageName = "fantasy_bullet_";
         spriteRanderer.sprite = FindImage(imageName, rangeWeaponHandler.ImageIdx);
+
+        if (key == 9000)
+        {
+            imageName = "bullets\u002Bplasma_2";
+            spriteRanderer.sprite = FindImage(imageName);
+        }
+        else if (key == 9001)
+        {
+            imageName = "RPG-round_2";
+            spriteRanderer.sprite = FindImage(imageName);
+        }
 
         // 투사체 준비 완료
         isReady = true;
@@ -131,6 +142,19 @@ public class ProjectileController : MonoBehaviour
             }
         }
 
+        return null;
+    }
+
+    protected Sprite FindImage(string name)
+    {
+        foreach (Sprite img in images)
+        {
+            //Debug.Log(img.name);
+            if (name == img.name)
+            {
+                return img;
+            }
+        }
         return null;
     }
 
