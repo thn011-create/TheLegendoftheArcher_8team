@@ -223,6 +223,7 @@ MonoBehaviour:
   knockbackDuration: 0
   WeaponPrefab: {fileID: 5922578520239452610, guid: fe73485d1f4763d489bce4e380584c73, type: 3}
   timeSinceLastAttack: 3.4028235e+38
+  target: {fileID: 7586286333223084344, guid: 7040ce9f758fed34284f4d1dc200b22e, type: 3}
   followRange: 3
 --- !u!1 &3589650860656098233
 GameObject:

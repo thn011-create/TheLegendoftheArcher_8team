@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class EnemyController : BaseController
 {
     private EnemyManager enemyManager;
     private Transform target;
-    
+    private WeaponHandler weaponHandler;
+
     [SerializeField] private float followRange = 15f;
 
     public void Init(EnemyManager enemyManager, Transform target)
@@ -39,7 +41,7 @@ public class EnemyController : BaseController
 
             if (distance <= weaponHandler.AttackRange)
             {
-                int layerMaskTarget = _weaponHandler.target;
+                int layerMaskTarget = weaponHandler.target;
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, weaponHandler.AttackRange * 1.5f,
                     (1 << LayerMask.NameToLayer("Level")) | layerMaskTarget);
 
@@ -62,5 +64,11 @@ public class EnemyController : BaseController
         return (target.position - transform.position).normalized;
     }
 
+    public override void Death()
+    {
+        base.Death();
+        enemyManager.RemoveEnemyOnDeath(this);
+    }
 }
+
 
