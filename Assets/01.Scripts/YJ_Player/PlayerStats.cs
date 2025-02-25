@@ -53,18 +53,6 @@ public class PlayerStats : MonoBehaviour, ICharacter
         experience -= experienceToNextLevel;
         experienceToNextLevel *= 1.2f; // 다음 레벨업 필요 경험치 증가
 
-        // SkillUI.Instance가 null이면 강제로 찾기
-        if (SkillUI.Instance == null)
-        {
-            Debug.LogWarning("SkillUI.Instance가 null이라 강제로 찾습니다.");
-            SkillUI.Instance = FindObjectOfType<SkillUI>();
-
-            if (SkillUI.Instance == null)
-            {
-                Debug.LogError("SkillUI.Instance를 찾지 못했습니다! SkillUI 오브젝트가 씬에 있는지 확인하세요.");
-                return;
-            }
-        }
 
         SkillUI.Instance.ShowSkillSelection();
     }

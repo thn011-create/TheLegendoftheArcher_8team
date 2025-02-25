@@ -4,14 +4,15 @@ using UnityEngine.UI;
 
 public class SkillUI : MonoBehaviour
 {
-    public static SkillUI Instance { get;  set; } // 싱글톤 인스턴스
+    public static SkillUI Instance { get; private set; } // 싱글톤 인스턴스
+    public static SkillManager skillManager;
     [SerializeField] private GameObject skillPanel;
     [SerializeField] private Button[] skillButtons;
     [SerializeField] private Text[] skillLevelTexts;
     [SerializeField] private Text[] skillNames;
     [SerializeField] private Text[] skillDescriptions;
 
-    private List<SkillData> currentSkills;
+    private List<AbilityTable> currentSkills;
 
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class SkillUI : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+
             Debug.Log("SkillUI 싱글톤 설정 완료!");
         }
         else
@@ -27,6 +29,7 @@ public class SkillUI : MonoBehaviour
             Debug.LogWarning("SkillUI 인스턴스가 이미 존재하여 삭제됩니다.");
             Destroy(gameObject);
         }
+        
     }
     private void Start()
     {
@@ -39,16 +42,18 @@ public class SkillUI : MonoBehaviour
         {
             Debug.Log("SkillUI 오브젝트를 찾았습니다!");
         }
+        
     }
     public void ShowSkillSelection()
     {
+        skillManager = SkillManager.Instance;
         if (skillPanel == null)
         {
-            Debug.LogError("skillPanel이 설정되지 않았습니다!");
+            Debug.Log("skillPanel이 설정되지 않았습니다!");
             return;
         }
         skillPanel.SetActive(true);
-        currentSkills = SkillManager.Instance.GetRandomSkills(3);
+        currentSkills = skillManager.GetRandomSkills();
 
         for (int i = 0; i < skillButtons.Length; i++)
         {
