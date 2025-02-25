@@ -114,7 +114,7 @@ public class WeaponHandler : MonoBehaviour
     {
         foreach (Sprite img in images)
         {
-            Debug.Log(img.name);
+            //Debug.Log(img.name);
             if ($"{name}{idx.ToString()}" == img.name)
             {
                 return img;

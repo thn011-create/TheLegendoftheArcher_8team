@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4446620053497647867}
   - component: {fileID: 9199792879375299439}
   - component: {fileID: -8794588061431616146}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: Monster_Spider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -159,7 +159,7 @@ MonoBehaviour:
   knockback: {x: 0, y: 0}
   knockbackDuration: 0
   WeaponPrefab: {fileID: 5922578520239452610, guid: fe73485d1f4763d489bce4e380584c73, type: 3}
-  followRange: 20
+  followRange: 5
 --- !u!114 &-8794588061431616146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +183,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5344820948522139907}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: WeaponPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 4578907924385766847}
   - component: {fileID: 5944950991607156552}
   - component: {fileID: 4526760808044526456}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
