@@ -124,7 +124,7 @@ public class ProjectileController : MonoBehaviour
     {
         foreach (Sprite img in images)
         {
-            Debug.Log(img.name);
+            //Debug.Log(img.name);
             if ($"{name}{idx.ToString()}" == img.name)
             {
                 return img;
@@ -136,6 +136,7 @@ public class ProjectileController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision.gameObject.layer);
         // 레벨 충돌 레이어에 닿았는지 확인
         if (levelCollisionLayer.value ==
             (levelCollisionLayer.value | (1 << collision.gameObject.layer)))
@@ -147,6 +148,8 @@ public class ProjectileController : MonoBehaviour
         else if (rangeWeaponHandler.target.value ==
             (rangeWeaponHandler.target.value | (1 << collision.gameObject.layer)))
         {
+            
+
             ResourceController resourceController = collision.GetComponent<ResourceController>();
             if (resourceController != null)
             {

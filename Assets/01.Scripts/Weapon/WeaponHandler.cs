@@ -90,7 +90,7 @@ public class WeaponHandler : MonoBehaviour
         imageIndex = data.SpriteIndex;
         itemName = data.Name;
         grade = data.Grade;
-        //equip = data.Equip;
+        equip = data.Equip;
         damage = data.Damage;
         description = data.Description;
         delay = data.Delay;
@@ -114,7 +114,7 @@ public class WeaponHandler : MonoBehaviour
     {
         foreach (Sprite img in images)
         {
-            Debug.Log(img.name);
+            //Debug.Log(img.name);
             if ($"{name}{idx.ToString()}" == img.name)
             {
                 return img;
