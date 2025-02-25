@@ -24,7 +24,7 @@ public class RangeWeaponHandler : WeaponHandler
 
 
 
-    private ProjectileManager projectileManager;
+    protected ProjectileManager projectileManager;
 
     protected override void Start()
     {

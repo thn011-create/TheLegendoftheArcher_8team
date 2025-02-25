@@ -9,9 +9,6 @@ using static DesignEnums;
 /// </summary>
 public class E_RangeWeaponHandler : RangeWeaponHandler
 {
-    [Header("Range Attack Data")]
-
-    private ProjectileManager projectileManager;
 
     protected override void Start()
     {
