@@ -14,7 +14,7 @@ public class BaseUI : MonoBehaviour
     public virtual void ShowUI()
     {
         gameObject?.SetActive(true);
-        //Debug.Log($"{uiState}가 활성화됨");
+        Debug.Log($"{uiState}가 활성화됨");
 
         // 애니메이션 추가
     }

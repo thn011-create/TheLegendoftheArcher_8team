@@ -8,9 +8,9 @@ public class SaveData
 {
 
     public string Name { get; set; }
-    public float AttackDamage { get; set; }
+    public int AttackDamage { get; set; }
     public float MoveSpeed { get; set; }
-    public float MaxHealth { get; set; }
+    public int MaxHealth { get; set; }
     public List<WeaponInfo> Weapons { get; set; }
     public PlayerStats PlayerStats { get; set; }
 
