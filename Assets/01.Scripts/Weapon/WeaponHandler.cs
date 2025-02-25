@@ -9,7 +9,7 @@ using static DesignEnums;
 public class WeaponHandler : MonoBehaviour
 {
     [Header("이미지들")]
-    [SerializeField] List<Sprite> images;
+    [SerializeField] protected List<Sprite> images;
 
     [Header("Key값")]
     [SerializeField] int key;
@@ -49,7 +49,7 @@ public class WeaponHandler : MonoBehaviour
 
 
     [Header("Flip")]
-    [SerializeField] Transform flip;
+    [SerializeField] protected Transform flip;
 
     [Header("AudioClip")]
     public AudioClip attackSoundClip;
@@ -57,9 +57,9 @@ public class WeaponHandler : MonoBehaviour
     private static readonly int IsAttack = Animator.StringToHash("IsAttack");
 
 
-    Animator animator;
-    SpriteRenderer weaponRenderer;
-    DataManager dataManager;
+    protected Animator animator;
+    protected SpriteRenderer weaponRenderer;
+    protected DataManager dataManager;
     public BaseController Controller { get; private set; }
 
 
@@ -82,7 +82,7 @@ public class WeaponHandler : MonoBehaviour
 
     }
 
-    protected void LoadData(int key)
+    protected virtual void LoadData(int key)
     {
         var data = dataManager.WeaponInfoLoader.GetByKey(key);
         Debug.Assert(!(null == data), "키 값을 확인하세요.");

@@ -8,7 +8,7 @@ using UnityEngine;
 public class RangeWeaponHandler : WeaponHandler
 {
     [Header("Range Attack Data")]
-    [SerializeField] Transform projectileSpawnPosition;
+    [SerializeField] protected Transform projectileSpawnPosition;
     [SerializeField] float bulletSize = 1f;
     [SerializeField] float spread;
     [SerializeField] int numberofProjectilesPerShot;
@@ -24,7 +24,7 @@ public class RangeWeaponHandler : WeaponHandler
 
 
 
-    private ProjectileManager projectileManager;
+    protected ProjectileManager projectileManager;
 
     protected override void Start()
     {
@@ -67,14 +67,14 @@ public class RangeWeaponHandler : WeaponHandler
     /// </summary>
     /// <param name="_lookDir">방향</param>
     /// <param name="angle">각도</param>
-    private void CreateProjectile(Vector2 _lookDir, float angle)
+    protected void CreateProjectile(Vector2 _lookDir, float angle)
     {
         // 투사체 매니저를 통해 총알을 발사
         projectileManager.ShootBullet(
             this,  // 현재 무기 핸들러 전달
             projectileSpawnPosition.position,  // 투사체가 생성될 위치
-            RotateVector2(_lookDir, angle)   // 방향을 회전시켜 적용
-            );
+            RotateVector2(_lookDir, angle),   // 방향을 회전시켜 적용
+            this.Key);
     }
 
     /// <summary>
@@ -83,7 +83,7 @@ public class RangeWeaponHandler : WeaponHandler
     /// <param name="v">벡터</param>
     /// <param name="degree">각도</param>
     /// <returns></returns>
-    private static Vector2 RotateVector2(Vector2 v, float degree)
+    protected static Vector2 RotateVector2(Vector2 v, float degree)
     {
         return Quaternion.Euler(0, 0, degree) * v; // 2D 벡터 회전 수행
     }

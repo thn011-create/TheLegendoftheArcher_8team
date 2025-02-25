@@ -333,6 +333,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1673246206410119601, guid: ed03b7722a023e0488f803c6abe87084, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4044579958850169712, guid: ed03b7722a023e0488f803c6abe87084, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -541,6 +545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 4193762596709234230, guid: cb215ce58155a7f41969c26565812ada, type: 3}
+  E_projectilePrefab: {fileID: 4193762596709234230, guid: ff9385e4adf53134f91af791c546b723, type: 3}
 --- !u!1 &1146777641
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +555,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1146777642}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: WeaponPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -714,7 +719,7 @@ GameObject:
   - component: {fileID: 1359461971}
   - component: {fileID: 1359461972}
   - component: {fileID: 1359461975}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -945,7 +950,7 @@ GameObject:
   - component: {fileID: 1856602115}
   - component: {fileID: 1856602114}
   - component: {fileID: 1856602113}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1110,63 +1115,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!1001 &1964099585
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 937127251971352049, guid: 8823df3cec8e0144f9eb549c749aa9a4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 937127251971352049, guid: 8823df3cec8e0144f9eb549c749aa9a4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 937127251971352049, guid: 8823df3cec8e0144f9eb549c749aa9a4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 937127251971352049, guid: 8823df3cec8e0144f9eb549c749aa9a4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 937127251971352049, guid: 8823df3cec8e0144f9eb549c749aa9a4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 937127251971352049, guid: 8823df3cec8e0144f9eb549c749aa9a4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 937127251971352049, guid: 8823df3cec8e0144f9eb549c749aa9a4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 937127251971352049, guid: 8823df3cec8e0144f9eb549c749aa9a4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 937127251971352049, guid: 8823df3cec8e0144f9eb549c749aa9a4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 937127251971352049, guid: 8823df3cec8e0144f9eb549c749aa9a4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2898466594723352262, guid: 8823df3cec8e0144f9eb549c749aa9a4, type: 3}
-      propertyPath: m_Name
-      value: Monster_Wasp
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8823df3cec8e0144f9eb549c749aa9a4, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1177,4 +1125,3 @@ SceneRoots:
   - {fileID: 1222931942}
   - {fileID: 847662349}
   - {fileID: 1153479412}
-  - {fileID: 1964099585}
