@@ -692,8 +692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4371a1376ea95044490fa33b097fd9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefabs: []
-  impactParticleSyetem: {fileID: 0}
+  projectilePrefab: {fileID: 4193762596709234230, guid: cb215ce58155a7f41969c26565812ada, type: 3}
 --- !u!1 &1146777641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,10 +1211,15 @@ MonoBehaviour:
   playerName: Player
   level: 1
   attackDamage: 10
+  attackSpeed: 1
   moveSpeed: 5
   currentHealth: 100
   maxHealth: 100
   experience: 0
+  experienceToNextLevel: 100
+  extraProjectiles: 0
+  criticalChance: 10
+  criticalDamage: 100
 --- !u!114 &1856602116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1233,6 +1237,7 @@ MonoBehaviour:
   knockback: {x: 0, y: 0}
   knockbackDuration: 0
   WeaponPrefab: {fileID: 5922578520239452610, guid: fe73485d1f4763d489bce4e380584c73, type: 3}
+  timeSinceLastAttack: 3.4028235e+38
   joy: {fileID: 1212784351}
 --- !u!61 &1856602117
 BoxCollider2D:
