@@ -134,14 +134,13 @@ GameObject:
   - component: {fileID: 2820060}
   - component: {fileID: 2820062}
   - component: {fileID: 2820061}
-  - component: {fileID: 2820063}
   m_Layer: 5
   m_Name: skillPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2820060
 RectTransform:
   m_ObjectHideFlags: 0
@@ -202,35 +201,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2820059}
   m_CullTransparentMesh: 1
---- !u!114 &2820063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2820059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e586417810fe874cab529ccd6dd7939, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillPanel: {fileID: 2820059}
-  skillButtons:
-  - {fileID: 471290291}
-  - {fileID: 1631034818}
-  - {fileID: 605248182}
-  skillLevelTexts:
-  - {fileID: 1860834302}
-  - {fileID: 189829212}
-  - {fileID: 2105164512}
-  skillNames:
-  - {fileID: 428517232}
-  - {fileID: 1607449209}
-  - {fileID: 835183298}
-  skillDescriptions:
-  - {fileID: 993308287}
-  - {fileID: 1360040825}
-  - {fileID: 429420625}
 --- !u!1 &189829210
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,6 +786,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605248180}
   m_CullTransparentMesh: 1
+--- !u!1 &690528082 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1673246206410119601, guid: ed03b7722a023e0488f803c6abe87084, type: 3}
+  m_PrefabInstance: {fileID: 847662349}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &835183296
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,7 +976,7 @@ PrefabInstance:
       objectReference: {fileID: 1856602112}
     - target: {fileID: 1673246206410119601, guid: ed03b7722a023e0488f803c6abe87084, type: 3}
       propertyPath: m_Name
-      value: Canvas (1)
+      value: UIManager
       objectReference: {fileID: 0}
     - target: {fileID: 3175657658758408000, guid: ed03b7722a023e0488f803c6abe87084, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1117,13 +1092,45 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4044579958850169712, guid: ed03b7722a023e0488f803c6abe87084, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2820060}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1673246206410119601, guid: ed03b7722a023e0488f803c6abe87084, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 847662355}
   m_SourcePrefab: {fileID: 100100000, guid: ed03b7722a023e0488f803c6abe87084, type: 3}
 --- !u!224 &847662350 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4044579958850169712, guid: ed03b7722a023e0488f803c6abe87084, type: 3}
   m_PrefabInstance: {fileID: 847662349}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &847662355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690528082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e586417810fe874cab529ccd6dd7939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillPanel: {fileID: 2820059}
+  skillButtons:
+  - {fileID: 471290291}
+  - {fileID: 1631034818}
+  - {fileID: 605248182}
+  skillLevelTexts:
+  - {fileID: 1860834302}
+  - {fileID: 189829212}
+  - {fileID: 2105164512}
+  skillNames:
+  - {fileID: 428517232}
+  - {fileID: 1607449209}
+  - {fileID: 835183298}
+  skillDescriptions:
+  - {fileID: 993308287}
+  - {fileID: 1360040825}
+  - {fileID: 429420625}
 --- !u!1 &849400904
 GameObject:
   m_ObjectHideFlags: 0
