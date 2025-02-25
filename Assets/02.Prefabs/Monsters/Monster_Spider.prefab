@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 8812513648752427549}
   - component: {fileID: 8910735742714124100}
   - component: {fileID: 9204647734740923608}
-  - component: {fileID: 2168770236764799418}
   - component: {fileID: 4446620053497647867}
-  m_Layer: 7
+  - component: {fileID: -5991634553379507315}
+  - component: {fileID: -7342056762767986487}
+  m_Layer: 12
   m_Name: Monster_Spider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -128,20 +129,6 @@ MonoBehaviour:
   currentHealth: 100
   maxHealth: 100
   experience: 0
---- !u!114 &2168770236764799418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4452842820046348919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c504f469dca9b9746ab27e3bb1c9af69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthChangeDelay: 0.5
-  damageClip: {fileID: 0}
 --- !u!114 &4446620053497647867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,6 +141,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48819f759ff2784aa845a9435e935a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-5991634553379507315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4452842820046348919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fffb5421c9ce6da4083f158914dbd6a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chracterRendere: {fileID: 5944950991607156552}
+  weaponPivot: {fileID: 0}
+  knockback: {x: 0, y: 0}
+  knockbackDuration: 0
+  WeaponPrefab: {fileID: 0}
+  followRange: 3
+--- !u!114 &-7342056762767986487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4452842820046348919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b174dde1215e33a46b0bd6844576bb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthChangeDelay: 0.5
+  damageClip: {fileID: 0}
 --- !u!1 &8483782100936568387
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +184,7 @@ GameObject:
   - component: {fileID: 4578907924385766847}
   - component: {fileID: 5944950991607156552}
   - component: {fileID: 4526760808044526456}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

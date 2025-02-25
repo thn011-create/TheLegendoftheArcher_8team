@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 410270207052787073}
   - component: {fileID: 6129028934837957124}
   - component: {fileID: 6248601826753639347}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,9 +118,10 @@ GameObject:
   - component: {fileID: 2799371939739120825}
   - component: {fileID: 4709773047910386091}
   - component: {fileID: 6427397775427911386}
-  - component: {fileID: 3474461422189410045}
   - component: {fileID: 808978138636459015}
-  m_Layer: 7
+  - component: {fileID: -6785687907079599508}
+  - component: {fileID: 6625448009026366321}
+  m_Layer: 12
   m_Name: Monster_Soldier
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -234,20 +235,6 @@ MonoBehaviour:
   currentHealth: 100
   maxHealth: 100
   experience: 0
---- !u!114 &3474461422189410045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8273866081770108100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c504f469dca9b9746ab27e3bb1c9af69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthChangeDelay: 0.5
-  damageClip: {fileID: 0}
 --- !u!114 &808978138636459015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,3 +247,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48819f759ff2784aa845a9435e935a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6785687907079599508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8273866081770108100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fffb5421c9ce6da4083f158914dbd6a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chracterRendere: {fileID: 6129028934837957124}
+  weaponPivot: {fileID: 0}
+  knockback: {x: 0, y: 0}
+  knockbackDuration: 0
+  WeaponPrefab: {fileID: 0}
+  followRange: 3
+--- !u!114 &6625448009026366321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8273866081770108100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b174dde1215e33a46b0bd6844576bb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthChangeDelay: 0.5
+  damageClip: {fileID: 0}

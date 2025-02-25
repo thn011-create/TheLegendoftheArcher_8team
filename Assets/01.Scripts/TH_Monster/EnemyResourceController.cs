@@ -1,28 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
-public class ResourceController : MonoBehaviour
+public class EnemyResourceController : MonoBehaviour
 {
     [SerializeField] private float healthChangeDelay = .5f;
 
     private BaseController baseController;
-    private PlayerStats statHandler;
+    private EnemyStats statHandler;
     private AnimationHandler animationHandler;
 
     private float timeSinceLastChange = float.MaxValue;
 
     public float CurrentHealth { get; private set; }
     public float MaxHealth => statHandler.CurrentHealth;
-    
+
     public AudioClip damageClip;
 
     private Action<float, float> OnChangeHealth;
 
     private void Awake()
     {
-        statHandler = GetComponent<PlayerStats>();
+        statHandler = GetComponent<EnemyStats>();
         animationHandler = GetComponent<AnimationHandler>();
         baseController = GetComponent<BaseController>();
     }
@@ -60,7 +60,7 @@ public class ResourceController : MonoBehaviour
 
         if (change < 0)
         {
-            animationHandler.Damage();
+            animationHandler.Hit();
 
             //if (damageClip)
             //    SoundManager.PlayClip(damageClip);
@@ -88,5 +88,4 @@ public class ResourceController : MonoBehaviour
     {
         OnChangeHealth -= action;
     }
-
 }
