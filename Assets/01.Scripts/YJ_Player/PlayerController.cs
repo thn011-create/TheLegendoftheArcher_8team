@@ -78,23 +78,5 @@ public class PlayerController : BaseController
         target = nearestEnemy; // 가장 가까운 적을 타겟으로 설정
     }
 
-    public override void HandleAttackDelay()
-    {
-        PlayerStats player = GetComponent<PlayerStats>();
-
-        if (_weaponHandler == null)
-            return;
-        if (timeSinceLastAttack <= (1f / (_weaponHandler.Delay * player.AttackSpeed)))
-        {
-            timeSinceLastAttack += Time.deltaTime;
-        }
-        if (isAttacking)
-        {
-            if (timeSinceLastAttack > (1f / (_weaponHandler.Delay * player.AttackSpeed)))
-            {
-                timeSinceLastAttack = 0;
-                Attack();
-            }
-        }
-    }
+    
 }

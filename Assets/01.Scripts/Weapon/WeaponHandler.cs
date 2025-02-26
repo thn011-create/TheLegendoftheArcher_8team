@@ -117,7 +117,6 @@ public class WeaponHandler : MonoBehaviour
             //Debug.Log(img.name);
             if ($"{name}{idx.ToString()}" == img.name)
             {
-                Debug.LogError("총알이 없어어어어어어어어어어어어어어어어어어어어어어어어어어어어어");
                 return img;
             }
         }

@@ -9,11 +9,16 @@ public class EnemyController : BaseController
 
     [SerializeField] private float followRange = 15f; // 적이 플레이어를 추적하는 범위
 
+    public bool iAttack = false;
+    public Animator _animator;
+
     // 적 초기화 (적 매니저와 타겟 설정)
     public void Init(EnemyManager enemyManager, Transform target)
     {
         this.enemyManager = enemyManager;
         this.target = target;
+        if (iAttack)
+            _animator = GetComponentInParent<Animator>();
     }
 
     // 타겟과의 거리 계산
@@ -62,7 +67,7 @@ public class EnemyController : BaseController
                 // 공격 대상이 감지되면 공격 수행
                 if (hit.collider != null && layerMaskTarget == (layerMaskTarget | (1 << hit.collider.gameObject.layer)))
                 {
-                    isAttacking = true;
+                    isAttacking = true;                    
                 }
 
                 movementDirection = Vector2.zero; // 공격 시 이동 중지

@@ -1,21 +1,6 @@
 {
   "Items": [
     {
-      "key": 1000,
-      "Name": "w",
-      "Grade": 0,
-      "Damage": 9,
-      "Description": "…",
-      "Delay": 1,
-      "Speed": 10,
-      "AttackRange": 10,
-      "isOnKnockback": false,
-      "KnockbackPower": 0,
-      "KnockbackTime": 0,
-      "SpriteIndex": 0,
-      "Equip": false
-    },
-    {
       "key": 1001,
       "Name": "WoodSword",
       "Grade": 0,
@@ -88,21 +73,6 @@
       "KnockbackPower": 0.9,
       "KnockbackTime": 0.5,
       "SpriteIndex": 10,
-      "Equip": false
-    },
-    {
-      "key": 2000,
-      "Name": "w",
-      "Grade": 0,
-      "Damage": 9,
-      "Description": "…",
-      "Delay": 1,
-      "Speed": 10,
-      "AttackRange": 10,
-      "isOnKnockback": false,
-      "KnockbackPower": 0,
-      "KnockbackTime": 0,
-      "SpriteIndex": 0,
       "Equip": false
     },
     {
@@ -181,21 +151,6 @@
       "Equip": false
     },
     {
-      "key": 3000,
-      "Name": "w",
-      "Grade": 0,
-      "Damage": 9,
-      "Description": "…",
-      "Delay": 1,
-      "Speed": 10,
-      "AttackRange": 10,
-      "isOnKnockback": false,
-      "KnockbackPower": 0,
-      "KnockbackTime": 0,
-      "SpriteIndex": 0,
-      "Equip": false
-    },
-    {
       "key": 3001,
       "Name": "WoodHammer",
       "Grade": 0,
@@ -268,21 +223,6 @@
       "KnockbackPower": 1.1,
       "KnockbackTime": 0.65,
       "SpriteIndex": 12,
-      "Equip": false
-    },
-    {
-      "key": 4000,
-      "Name": "w",
-      "Grade": 0,
-      "Damage": 9,
-      "Description": "…",
-      "Delay": 1,
-      "Speed": 10,
-      "AttackRange": 10,
-      "isOnKnockback": false,
-      "KnockbackPower": 0,
-      "KnockbackTime": 0,
-      "SpriteIndex": 0,
       "Equip": false
     },
     {
@@ -361,21 +301,6 @@
       "Equip": false
     },
     {
-      "key": 5000,
-      "Name": "w",
-      "Grade": 0,
-      "Damage": 9,
-      "Description": "…",
-      "Delay": 1,
-      "Speed": 10,
-      "AttackRange": 10,
-      "isOnKnockback": false,
-      "KnockbackPower": 0,
-      "KnockbackTime": 0,
-      "SpriteIndex": 0,
-      "Equip": false
-    },
-    {
       "key": 5001,
       "Name": "WoodArrow",
       "Grade": 0,
@@ -448,21 +373,6 @@
       "KnockbackPower": 0.85,
       "KnockbackTime": 0.45,
       "SpriteIndex": 14,
-      "Equip": false
-    },
-    {
-      "key": 6000,
-      "Name": "w",
-      "Grade": 0,
-      "Damage": 9,
-      "Description": "…",
-      "Delay": 1,
-      "Speed": 10,
-      "AttackRange": 10,
-      "isOnKnockback": false,
-      "KnockbackPower": 0,
-      "KnockbackTime": 0,
-      "SpriteIndex": 0,
       "Equip": false
     },
     {
@@ -541,21 +451,6 @@
       "Equip": false
     },
     {
-      "key": 7000,
-      "Name": "w",
-      "Grade": 0,
-      "Damage": 9,
-      "Description": "…",
-      "Delay": 1,
-      "Speed": 10,
-      "AttackRange": 10,
-      "isOnKnockback": false,
-      "KnockbackPower": 0,
-      "KnockbackTime": 0,
-      "SpriteIndex": 0,
-      "Equip": false
-    },
-    {
       "key": 7001,
       "Name": "WoodScythe",
       "Grade": 0,
@@ -631,21 +526,6 @@
       "Equip": false
     },
     {
-      "key": 9000,
-      "Name": "w",
-      "Grade": 0,
-      "Damage": 9,
-      "Description": "…",
-      "Delay": 1,
-      "Speed": 10,
-      "AttackRange": 10,
-      "isOnKnockback": false,
-      "KnockbackPower": 0,
-      "KnockbackTime": 0,
-      "SpriteIndex": 0,
-      "Equip": false
-    },
-    {
       "key": 9001,
       "Name": "SniperWeapon",
       "Grade": 0,
@@ -682,8 +562,8 @@
       "Damage": 10,
       "Description": "이것도 무기인가?",
       "Delay": 1,
-      "Speed": 5,
-      "AttackRange": 7,
+      "Speed": 1,
+      "AttackRange": 2,
       "isOnKnockback": true,
       "KnockbackPower": 0.1,
       "KnockbackTime": 0.1,

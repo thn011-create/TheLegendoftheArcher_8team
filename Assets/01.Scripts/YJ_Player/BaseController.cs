@@ -125,7 +125,7 @@ public class BaseController : MonoBehaviour
 
         if (_weaponHandler == null)
             return;
-        if (timeSinceLastAttack <= _weaponHandler.Delay)
+        if (timeSinceLastAttack <= (1f / _weaponHandler.Delay))
         {
             timeSinceLastAttack += Time.deltaTime;
         }
