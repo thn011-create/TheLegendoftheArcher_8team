@@ -39,8 +39,7 @@ public class PauseUI : BaseUI
         continueBtn.onClick.AddListener(OnClickContinueButton);
         exitBtn.onClick.AddListener(OnClickExitButton);
 
-        // 내정보
-        PlayerStatsUI();
+        
         // 획득한 스킬
         PlayerSkillUI();
     }
@@ -55,7 +54,12 @@ public class PauseUI : BaseUI
         }
 
     }
-   
+    private void OnEnable()
+    {
+        // 내정보
+        PlayerStatsUI();
+    }
+
     void OnClickContinueButton() 
     {
      
