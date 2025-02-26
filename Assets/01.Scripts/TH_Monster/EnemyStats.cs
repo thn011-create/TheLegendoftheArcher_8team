@@ -11,6 +11,7 @@ public class EnemyStats : MonoBehaviour, ICharacter
     [SerializeField] private float currentHealth = 100;
     [SerializeField] private float maxHealth = 100;
     [SerializeField] private float experience = 0;
+    [SerializeField] private float attackSpeed = 1;
 
 
 
@@ -21,4 +22,6 @@ public class EnemyStats : MonoBehaviour, ICharacter
     public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
     public float MaxHealth { get => maxHealth; set => maxHealth = value; }
     public float Experience { get; set; }
+
+    public float AttackSpeed { get => attackSpeed; set => attackSpeed = value; }
 }

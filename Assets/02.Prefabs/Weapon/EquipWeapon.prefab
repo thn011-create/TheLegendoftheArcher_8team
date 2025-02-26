@@ -353,7 +353,7 @@ MonoBehaviour:
   - {fileID: 339559552, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
   - {fileID: -1004916948, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
   - {fileID: -1982886633, guid: f5a9002770551344fa3e2bec1fd778dc, type: 3}
-  key: 1004
+  key: 4000
   imageIndex: 0
   itemName: 
   grade: 0
@@ -365,7 +365,7 @@ MonoBehaviour:
   attackRange: 10
   target:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   isOnKnockback: 1
   knockbackPower: 0.1
   knockbackTime: 0.5

@@ -23,6 +23,18 @@
       "KnockbackPower": 0.2,
       "KnockbackTime": 0.3,
       "SpriteName": "RPG-round_2"
+    },
+    {
+      "key": 9002,
+      "Name": "BodyWeapon",
+      "Damage": 10,
+      "Delay": 1,
+      "Speed": 5,
+      "AttackRange": 7,
+      "isOnKnockback": true,
+      "KnockbackPower": 0.1,
+      "KnockbackTime": 0.1,
+      "SpriteName": ""
     }
   ]
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Unity.Mathematics;
 
 public class ResourceController : MonoBehaviour
 {
@@ -52,19 +53,33 @@ public class ResourceController : MonoBehaviour
         }
 
         timeSinceLastChange = 0f;
+
+        //System.Random random = new System.Random(); // 랜덤 객체 생성
+        //if (change< 0)
+        //{
+        //    if(random.NextDouble() <= statHandler.Evasionrate) //회피
+        //    {
+        //        animationHandler.Evasion();
+        //    }
+        //    else // 데미지
+        //    {
+        //        animationHandler.Damage();
+        //        //if (damageClip)
+        //        //    SoundManager.PlayClip(damageClip);
+        //        CurrentHealth += change; // 마이너스이니까 플러스
+        //    }
+        //}
+        //else
+        //{
+        //    //회복부분
+        //}
         CurrentHealth += change;
         CurrentHealth = CurrentHealth > MaxHealth ? MaxHealth : CurrentHealth;
         CurrentHealth = CurrentHealth < 0 ? 0 : CurrentHealth;
 
         OnChangeHealth?.Invoke(CurrentHealth, MaxHealth);
 
-        if (change < 0)
-        {
-            animationHandler.Damage();
-
-            //if (damageClip)
-            //    SoundManager.PlayClip(damageClip);
-        }
+        animationHandler.Damage();
 
         if (CurrentHealth <= 0f)
         {

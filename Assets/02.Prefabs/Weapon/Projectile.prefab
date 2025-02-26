@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelCollisionLayer:
     serializedVersion: 2
-    m_Bits: 4096
+    m_Bits: 64
   images:
   - {fileID: -1421879631, guid: a2f57162af6eb2043b382eae5ee1ea1b, type: 3}
   - {fileID: 1865048476, guid: a2f57162af6eb2043b382eae5ee1ea1b, type: 3}
