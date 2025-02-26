@@ -14,13 +14,22 @@ public class PauseUI : BaseUI
     // 게임 정지 상태인지 아닌지
     public static bool GamePause = false;
 
-   
+    // 플레이어 정보 text
+    [SerializeField] public Text playerNameText;
+    [SerializeField] public Text playerLevelText;
+    [SerializeField] public Text playerHealthText;
+    [SerializeField] public Text playerAttackText;
+    [SerializeField] public Text playerSpeedText;
+
+
     void Start()
     {
         uiState = UIState.Pause;
 
         continueBtn.onClick.AddListener(OnClickContinueButton);
         exitBtn.onClick.AddListener(OnClickExitButton);
+
+        PlayerStatsUI();
     }
 
 
@@ -34,7 +43,6 @@ public class PauseUI : BaseUI
 
     }
    
-
     void OnClickContinueButton() 
     {
      
@@ -51,8 +59,20 @@ public class PauseUI : BaseUI
         // 홈으로 나가기 
 
         SceneManager.LoadScene("HomeScene"); // 0 = HomeScene이어야 함
-        
-
     }
 
+    public void PlayerStatsUI()
+    {
+        PlayerStats playerStats = FindObjectOfType<PlayerStats>();
+
+        if (playerStats != null)
+        {
+            playerNameText.text = $"이름: {playerStats.Name}";
+            playerLevelText.text = $"레벨: {playerStats.Level}";
+            playerHealthText.text = $"체력: {playerStats.CurrentHealth} / {playerStats.MaxHealth}";
+            playerAttackText.text = $"공격력: {playerStats.AttackDamage}";
+            playerSpeedText.text = $"공격속도: {playerStats.AttackSpeed}";
+        }
+
+    }
 }
