@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     private UIManager uiManager;
     public static bool isFirstLoading = true;
 
+    public MapDesign design;
+
     private void Awake()
     {
         if (instance == null)
@@ -32,18 +34,23 @@ public class GameManager : MonoBehaviour
 
         enemyManager = GetComponentInChildren<EnemyManager>();
         enemyManager.Init(this);
+
+        
     }
 
     private void Start()
     {
+        design = GetComponentInChildren<MapDesign>();
         if (!isFirstLoading)
         {
+            design.DrawMap();
             StartGame();
         }
         else
         {
             isFirstLoading = false;
         }
+
     }
 
     public void StartGame()
