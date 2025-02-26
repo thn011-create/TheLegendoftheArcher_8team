@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4834348509014244598}
   - component: {fileID: 4632894785771649057}
   - component: {fileID: 590840001444627493}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EdgeCollision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
