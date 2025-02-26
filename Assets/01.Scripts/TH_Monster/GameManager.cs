@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     public MapDesign design;
 
+    [SerializeField] GameObject nextStageArea;
+
     private void Awake()
     {
         if (instance == null)
@@ -69,12 +71,28 @@ public class GameManager : MonoBehaviour
     public void EndOfWave()
     {
         StartNextWave();
+        /*enemyManager.StopWave();
+        Destroy(design.mapDoor);*/
+
     }
 
     public void GameOver()
     {
         enemyManager.StopWave();
         //uiManager.SetGameOver();
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision == null)
+        {
+            return;
+        }
+        if (collision.CompareTag("Player"))
+        {
+            StartGame();
+        }
     }
 }
 

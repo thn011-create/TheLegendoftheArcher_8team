@@ -8,9 +8,7 @@ public class ProjectileManager : MonoBehaviour
     public static ProjectileManager Instance { get { return instance; } }
 
     [SerializeField] GameObject projectilePrefab;
-    [SerializeField] GameObject E_projectilePrefab;
-
-    //[SerializeField] ParticleSystem impactParticleSyetem;
+           
 
     private void Awake()
     {
@@ -29,10 +27,6 @@ public class ProjectileManager : MonoBehaviour
     {
         // 무기 핸들러의 탄환 인덱스를 사용하여 발사할 탄환 프리팹을 가져옴
         GameObject origin = projectilePrefab;
-
-        // 적 무기 교체
-        if (key >= 9000)
-            origin = E_projectilePrefab;
 
         // 탄환 오브젝트를 생성 (위치: startPosition, 회전: 없음)
         GameObject obj = Instantiate(origin, startPosition, Quaternion.identity);

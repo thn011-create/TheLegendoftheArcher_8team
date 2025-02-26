@@ -245,9 +245,11 @@ MonoBehaviour:
   weaponPivot: {fileID: 2728736344961676907}
   knockback: {x: 0, y: 0}
   knockbackDuration: 0
-  WeaponPrefab: {fileID: 1481014989831272378, guid: a31d21766b233444a904756e915d652b, type: 3}
+  WeaponPrefab: {fileID: 5922578520239452610, guid: d8e17b0e86abb3b449e6ee5096b4edb6, type: 3}
   timeSinceLastAttack: 3.4028235e+38
   followRange: 20
+  experiencePrefab: {fileID: 8784730493887903239, guid: 711121958ea1ab74dafee9eaf3b4a03e, type: 3}
+  experienceAmount: 10
 --- !u!114 &4059563791064528766
 MonoBehaviour:
   m_ObjectHideFlags: 0
