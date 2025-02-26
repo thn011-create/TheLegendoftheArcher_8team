@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 4452842820046348919}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -141,7 +141,7 @@ MonoBehaviour:
   knockbackDuration: 0
   WeaponPrefab: {fileID: 5922578520239452610, guid: a98569ca2a2189a49be929746b28ab56, type: 3}
   timeSinceLastAttack: 3.4028235e+38
-  followRange: 15
+  followRange: 20
 --- !u!114 &-4548496106840126001
 MonoBehaviour:
   m_ObjectHideFlags: 0

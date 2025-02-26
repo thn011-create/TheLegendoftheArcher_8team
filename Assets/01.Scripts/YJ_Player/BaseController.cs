@@ -157,7 +157,7 @@ public class BaseController : MonoBehaviour
         {
             componet.enabled = false;
         }
-        animationHandler.Die();
+        //animationHandler.Die();
         Destroy(gameObject, 2f);
     }
 
