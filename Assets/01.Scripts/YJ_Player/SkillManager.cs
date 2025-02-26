@@ -110,6 +110,7 @@ public class SkillManager : MonoBehaviour
                 player.ExtraProjectiles += 1;
                 break;
         }
+
     }
 
     // Æ¯Á¤ ½ºÅ³ÀÇ È¹µæ È½¼ö ¹ÝÈ¯

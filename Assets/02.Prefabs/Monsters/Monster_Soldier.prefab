@@ -279,6 +279,8 @@ MonoBehaviour:
   WeaponPrefab: {fileID: 5922578520239452610, guid: a98569ca2a2189a49be929746b28ab56, type: 3}
   timeSinceLastAttack: 3.4028235e+38
   followRange: 20
+  experiencePrefab: {fileID: 8784730493887903239, guid: 711121958ea1ab74dafee9eaf3b4a03e, type: 3}
+  experienceAmount: 10
 --- !u!114 &-7499359558193054396
 MonoBehaviour:
   m_ObjectHideFlags: 0
