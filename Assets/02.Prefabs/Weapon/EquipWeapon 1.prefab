@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 2363005291407128918}
   - component: {fileID: 5922578520239452610}
   m_Layer: 0
-  m_Name: EquipWeapon
+  m_Name: EquipWeapon 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -365,7 +365,7 @@ MonoBehaviour:
   attackRange: 10
   target:
     serializedVersion: 2
-    m_Bits: 4096
+    m_Bits: 256
   isOnKnockback: 1
   knockbackPower: 0.1
   knockbackTime: 0.5

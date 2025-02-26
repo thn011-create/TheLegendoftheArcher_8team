@@ -281,6 +281,7 @@ MonoBehaviour:
   - {fileID: 6686194489726729802, guid: 43fc1108b64715a4eabb943f6727d1c7, type: 3}
   - {fileID: 6686194489726729802, guid: 2e996108112501a49b6f60d5ef0703f2, type: 3}
   - {fileID: 6686194489726729802, guid: 3b634c0b43b3ebc49971ad1a75012e9c, type: 3}
+  nextStageArea: {fileID: 0}
 --- !u!4 &672490942
 Transform:
   m_ObjectHideFlags: 0

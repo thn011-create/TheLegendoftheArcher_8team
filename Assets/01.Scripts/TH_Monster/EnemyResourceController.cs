@@ -60,7 +60,7 @@ public class EnemyResourceController : MonoBehaviour
 
         if (change < 0)
         {
-            animationHandler.Hit();
+            animationHandler.Damage();
 
             //if (damageClip)
             //    SoundManager.PlayClip(damageClip);
