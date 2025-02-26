@@ -7,8 +7,8 @@ using UnityEngine;
 public enum UIState
 {
     //Game Scene
-    GameMission, // 클리어 조건
-    SelectSkill, // 능력 선택
+    //GameMission, // 클리어 조건
+    //SelectSkill, // 능력 선택
     InGame, // 인게임
     Pause, // 게임 일시정지
     GameOver, // 게임오버
@@ -54,8 +54,12 @@ public class UIManager : MonoBehaviour
                 Debug.Log($"등록된 UI: {ui.uiState}");
             }
 
-            currentState = UIState.SelectSkill;
-            ChangeState(UIState.InGame);
+            currentState = UIState.InGame;
+
+            if (uiDictionary.ContainsKey(UIState.InGame))
+            {
+                uiDictionary[UIState.InGame].ShowUI();
+            }
             // 씬 추가시 DontDestroyOnLoad 추가 예정
 
             // DontDestroyOnLoad(gameObject);
@@ -68,13 +72,24 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log($"[ChangeState] 현재 상태: {currentState}, 변경될 상태: {nextState}");
 
-        // 변화 없으면 return
-        if (currentState == nextState) return;
+       
+        
 
-        //딕셔너리에서 현재 상태와 같은 UI가 있다면 숨김
-        if (uiDictionary.ContainsKey(currentState))
+        //딕셔너리에서 현재 상태와 같은 UI가 있다면 숨김 / nextState가 현재 상태와 다를 때만 실행
+        if (uiDictionary.ContainsKey(currentState) && currentState != nextState)
         {
            uiDictionary[currentState].HideUI();
+        }
+        
+
+        if (currentState == nextState)
+        {
+            if (uiDictionary.ContainsKey(currentState))
+            {
+                uiDictionary[currentState].ShowUI();
+            }
+            // 변화 없으면 return
+            return;
         }
 
         // 변경될 ui로 상태 변경
