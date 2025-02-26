@@ -95,4 +95,5 @@ public class EnemyController : BaseController
         if (canMoveRight) return rightDirection;
         return Vector2.zero; // 이동할 수 없는 경우 정지
     }
+
 }

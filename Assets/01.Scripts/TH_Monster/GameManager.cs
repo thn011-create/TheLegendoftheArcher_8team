@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public PlayerController player { get; private set; }
     private ResourceController _playerResourceController;
+    
 
     [SerializeField] private int currentWaveIndex = 0;
 
