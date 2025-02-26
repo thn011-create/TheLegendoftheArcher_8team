@@ -255,6 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapEdge: {fileID: 1881038590371650831, guid: 45632ffb951a23940bfacb8298eb2d57, type: 3}
+  mapDoor: {fileID: 1881038590371650831, guid: ab7d4d4f3c591b74fafcda62e1b0b2b3, type: 3}
   mapPrefabs:
   - {fileID: 6686194489726729802, guid: e148fe32db6a6944d9b933a095cf0888, type: 3}
   - {fileID: 6686194489726729802, guid: 40fb8444450e98842b593572ce84c31c, type: 3}
@@ -535,6 +536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentWaveIndex: 0
   design: {fileID: 0}
+  nextStageArea: {fileID: 0}
   enemyPrefabs:
   - {fileID: 2898466594723352262, guid: 8823df3cec8e0144f9eb549c749aa9a4, type: 3}
   - {fileID: 6335177055578721425, guid: 4a25ead22de84d148b98e1b1c936d78d, type: 3}
@@ -679,6 +681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentWaveIndex: 0
   design: {fileID: 672490941}
+  nextStageArea: {fileID: 8882744389502918330, guid: 02426a11bf6a1c341b29768aa18bae85, type: 3}
 --- !u!4 &1153479412
 Transform:
   m_ObjectHideFlags: 0

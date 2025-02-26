@@ -5,10 +5,9 @@ using UnityEngine;
 public class MapDesign : MonoBehaviour
 {
     [SerializeField] GameObject mapEdge;
-    [SerializeField] GameObject mapDoor;
+    [SerializeField] public GameObject mapDoor;
     [SerializeField] List<GameObject> mapPrefabs;
 
-    [SerializeField] GameObject nextStageArea;
 
     public void SelectedMap(int minMapNum, int maxMapNum)
     {
