@@ -255,6 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapEdge: {fileID: 1881038590371650831, guid: 45632ffb951a23940bfacb8298eb2d57, type: 3}
+  mapDoor: {fileID: 1881038590371650831, guid: ab7d4d4f3c591b74fafcda62e1b0b2b3, type: 3}
   mapPrefabs:
   - {fileID: 6686194489726729802, guid: e148fe32db6a6944d9b933a095cf0888, type: 3}
   - {fileID: 6686194489726729802, guid: 40fb8444450e98842b593572ce84c31c, type: 3}
@@ -280,6 +281,7 @@ MonoBehaviour:
   - {fileID: 6686194489726729802, guid: 43fc1108b64715a4eabb943f6727d1c7, type: 3}
   - {fileID: 6686194489726729802, guid: 2e996108112501a49b6f60d5ef0703f2, type: 3}
   - {fileID: 6686194489726729802, guid: 3b634c0b43b3ebc49971ad1a75012e9c, type: 3}
+  nextStageArea: {fileID: 0}
 --- !u!4 &672490942
 Transform:
   m_ObjectHideFlags: 0
