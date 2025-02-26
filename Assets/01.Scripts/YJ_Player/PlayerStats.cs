@@ -35,7 +35,7 @@ public class PlayerStats : MonoBehaviour, ICharacter
     public float RecoveryRate { get => recoveryRate; set => recoveryRate = value; }
     public float BloodAbsorptionRate { get => bloodAbsorptionRate; set => bloodAbsorptionRate = value; }
     public float RecoveryDropRate { get => recoveryDropRate; set => recoveryDropRate = value; }
-    public float Evasionrate { get => Evasionrate; set => Evasionrate = value; }
+    public float Evasionrate { get => evasionRate; set => evasionRate = value; }
 
     public void GainExperience(float amount)
     {

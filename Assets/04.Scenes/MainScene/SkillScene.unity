@@ -1576,6 +1576,31 @@ MonoBehaviour:
   - {fileID: 557944932}
   - {fileID: 1773390035}
   - {fileID: 1778579713}
+  Icon:
+  - {fileID: 21300000, guid: 7f49df267b478bc43802209b0f81149c, type: 3}
+  - {fileID: 21300000, guid: bf49c1ebfbe9979419d345e297403ca1, type: 3}
+  - {fileID: 21300000, guid: d5f581f72dd5e984c903b184702d33c1, type: 3}
+  - {fileID: 21300000, guid: 6e8c91e6709644c40ba44e3a9c775175, type: 3}
+  - {fileID: 21300000, guid: 03209922345d92f4b94d8912c7e469d1, type: 3}
+  - {fileID: 21300000, guid: 5dc1d0f75c3926946bb65c543bbe2b08, type: 3}
+  - {fileID: 21300000, guid: 11127d86b2a614f4eb7a96ade98ce5b4, type: 3}
+  - {fileID: 21300000, guid: 093959b310eb9654594d2bb6dd66b4c4, type: 3}
+  - {fileID: 21300000, guid: 5eafe6b052b261b4ba05196826ac41a3, type: 3}
+  - {fileID: 21300000, guid: 8193abfe29c520047bea4b11b5314c18, type: 3}
+  - {fileID: 21300000, guid: cfd4969c98c183a4795e9795e0dd0086, type: 3}
+  - {fileID: 21300000, guid: f6e934be2c98dca4694027cc068a4627, type: 3}
+  - {fileID: 21300000, guid: 03fa3682feba7524fbf9852753d63f60, type: 3}
+  - {fileID: 21300000, guid: 1dba230ab3649ff4fa34a63252911058, type: 3}
+  - {fileID: 21300000, guid: c940de9b2f50f2f40a453b56be30d8ad, type: 3}
+  - {fileID: 21300000, guid: 7e15bfde77f1d914b9b02b105749e4fb, type: 3}
+  - {fileID: 21300000, guid: 1ace68038c119304daaf4927eb0945f3, type: 3}
+  - {fileID: 21300000, guid: 17bf08e3a4d921e4db879c66cf88f71e, type: 3}
+  - {fileID: 21300000, guid: 54bf7b601ed0bd84caacd3085de379bf, type: 3}
+  - {fileID: 21300000, guid: 0155f6277bf193f4391e2477c686e2bf, type: 3}
+  skillIcons:
+  - {fileID: 1278000173}
+  - {fileID: 767888223}
+  - {fileID: 50581234}
 --- !u!1 &1449668350
 GameObject:
   m_ObjectHideFlags: 0
