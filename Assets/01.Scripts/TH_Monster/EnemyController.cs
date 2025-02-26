@@ -7,10 +7,14 @@ public class EnemyController : BaseController
 {
     private EnemyManager enemyManager;
     private Transform target;
-
+    private AnimationHandler animationHandler;
     public int attackRange = 2;
 
     [SerializeField] private float followRange = 15f;
+
+
+    public float delay;
+    public float Delay { get => delay; set => delay = value; }
 
     public void Init(EnemyManager enemyManager, Transform target)
     {
@@ -36,7 +40,7 @@ public class EnemyController : BaseController
 
         float distance = DistanceToTarget();
         Vector2 direction = DirectionToTarget();
-   
+
         isAttacking = false;
         if (distance <= followRange)
         {
@@ -47,7 +51,7 @@ public class EnemyController : BaseController
                 int layerMaskTarget = 2;
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, attackRange * 1.5f,
                     (1 << LayerMask.NameToLayer("Player")) | layerMaskTarget);
-                
+
 
                 if (hit.collider != null && layerMaskTarget == (layerMaskTarget | (1 << hit.collider.gameObject.layer)))
                 {
@@ -75,18 +79,46 @@ public class EnemyController : BaseController
 
     protected override void MoveMent(Vector2 direction)
     {
-
-        direction = direction * enemyStats.MoveSpeed; // ±âº» ÀÌµ¿ ¼Óµµ Àû¿ë
+        animationHandler = GetComponent<AnimationHandler>();
+        direction = direction * enemyStats.MoveSpeed; // ê¸°ë³¸ ì´ë™ ì†ë„ ì ìš©
         //Debug.Log($"Applying Velocity: {direction}");
-        // ³Ë¹é Áö¼Ó ÁßÀÌ¸é ÀÌµ¿ ¼Óµµ¸¦ ÁÙÀÌ°í ³Ë¹é º¤ÅÍ¸¦ Ãß°¡
+        // ë„‰ë°± ì§€ì† ì¤‘ì´ë©´ ì´ë™ ì†ë„ë¥¼ ì¤„ì´ê³  ë„‰ë°± ë²¡í„°ë¥¼ ì¶”ê°€
         if (knockbackDuration > 0.0f)
         {
-            direction *= 0.2f; // ÀÌµ¿ ¼Óµµ¸¦ 20%·Î ÁÙÀÓ
-            direction += knockback; // ³Ë¹é ¹İ¿µ
+            direction *= 0.2f; // ì´ë™ ì†ë„ë¥¼ 20%ë¡œ ì¤„ì„
+            direction += knockback; // ë„‰ë°± ë°˜ì˜
         }
 
-        _rigidbody.velocity = direction; // Rigidbody2D¿¡ Àû¿ë
+        _rigidbody.velocity = direction; // Rigidbody2Dì— ì ìš©
         animationHandler.Move(direction);
+    }
+
+    public override void HandleAttackDelay()
+    {
+        EnemyStats monster = GetComponent<EnemyStats>();
+
+        if (timeSinceLastAttack <= Delay)
+        {
+            timeSinceLastAttack += Time.deltaTime;
+        }
+        if (isAttacking && timeSinceLastAttack > (1f / (Delay * enemyStats.AttackSpeed)))
+        {
+            timeSinceLastAttack = 0;
+            Attack();
+        }
+    }
+
+    protected override void Attack()
+    {
+        if (lookDirection != Vector2.zero)
+        {
+            AttackAnimation();
+        }
+    }
+
+    public virtual void AttackAnimation()
+    {
+        animationHandler.Attack();
     }
 }
 
