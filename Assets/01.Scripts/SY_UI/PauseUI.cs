@@ -92,48 +92,48 @@ public class PauseUI : BaseUI
     {
         // 획득한 스킬 목록
         ///Dictionary<int, int> acquiredSkills = SkillManager.Instance.
-        List<AbilityTable> allSkills = DataManager.Instance.AbilityTableLoader.ItemsList;
-        List<AbilityTable> acquiredSkills = new List<AbilityTable>();
+        //List<AbilityTable> allSkills = DataManager.Instance.AbilityTableLoader.ItemsList;
+        //List<AbilityTable> acquiredSkills = new List<AbilityTable>();
 
-        int index = 0;
-
-
-        foreach (var skill in allSkills)
-        {
+        //int index = 0;
 
 
-            int skillLevel = SkillManager.Instance.GetSkillLevel(skill.key);
-            // 스킬을 얻으면 얻은 스킬 목록에 추가
-            if (skillLevel > 0)
-            {
-                acquiredSkills.Add(skill);
-            }
-        }
-        // 슬롯
-        for (int i = 0; i < skillSlots.Count; i++)
-        {
-            if (i < acquiredSkills.Count)
-            {
-                AbilityTable skill = acquiredSkills[i];
-                int skillLevel = SkillManager.Instance.GetSkillLevel(skill.key);
-
-                skillSlots[i].SetActive(true);
-                //skillIcons[i].sprite = SkillUI.Instance.Icon[skill.key - 1];
-                skillNames[i].text = skill.Name;
-                skillLevels[i].text = $"Lv. {skillLevel}";
-                skillDescriptions[i].text = skill.Description;
-
-                // 버튼 내부의 Image 컴포넌트를 찾아 아이콘 적용
-                //Image iconImage = skillButtons[i].GetComponentInChildren<Image>();
-                //if (iconImage != null && index - 1 < Icon.Length)
-                //{
-                //    iconImage.sprite = Icon[acquiredSkills[i].key - 1];   //Icon[index];
-                //    iconImage.gameObject.SetActive(true);
-                //}
+        //foreach (var skill in allSkills)
+        //{
 
 
-            }
-        }
+        //    int skillLevel = SkillManager.Instance.GetSkillLevel(skill.key);
+        //    // 스킬을 얻으면 얻은 스킬 목록에 추가
+        //    if (skillLevel > 0)
+        //    {
+        //        acquiredSkills.Add(skill);
+        //    }
+        //}
+        //// 슬롯
+        //for (int i = 0; i < skillSlots.Count; i++)
+        //{
+        //    if (i < acquiredSkills.Count)
+        //    {
+        //        AbilityTable skill = acquiredSkills[i];
+        //        int skillLevel = SkillManager.Instance.GetSkillLevel(skill.key);
+
+        //        skillSlots[i].SetActive(true);
+        //        //skillIcons[i].sprite = SkillUI.Instance.Icon[skill.key - 1];
+        //        skillNames[i].text = skill.Name;
+        //        skillLevels[i].text = $"Lv. {skillLevel}";
+        //        skillDescriptions[i].text = skill.Description;
+
+        //        // 버튼 내부의 Image 컴포넌트를 찾아 아이콘 적용
+        //        //Image iconImage = skillButtons[i].GetComponentInChildren<Image>();
+        //        //if (iconImage != null && index - 1 < Icon.Length)
+        //        //{
+        //        //    iconImage.sprite = Icon[acquiredSkills[i].key - 1];   //Icon[index];
+        //        //    iconImage.gameObject.SetActive(true);
+        //        //}
+
+
+        //    }
+        //}
 
 
 
