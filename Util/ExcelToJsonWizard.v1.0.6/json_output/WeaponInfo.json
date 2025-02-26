@@ -2,6 +2,21 @@
   "Items": [
     {
       "key": 1000,
+      "Name": "w",
+      "Grade": 0,
+      "Damage": 9,
+      "Description": "…",
+      "Delay": 1,
+      "Speed": 10,
+      "AttackRange": 10,
+      "isOnKnockback": false,
+      "KnockbackPower": 0,
+      "KnockbackTime": 0,
+      "SpriteIndex": 0,
+      "Equip": false
+    },
+    {
+      "key": 1001,
       "Name": "WoodSword",
       "Grade": 0,
       "Damage": 90,
@@ -16,7 +31,7 @@
       "Equip": false
     },
     {
-      "key": 1001,
+      "key": 1002,
       "Name": "SkeltonSword",
       "Grade": 1,
       "Damage": 140,
@@ -31,7 +46,7 @@
       "Equip": false
     },
     {
-      "key": 1002,
+      "key": 1003,
       "Name": "IronSword",
       "Grade": 2,
       "Damage": 240,
@@ -46,7 +61,7 @@
       "Equip": false
     },
     {
-      "key": 1003,
+      "key": 1004,
       "Name": "LavaSword",
       "Grade": 3,
       "Damage": 390,
@@ -61,7 +76,7 @@
       "Equip": false
     },
     {
-      "key": 1004,
+      "key": 1005,
       "Name": "AquaSword",
       "Grade": 4,
       "Damage": 590,
@@ -77,6 +92,21 @@
     },
     {
       "key": 2000,
+      "Name": "w",
+      "Grade": 0,
+      "Damage": 9,
+      "Description": "…",
+      "Delay": 1,
+      "Speed": 10,
+      "AttackRange": 10,
+      "isOnKnockback": false,
+      "KnockbackPower": 0,
+      "KnockbackTime": 0,
+      "SpriteIndex": 0,
+      "Equip": false
+    },
+    {
+      "key": 2001,
       "Name": "WoodAxe",
       "Grade": 0,
       "Damage": 100,
@@ -91,7 +121,7 @@
       "Equip": false
     },
     {
-      "key": 2001,
+      "key": 2002,
       "Name": "SkeltonAxe",
       "Grade": 1,
       "Damage": 150,
@@ -106,7 +136,7 @@
       "Equip": false
     },
     {
-      "key": 2002,
+      "key": 2003,
       "Name": "IronAxe",
       "Grade": 2,
       "Damage": 250,
@@ -121,7 +151,7 @@
       "Equip": false
     },
     {
-      "key": 2003,
+      "key": 2004,
       "Name": "LavaAxe",
       "Grade": 3,
       "Damage": 400,
@@ -136,7 +166,7 @@
       "Equip": false
     },
     {
-      "key": 2004,
+      "key": 2005,
       "Name": "AquaAxe",
       "Grade": 4,
       "Damage": 600,
@@ -152,6 +182,21 @@
     },
     {
       "key": 3000,
+      "Name": "w",
+      "Grade": 0,
+      "Damage": 9,
+      "Description": "…",
+      "Delay": 1,
+      "Speed": 10,
+      "AttackRange": 10,
+      "isOnKnockback": false,
+      "KnockbackPower": 0,
+      "KnockbackTime": 0,
+      "SpriteIndex": 0,
+      "Equip": false
+    },
+    {
+      "key": 3001,
       "Name": "WoodHammer",
       "Grade": 0,
       "Damage": 120,
@@ -166,7 +211,7 @@
       "Equip": false
     },
     {
-      "key": 3001,
+      "key": 3002,
       "Name": "SkeltonHammer",
       "Grade": 1,
       "Damage": 170,
@@ -181,7 +226,7 @@
       "Equip": false
     },
     {
-      "key": 3002,
+      "key": 3003,
       "Name": "IronHammer",
       "Grade": 2,
       "Damage": 270,
@@ -196,7 +241,7 @@
       "Equip": false
     },
     {
-      "key": 3003,
+      "key": 3004,
       "Name": "LavaHammer",
       "Grade": 3,
       "Damage": 420,
@@ -211,7 +256,7 @@
       "Equip": false
     },
     {
-      "key": 3004,
+      "key": 3005,
       "Name": "AquaHammer",
       "Grade": 4,
       "Damage": 620,
@@ -227,6 +272,21 @@
     },
     {
       "key": 4000,
+      "Name": "w",
+      "Grade": 0,
+      "Damage": 9,
+      "Description": "…",
+      "Delay": 1,
+      "Speed": 10,
+      "AttackRange": 10,
+      "isOnKnockback": false,
+      "KnockbackPower": 0,
+      "KnockbackTime": 0,
+      "SpriteIndex": 0,
+      "Equip": false
+    },
+    {
+      "key": 4001,
       "Name": "WoodDagger",
       "Grade": 0,
       "Damage": 60,
@@ -241,7 +301,7 @@
       "Equip": false
     },
     {
-      "key": 4001,
+      "key": 4002,
       "Name": "SkeltonDagger",
       "Grade": 1,
       "Damage": 110,
@@ -256,7 +316,7 @@
       "Equip": false
     },
     {
-      "key": 4002,
+      "key": 4003,
       "Name": "IronDagger",
       "Grade": 2,
       "Damage": 210,
@@ -271,7 +331,7 @@
       "Equip": false
     },
     {
-      "key": 4003,
+      "key": 4004,
       "Name": "LavaDagger",
       "Grade": 3,
       "Damage": 360,
@@ -286,7 +346,7 @@
       "Equip": false
     },
     {
-      "key": 4004,
+      "key": 4005,
       "Name": "AquaDagger",
       "Grade": 4,
       "Damage": 560,
@@ -302,6 +362,21 @@
     },
     {
       "key": 5000,
+      "Name": "w",
+      "Grade": 0,
+      "Damage": 9,
+      "Description": "…",
+      "Delay": 1,
+      "Speed": 10,
+      "AttackRange": 10,
+      "isOnKnockback": false,
+      "KnockbackPower": 0,
+      "KnockbackTime": 0,
+      "SpriteIndex": 0,
+      "Equip": false
+    },
+    {
+      "key": 5001,
       "Name": "WoodArrow",
       "Grade": 0,
       "Damage": 80,
@@ -316,7 +391,7 @@
       "Equip": false
     },
     {
-      "key": 5001,
+      "key": 5002,
       "Name": "SkeltonArrow",
       "Grade": 1,
       "Damage": 130,
@@ -331,7 +406,7 @@
       "Equip": false
     },
     {
-      "key": 5002,
+      "key": 5003,
       "Name": "IronArrow",
       "Grade": 2,
       "Damage": 230,
@@ -346,7 +421,7 @@
       "Equip": false
     },
     {
-      "key": 5003,
+      "key": 5004,
       "Name": "LavaArrow",
       "Grade": 3,
       "Damage": 380,
@@ -361,7 +436,7 @@
       "Equip": false
     },
     {
-      "key": 5004,
+      "key": 5005,
       "Name": "AquaArrow",
       "Grade": 4,
       "Damage": 580,
@@ -377,6 +452,21 @@
     },
     {
       "key": 6000,
+      "Name": "w",
+      "Grade": 0,
+      "Damage": 9,
+      "Description": "…",
+      "Delay": 1,
+      "Speed": 10,
+      "AttackRange": 10,
+      "isOnKnockback": false,
+      "KnockbackPower": 0,
+      "KnockbackTime": 0,
+      "SpriteIndex": 0,
+      "Equip": false
+    },
+    {
+      "key": 6001,
       "Name": "WoodStamp",
       "Grade": 0,
       "Damage": 80,
@@ -391,7 +481,7 @@
       "Equip": false
     },
     {
-      "key": 6001,
+      "key": 6002,
       "Name": "SkeltonStamp",
       "Grade": 1,
       "Damage": 130,
@@ -406,7 +496,7 @@
       "Equip": false
     },
     {
-      "key": 6002,
+      "key": 6003,
       "Name": "IronStamp",
       "Grade": 2,
       "Damage": 230,
@@ -421,7 +511,7 @@
       "Equip": false
     },
     {
-      "key": 6003,
+      "key": 6004,
       "Name": "LavaStamp",
       "Grade": 3,
       "Damage": 380,
@@ -436,7 +526,7 @@
       "Equip": false
     },
     {
-      "key": 6004,
+      "key": 6005,
       "Name": "AquaStamp",
       "Grade": 4,
       "Damage": 580,
@@ -452,6 +542,21 @@
     },
     {
       "key": 7000,
+      "Name": "w",
+      "Grade": 0,
+      "Damage": 9,
+      "Description": "…",
+      "Delay": 1,
+      "Speed": 10,
+      "AttackRange": 10,
+      "isOnKnockback": false,
+      "KnockbackPower": 0,
+      "KnockbackTime": 0,
+      "SpriteIndex": 0,
+      "Equip": false
+    },
+    {
+      "key": 7001,
       "Name": "WoodScythe",
       "Grade": 0,
       "Damage": 70,
@@ -466,7 +571,7 @@
       "Equip": false
     },
     {
-      "key": 7001,
+      "key": 7002,
       "Name": "SkeltonScythe",
       "Grade": 1,
       "Damage": 120,
@@ -481,7 +586,7 @@
       "Equip": false
     },
     {
-      "key": 7002,
+      "key": 7003,
       "Name": "IronScythe",
       "Grade": 2,
       "Damage": 220,
@@ -496,7 +601,7 @@
       "Equip": false
     },
     {
-      "key": 7003,
+      "key": 7004,
       "Name": "LavaScythe",
       "Grade": 3,
       "Damage": 370,
@@ -511,7 +616,7 @@
       "Equip": false
     },
     {
-      "key": 7004,
+      "key": 7005,
       "Name": "AquaScythe",
       "Grade": 4,
       "Damage": 570,
@@ -523,6 +628,66 @@
       "KnockbackPower": 0.9,
       "KnockbackTime": 0.5,
       "SpriteIndex": 16,
+      "Equip": false
+    },
+    {
+      "key": 9000,
+      "Name": "w",
+      "Grade": 0,
+      "Damage": 9,
+      "Description": "…",
+      "Delay": 1,
+      "Speed": 10,
+      "AttackRange": 10,
+      "isOnKnockback": false,
+      "KnockbackPower": 0,
+      "KnockbackTime": 0,
+      "SpriteIndex": 0,
+      "Equip": false
+    },
+    {
+      "key": 9001,
+      "Name": "SniperWeapon",
+      "Grade": 0,
+      "Damage": 10,
+      "Description": "몬스터가 쓰는 무기인 것 같다 버리고 가자.",
+      "Delay": 0.7,
+      "Speed": 7,
+      "AttackRange": 10,
+      "isOnKnockback": true,
+      "KnockbackPower": 0.4,
+      "KnockbackTime": 0.6,
+      "SpriteIndex": 95,
+      "Equip": false
+    },
+    {
+      "key": 9002,
+      "Name": "SoliderWeapon",
+      "Grade": 0,
+      "Damage": 10,
+      "Description": "몬스터가 쓰는 무기인 것 같다 버리고 가자.",
+      "Delay": 1,
+      "Speed": 5,
+      "AttackRange": 7,
+      "isOnKnockback": true,
+      "KnockbackPower": 0.2,
+      "KnockbackTime": 0.3,
+      "SpriteIndex": 92,
+      "Equip": false
+    },
+    {
+      "key": 9003,
+      "Name": "BodyWeapon",
+      "Grade": 0,
+      "Damage": 10,
+      "Description": "이것도 무기인가?",
+      "Delay": 1,
+      "Speed": 5,
+      "AttackRange": 7,
+      "isOnKnockback": true,
+      "KnockbackPower": 0.1,
+      "KnockbackTime": 0.1,
+      "SpriteIndex": 96,
       "Equip": false
     }
   ]

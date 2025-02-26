@@ -50,8 +50,10 @@ public class ProjectileController : MonoBehaviour
         // 투사체를 지정된 방향으로 이동시킴
         _rigidbody.velocity = direction * rangeWeaponHandler.Speed;
 
+
+        Debug.LogError("무기 번호 이자식아"+rangeWeaponHandler.Key);
         // 투사체 회전
-        if (rangeWeaponHandler.Key / 1000 != 5)
+        if (rangeWeaponHandler.Key / 1000 != 5 && rangeWeaponHandler.Key / 1000 != 9)
         {
             rotZ += Time.deltaTime * 1000;
             transform.localEulerAngles = new Vector3(0f, 0f, rotZ);
@@ -89,21 +91,10 @@ public class ProjectileController : MonoBehaviour
         // 투사체의 방향에 따라 피벗 회전 조정
         pivot.localEulerAngles += new Vector3(0, 180, 0);
 
-
+        Debug.LogError(rangeWeaponHandler.ImageIdx);
         // Sprite
         string imageName = "fantasy_bullet_";
         spriteRanderer.sprite = FindImage(imageName, rangeWeaponHandler.ImageIdx);
-
-        if (key == 9000)
-        {
-            imageName = "bullets\u002Bplasma_2";
-            spriteRanderer.sprite = FindImage(imageName);
-        }
-        else if (key == 9001)
-        {
-            imageName = "RPG-round_2";
-            spriteRanderer.sprite = FindImage(imageName);
-        }
 
         // 투사체 준비 완료
         isReady = true;
@@ -152,6 +143,7 @@ public class ProjectileController : MonoBehaviour
             //Debug.Log(img.name);
             if (name == img.name)
             {
+                Debug.Log(img.name);
                 return img;
             }
         }

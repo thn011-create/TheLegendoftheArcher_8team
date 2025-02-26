@@ -281,7 +281,6 @@ MonoBehaviour:
   - {fileID: 6686194489726729802, guid: 43fc1108b64715a4eabb943f6727d1c7, type: 3}
   - {fileID: 6686194489726729802, guid: 2e996108112501a49b6f60d5ef0703f2, type: 3}
   - {fileID: 6686194489726729802, guid: 3b634c0b43b3ebc49971ad1a75012e9c, type: 3}
-  nextStageArea: {fileID: 0}
 --- !u!4 &672490942
 Transform:
   m_ObjectHideFlags: 0
@@ -629,7 +628,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1146777642}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WeaponPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -796,7 +795,7 @@ GameObject:
   - component: {fileID: 1359461971}
   - component: {fileID: 1359461972}
   - component: {fileID: 1359461975}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1027,7 +1026,7 @@ GameObject:
   - component: {fileID: 1856602115}
   - component: {fileID: 1856602114}
   - component: {fileID: 1856602113}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}

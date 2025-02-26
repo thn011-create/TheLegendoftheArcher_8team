@@ -84,14 +84,17 @@ public class PlayerController : BaseController
 
         if (_weaponHandler == null)
             return;
-        if (timeSinceLastAttack <= _weaponHandler.Delay)
+        if (timeSinceLastAttack <= (1f / (_weaponHandler.Delay * player.AttackSpeed)))
         {
             timeSinceLastAttack += Time.deltaTime;
         }
-        if (isAttacking && timeSinceLastAttack > (1f / (_weaponHandler.Delay * player.AttackSpeed)))
+        if (isAttacking)
         {
-            timeSinceLastAttack = 0;
-            Attack();
+            if (timeSinceLastAttack > (1f / (_weaponHandler.Delay * player.AttackSpeed)))
+            {
+                timeSinceLastAttack = 0;
+                Attack();
+            }
         }
     }
 }
