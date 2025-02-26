@@ -25,6 +25,27 @@ public class InGameUI : BaseUI
         pauseButton.onClick.AddListener(() => UIManager.Instance.ChangeState(UIState.Pause));
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("ESC´­¸²");
+            
+            UIManager.Instance.ChangeState(UIState.Pause);
+            Time.timeScale = 0f;
+
+
+
+            //if (GamePause)
+            //{
+            //    Resume();
+            //}
+            //else
+            //{
+            //    Pause();
+            //}
+        }
+    }
 
 
     public void UpdateWaveText(int wave)
