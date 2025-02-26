@@ -11,6 +11,8 @@ public class SkillUI : MonoBehaviour
     [SerializeField] private Text[] skillLevelTexts;
     [SerializeField] private Text[] skillNames;
     [SerializeField] private Text[] skillDescriptions;
+    [SerializeField] private Sprite[] Icon; // 키 값과 같이 정렬한 이미지
+    [SerializeField] private Image[] skillIcons; // 버튼의 이미지 UI 추가
 
     private List<AbilityTable> currentSkills;
     private void Awake()
@@ -51,6 +53,16 @@ public class SkillUI : MonoBehaviour
                 int index = i;
                 skillButtons[i].onClick.RemoveAllListeners();
                 skillButtons[i].onClick.AddListener(() => SelectSkill(index));
+
+                // 버튼 내부의 Image 컴포넌트를 찾아 아이콘 적용
+                Image iconImage = skillButtons[i].GetComponentInChildren<Image>();
+                if (iconImage != null && index-1 < Icon.Length)
+                {
+                    iconImage.sprite = Icon[currentSkills[i].key-1];   //Icon[index];
+                    iconImage.gameObject.SetActive(true);
+                }
+
+
             }
             else
             {

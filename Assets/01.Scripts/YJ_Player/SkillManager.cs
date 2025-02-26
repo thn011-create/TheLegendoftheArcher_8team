@@ -4,8 +4,7 @@ using UnityEngine;
 public class SkillManager : MonoBehaviour
 {
     public static SkillManager Instance { get; private set; }
-
-    private List<SkillData> allSkills = new List<SkillData>();  // ¸ðµç ½ºÅ³ µ¥ÀÌÅÍ ¸®½ºÆ®
+    
     private Dictionary<int, int> acquiredSkills = new Dictionary<int, int>(); // È¹µæÇÑ ½ºÅ³ (key, È¹µæ È½¼ö)
 
     private void Awake()
