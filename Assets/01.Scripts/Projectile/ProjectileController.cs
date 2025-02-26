@@ -51,7 +51,7 @@ public class ProjectileController : MonoBehaviour
         _rigidbody.velocity = direction * rangeWeaponHandler.Speed;
 
 
-        Debug.LogError("무기 번호 이자식아"+rangeWeaponHandler.Key);
+        
         // 투사체 회전
         if (rangeWeaponHandler.Key / 1000 != 5 && rangeWeaponHandler.Key / 1000 != 9)
         {
@@ -91,7 +91,7 @@ public class ProjectileController : MonoBehaviour
         // 투사체의 방향에 따라 피벗 회전 조정
         pivot.localEulerAngles += new Vector3(0, 180, 0);
 
-        Debug.LogError(rangeWeaponHandler.ImageIdx);
+        
         // Sprite
         string imageName = "fantasy_bullet_";
         spriteRanderer.sprite = FindImage(imageName, rangeWeaponHandler.ImageIdx);
@@ -126,7 +126,6 @@ public class ProjectileController : MonoBehaviour
     {
         foreach (Sprite img in images)
         {
-            //Debug.Log(img.name);
             if ($"{name}{idx.ToString()}" == img.name)
             {
                 return img;
@@ -140,7 +139,6 @@ public class ProjectileController : MonoBehaviour
     {
         foreach (Sprite img in images)
         {
-            //Debug.Log(img.name);
             if (name == img.name)
             {
                 Debug.Log(img.name);
@@ -152,7 +150,6 @@ public class ProjectileController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.layer);
         // 레벨 충돌 레이어에 닿았는지 확인
         if (levelCollisionLayer.value ==
             (levelCollisionLayer.value | (1 << collision.gameObject.layer)))

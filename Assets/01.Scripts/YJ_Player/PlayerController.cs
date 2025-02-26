@@ -10,13 +10,13 @@ public class PlayerController : BaseController
 
     //public LayerMask Etarget;
     public Joystick joy;
-    private Camera camera;
+    private Camera _camera;
     private GameManager gameManager;
 
     public void Init(GameManager gameManager)
     {
         this.gameManager = gameManager;
-        camera = Camera.main;
+        _camera = Camera.main;
     }
 
     protected override void HandleAction()
