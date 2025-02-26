@@ -25,7 +25,8 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField, ReadOnly(false)] float delay;
     [SerializeField, ReadOnly(false)] float speed;
     [SerializeField, ReadOnly(false)] float attackRange;
-    
+    [SerializeField, ReadOnly(false)] int bouncing = 0;
+
     public int Key { get => key; set => key = value; }
     public int ImageIdx { get => imageIndex; set => imageIndex = value; }
     public string ItemName { get => itemName; set => itemName = value; }
@@ -36,6 +37,7 @@ public class WeaponHandler : MonoBehaviour
     public float Delay { get => delay; set => delay = value; }
     public float Speed { get => speed; set => speed = value; }
     public float AttackRange { get => attackRange; set => attackRange = value; }
+    public int Bouncing { get => bouncing; set => bouncing = value; }
 
     public LayerMask target;
 
@@ -99,6 +101,7 @@ public class WeaponHandler : MonoBehaviour
         isOnKnockback = data.isOnKnockback;
         knockbackPower = data.KnockbackPower;
         knockbackTime = data.KnockbackTime;
+        bouncing = 5; //data.Bouncing;
 
         string imageName = "fantasy_weapons_pack1_noglow_";
         weaponRenderer.sprite = FindImage(imageName, imageIndex);
