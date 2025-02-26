@@ -30,10 +30,11 @@ public class BaseController : MonoBehaviour
 
     protected virtual void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody2D>(); // Rigidbody2D 컴포넌트 가져오기
+        _rigidbody = GetComponent<Rigidbody2D>();
         animationHandler = GetComponent<AnimationHandler>();
         statHandler = GetComponent<PlayerStats>();
         enemyStats = GetComponent<EnemyStats>();
+
         if (WeaponPrefab != null)
         {
             _weaponHandler = Instantiate(WeaponPrefab, weaponPivot);
@@ -43,6 +44,7 @@ public class BaseController : MonoBehaviour
             _weaponHandler = GetComponentInChildren<WeaponHandler>();
         }
     }
+
 
     protected virtual void Start()
     {
@@ -57,12 +59,18 @@ public class BaseController : MonoBehaviour
         HandleAttackDelay();
     }
 
-    protected virtual void FixedUpdate() // 물리 연산이 필요할 때 일정한 간격으로 호출
+    protected virtual void FixedUpdate()
     {
-        
-        MoveMent(movementDirection); // 이동 처리
+        // 조이스틱을 움직일 때만 이동 처리
+        if (movementDirection != Vector2.zero)
+        {
+            MoveMent(movementDirection);
+        }
+        else
+        {
+            _rigidbody.velocity = Vector2.zero; // 조이스틱 입력 없을 때 정지
+        }
 
-        // 넉백이 지속 중이면 시간을 줄임
         if (knockbackDuration > 0.0f)
         {
             knockbackDuration -= Time.fixedDeltaTime;
@@ -77,19 +85,29 @@ public class BaseController : MonoBehaviour
     // 이동 처리 함수
     protected virtual void MoveMent(Vector2 direction)
     {
-        
-        direction = direction * statHandler.MoveSpeed; // 기본 이동 속도 적용
-        //Debug.Log($"Applying Velocity: {direction}");
-        // 넉백 지속 중이면 이동 속도를 줄이고 넉백 벡터를 추가
+        float moveSpeed = 1f; // 기본 속도 (혹시라도 둘 다 null이면 기본값 사용)
+
+        if (statHandler != null)
+        {
+            moveSpeed = statHandler.MoveSpeed; // 플레이어일 경우 속도 적용
+        }
+        else if (enemyStats != null)
+        {
+            moveSpeed = enemyStats.MoveSpeed; // 적일 경우 속도 적용
+        }
+
+        direction = direction * moveSpeed; // 이동 속도 반영
+
         if (knockbackDuration > 0.0f)
         {
-            direction *= 0.2f; // 이동 속도를 20%로 줄임
-            direction += knockback; // 넉백 반영
+            direction *= 0.2f; // 넉백 중일 때 이동 속도 감소
+            direction += knockback;
         }
 
         _rigidbody.velocity = direction; // Rigidbody2D에 적용
-        animationHandler.Move(direction);
+        animationHandler?.Move(direction);
     }
+
 
     // 캐릭터 회전 처리 함수
     private void Rotate(Vector2 direction)
@@ -125,7 +143,7 @@ public class BaseController : MonoBehaviour
 
         if (_weaponHandler == null)
             return;
-        if (timeSinceLastAttack <= _weaponHandler.Delay)
+        if (timeSinceLastAttack <= (1f / _weaponHandler.Delay))
         {
             timeSinceLastAttack += Time.deltaTime;
         }

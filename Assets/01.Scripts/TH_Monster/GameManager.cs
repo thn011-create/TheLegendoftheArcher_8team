@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public PlayerController player { get; private set; }
     private ResourceController _playerResourceController;
+    
 
     [SerializeField] private int currentWaveIndex = 0;
 
@@ -16,6 +17,8 @@ public class GameManager : MonoBehaviour
     public static bool isFirstLoading = true;
 
     public MapDesign design;
+
+    [SerializeField] GameObject nextStageArea;
 
     private void Awake()
     {
@@ -35,7 +38,6 @@ public class GameManager : MonoBehaviour
         enemyManager = GetComponentInChildren<EnemyManager>();
         enemyManager.Init(this);
 
-        
     }
 
     private void Start()
@@ -69,12 +71,28 @@ public class GameManager : MonoBehaviour
     public void EndOfWave()
     {
         StartNextWave();
+        /*enemyManager.StopWave();
+        Destroy(design.mapDoor);*/
+
     }
 
     public void GameOver()
     {
         enemyManager.StopWave();
         //uiManager.SetGameOver();
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision == null)
+        {
+            return;
+        }
+        if (collision.CompareTag("Player"))
+        {
+            StartGame();
+        }
     }
 }
 

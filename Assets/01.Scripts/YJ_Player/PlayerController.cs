@@ -10,13 +10,13 @@ public class PlayerController : BaseController
 
     //public LayerMask Etarget;
     public Joystick joy;
-    private Camera camera;
+    private Camera _camera;
     private GameManager gameManager;
 
     public void Init(GameManager gameManager)
     {
         this.gameManager = gameManager;
-        camera = Camera.main;
+        _camera = Camera.main;
     }
 
     protected override void HandleAction()
@@ -78,20 +78,5 @@ public class PlayerController : BaseController
         target = nearestEnemy; // 가장 가까운 적을 타겟으로 설정
     }
 
-    public override void HandleAttackDelay()
-    {
-        PlayerStats player = GetComponent<PlayerStats>();
-
-        if (_weaponHandler == null)
-            return;
-        if (timeSinceLastAttack <= _weaponHandler.Delay)
-        {
-            timeSinceLastAttack += Time.deltaTime;
-        }
-        if (isAttacking && timeSinceLastAttack > (1f / (_weaponHandler.Delay * player.AttackSpeed)))
-        {
-            timeSinceLastAttack = 0;
-            Attack();
-        }
-    }
+    
 }
