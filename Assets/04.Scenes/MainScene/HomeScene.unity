@@ -1137,7 +1137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &633278575
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1574,7 +1574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1024312276
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1864,7 +1864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1158523295
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1874,7 +1874,7 @@ RectTransform:
   m_GameObject: {fileID: 1158523294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1294770837}
@@ -2276,11 +2276,11 @@ RectTransform:
   m_Children:
   - {fileID: 97951595}
   - {fileID: 1343467572}
-  - {fileID: 1158523295}
   - {fileID: 83023585}
   - {fileID: 744660247}
   - {fileID: 2000910905}
   - {fileID: 1418394524}
+  - {fileID: 1158523295}
   - {fileID: 2037793887}
   m_Father: {fileID: 1657694914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3169,8 +3169,8 @@ MonoBehaviour:
     m_FontSize: 48
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
-    m_MaxSize: 48
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -3584,6 +3584,7 @@ GameObject:
   - component: {fileID: 2000910905}
   - component: {fileID: 2000910907}
   - component: {fileID: 2000910906}
+  - component: {fileID: 2000910908}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -3650,6 +3651,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2000910904}
   m_CullTransparentMesh: 1
+--- !u!114 &2000910908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000910904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2c7dbad9528edc42af5fc48e3f507a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titelTxt: {fileID: 162373415}
 --- !u!1 &2037793886
 GameObject:
   m_ObjectHideFlags: 0
@@ -3711,8 +3725,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 1, g: 0, b: 0.06946659, a: 1}
+    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -3729,7 +3743,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 2037793889}
+  m_TargetGraphic: {fileID: 1658797463}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
