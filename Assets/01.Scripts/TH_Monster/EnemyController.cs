@@ -2,90 +2,78 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class EnemyController : BaseController
 {
-    private EnemyManager enemyManager;
-    private Transform target;
-    private AnimationHandler animationHandler;
-    public int attackRange = 2;
+    private EnemyManager enemyManager; // 적 매니저 참조
+    private Transform target; // 타겟(플레이어 등) 참조
 
-    [SerializeField] private float followRange = 15f;
+    [SerializeField] private float followRange = 15f; // 적이 플레이어를 추적하는 범위
 
-
-    public float delay;
-    public float Delay { get => delay; set => delay = value; }
-
+    // 적 초기화 (적 매니저와 타겟 설정)
     public void Init(EnemyManager enemyManager, Transform target)
     {
         this.enemyManager = enemyManager;
         this.target = target;
     }
 
-
+    // 타겟과의 거리 계산
     protected float DistanceToTarget()
     {
         return Vector3.Distance(transform.position, target.position);
     }
 
+    // 적의 행동 처리
     protected override void HandleAction()
     {
         base.HandleAction();
 
-        // 타겟이 null인 경우 이동 방향을 초기화하고 종료
-        if (target == null)
+        if (_weaponHandler == null || target == null)
         {
             if (!movementDirection.Equals(Vector2.zero)) movementDirection = Vector2.zero;
             return;
         }
 
-        // 타겟과의 거리 및 방향 계산
-        float distance = DistanceToTarget();
-        Vector2 direction = DirectionToTarget();
+        float distance = DistanceToTarget(); // 타겟과의 거리 측정
+        Vector2 direction = DirectionToTarget(); // 타겟 방향 계산
 
-        // 공격 상태 초기화
         isAttacking = false;
-
-        // 타겟이 추적 범위(followRange) 내에 있는 경우
-        if (distance <= followRange)
+        if (distance <= followRange) // 타겟이 추적 범위 내에 있는 경우
         {
-            lookDirection = direction; // 타겟을 바라보기
-
-            // 타겟이 공격 범위(attackRange) 내에 있는 경우
-            if (distance <= attackRange)
+            lookDirection = direction;
+            // 벽 감지 Raycast 추가
+            RaycastHit2D wallHit = Physics2D.Raycast(transform.position, direction, 1f, 1 << LayerMask.NameToLayer("Level"));
+            if (wallHit.collider != null)
             {
-                // 레이어 마스크 설정 (예: "Player" 레이어만 감지)
-                int layerMaskTarget = 1 << LayerMask.NameToLayer("Player");
+                // 벽을 감지하면 경로 변경
+                movementDirection = GetAlternativeDirection(direction);
+            }
+            else
+            {
+                movementDirection = direction;
+            }
 
-                // 레이캐스트를 사용해 타겟 감지
+            if (distance <= _weaponHandler.AttackRange) // 타겟이 공격 범위 내에 있는 경우
+            {
+                int layerMaskTarget = _weaponHandler.target;
                 RaycastHit2D hit = Physics2D.Raycast(
-                    transform.position, // 시작 위치
-                    direction, // 방향
-                    attackRange * 1.5f, // 거리 (공격 범위의 1.5배)
-                    layerMaskTarget // 대상 레이어 마스크
-                );
+                    transform.position, direction, _weaponHandler.AttackRange * 1.5f,
+                    (1 << LayerMask.NameToLayer("Level")) | layerMaskTarget);
 
-                // 레이캐스트 디버깅 (시각화)
-                Debug.DrawRay(transform.position, direction * attackRange * 1.5f, Color.red);
-
-                // 레이캐스트가 타겟을 감지한 경우
-                if (hit.collider != null && hit.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
+                // 공격 대상이 감지되면 공격 수행
+                if (hit.collider != null && layerMaskTarget == (layerMaskTarget | (1 << hit.collider.gameObject.layer)))
                 {
-                    isAttacking = true; // 공격 상태로 변경
-                    Attack();
-                    MoveMent(movementDirection); // 공격 중 이동 (필요한 경우)
+                    isAttacking = true;
                 }
 
-                // 공격 중에는 이동 방향 초기화
-                movementDirection = Vector2.zero;
+                movementDirection = Vector2.zero; // 공격 시 이동 중지
                 return;
             }
 
-            // 타겟이 추적 범위 내에 있지만 공격 범위 밖인 경우, 타겟을 향해 이동
-            movementDirection = direction;
+            movementDirection = direction; // 타겟을 향해 이동
         }
     }
 
+    // 타겟 방향을 계산하여 반환
     protected Vector2 DirectionToTarget()
     {
         return (target.position - transform.position).normalized;
@@ -96,49 +84,15 @@ public class EnemyController : BaseController
         base.Death();
         enemyManager.RemoveEnemyOnDeath(this);
     }
-
-    protected override void MoveMent(Vector2 direction)
+    private Vector2 GetAlternativeDirection(Vector2 originalDirection)
     {
-        animationHandler = GetComponent<AnimationHandler>();
-        direction = direction * enemyStats.MoveSpeed; // 기본 이동 속도 적용
-        //Debug.Log($"Applying Velocity: {direction}");
-        // 넉백 지속 중이면 이동 속도를 줄이고 넉백 벡터를 추가
-        if (knockbackDuration > 0.0f)
-        {
-            direction *= 0.2f; // 이동 속도를 20%로 줄임
-            direction += knockback; // 넉백 반영
-        }
-
-        _rigidbody.velocity = direction; // Rigidbody2D에 적용
-        animationHandler.Move(direction);
-    }
-
-    public override void HandleAttackDelay()
-    {
-        EnemyStats monster = GetComponent<EnemyStats>();
-
-        if (timeSinceLastAttack <= Delay)
-        {
-            timeSinceLastAttack += Time.deltaTime;
-        }
-        if (isAttacking && timeSinceLastAttack > (1f / (Delay * enemyStats.AttackSpeed)))
-        {
-            timeSinceLastAttack = 0;
-            Attack();
-        }
-    }
-
-    protected override void Attack()
-    {
-        if (lookDirection != Vector2.zero)
-        {
-            AttackAnimation();
-        }
-    }
-
-    public virtual void AttackAnimation()
-    {
-        animationHandler.Attack();
+        // 벽을 기준으로 좌우로 회피할 수 있는지 검사
+        Vector2 leftDirection = new Vector2(-originalDirection.y, originalDirection.x); // 좌측 90도 회전
+        Vector2 rightDirection = new Vector2(originalDirection.y, -originalDirection.x); // 우측 90도 회전
+        bool canMoveLeft = !Physics2D.Raycast(transform.position, leftDirection, 1f, 1 << LayerMask.NameToLayer("Level"));
+        bool canMoveRight = !Physics2D.Raycast(transform.position, rightDirection, 1f, 1 << LayerMask.NameToLayer("Level"));
+        if (canMoveLeft) return leftDirection;
+        if (canMoveRight) return rightDirection;
+        return Vector2.zero; // 이동할 수 없는 경우 정지
     }
 }
-

@@ -148,10 +148,10 @@ GameObject:
   - component: {fileID: 8444959322674489619}
   - component: {fileID: 3839656341850991653}
   - component: {fileID: 1938564351470383679}
-  - component: {fileID: 5408135035986962665}
   - component: {fileID: 6022621859116815248}
   - component: {fileID: 8432660849864740146}
-  - component: {fileID: 2594504199741797444}
+  - component: {fileID: -365274504188723848}
+  - component: {fileID: -54044585365517754}
   m_Layer: 12
   m_Name: Monster_Hornet
   m_TagString: Enemy
@@ -248,25 +248,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5408135035986962665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6335177055578721425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b96f47b305ddcb4468e2e4b80b4f864b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyname: Hornet
-  level: 1
-  attackDamage: 10
-  moveSpeed: 2
-  currentHealth: 100
-  maxHealth: 100
-  experience: 0
 --- !u!114 &6022621859116815248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,9 +278,8 @@ MonoBehaviour:
   knockbackDuration: 0
   WeaponPrefab: {fileID: 3439863929649181971, guid: 6b48fb120dc136446970e0e73919a487, type: 3}
   timeSinceLastAttack: 3.4028235e+38
-  attackRange: 2
-  followRange: 5
---- !u!114 &2594504199741797444
+  followRange: 15
+--- !u!114 &-365274504188723848
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -308,8 +288,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 6335177055578721425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b174dde1215e33a46b0bd6844576bb67, type: 3}
+  m_Script: {fileID: 11500000, guid: c504f469dca9b9746ab27e3bb1c9af69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
   damageClip: {fileID: 0}
+--- !u!114 &-54044585365517754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6335177055578721425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faeefed0add851442ae87701fdf72436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerName: Player
+  level: 1
+  attackDamage: 10
+  attackSpeed: 1
+  moveSpeed: 5
+  currentHealth: 100
+  maxHealth: 100
+  experience: 0
+  experienceToNextLevel: 100
+  extraProjectiles: 0
+  criticalChance: 10
+  criticalDamage: 100
+  headShotRate: 0
+  recoveryRate: 0
+  bloodAbsorptionRate: 0
+  recoveryDropRate: 0
+  evasionRate: 0
+  skillUI: {fileID: 0}

@@ -42,10 +42,10 @@ GameObject:
   - component: {fileID: 937127251971352049}
   - component: {fileID: 2318519198940190288}
   - component: {fileID: 7963604790079316177}
-  - component: {fileID: 6657702147254765406}
   - component: {fileID: 2758667687721083141}
   - component: {fileID: -3066317796630852101}
-  - component: {fileID: 5141048499372295216}
+  - component: {fileID: 934050846325013044}
+  - component: {fileID: -5637022865722695985}
   m_Layer: 12
   m_Name: Monster_Wasp
   m_TagString: Enemy
@@ -142,25 +142,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.73374146}
   m_EdgeRadius: 0
---- !u!114 &6657702147254765406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2898466594723352262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b96f47b305ddcb4468e2e4b80b4f864b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyname: Wasp
-  level: 1
-  attackDamage: 10
-  moveSpeed: 2
-  currentHealth: 100
-  maxHealth: 100
-  experience: 0
 --- !u!114 &2758667687721083141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,9 +172,8 @@ MonoBehaviour:
   knockbackDuration: 0
   WeaponPrefab: {fileID: 3439863929649181971, guid: 6b48fb120dc136446970e0e73919a487, type: 3}
   timeSinceLastAttack: 3.4028235e+38
-  attackRange: 2
-  followRange: 5
---- !u!114 &5141048499372295216
+  followRange: 15
+--- !u!114 &934050846325013044
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,11 +182,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 2898466594723352262}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b174dde1215e33a46b0bd6844576bb67, type: 3}
+  m_Script: {fileID: 11500000, guid: c504f469dca9b9746ab27e3bb1c9af69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
   damageClip: {fileID: 0}
+--- !u!114 &-5637022865722695985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2898466594723352262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faeefed0add851442ae87701fdf72436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerName: Player
+  level: 1
+  attackDamage: 10
+  attackSpeed: 1
+  moveSpeed: 5
+  currentHealth: 100
+  maxHealth: 100
+  experience: 0
+  experienceToNextLevel: 100
+  extraProjectiles: 0
+  criticalChance: 10
+  criticalDamage: 100
+  headShotRate: 0
+  recoveryRate: 0
+  bloodAbsorptionRate: 0
+  recoveryDropRate: 0
+  evasionRate: 0
+  skillUI: {fileID: 0}
 --- !u!1 &3589650860656098233
 GameObject:
   m_ObjectHideFlags: 0
