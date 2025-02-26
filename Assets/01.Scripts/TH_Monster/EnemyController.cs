@@ -32,36 +32,56 @@ public class EnemyController : BaseController
     {
         base.HandleAction();
 
+        // 타겟이 null인 경우 이동 방향을 초기화하고 종료
         if (target == null)
         {
             if (!movementDirection.Equals(Vector2.zero)) movementDirection = Vector2.zero;
             return;
         }
 
+        // 타겟과의 거리 및 방향 계산
         float distance = DistanceToTarget();
         Vector2 direction = DirectionToTarget();
 
+        // 공격 상태 초기화
         isAttacking = false;
+
+        // 타겟이 추적 범위(followRange) 내에 있는 경우
         if (distance <= followRange)
         {
-            lookDirection = direction;
+            lookDirection = direction; // 타겟을 바라보기
 
+            // 타겟이 공격 범위(attackRange) 내에 있는 경우
             if (distance <= attackRange)
             {
-                int layerMaskTarget = 2;
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, attackRange * 1.5f,
-                    (1 << LayerMask.NameToLayer("Player")) | layerMaskTarget);
+                // 레이어 마스크 설정 (예: "Player" 레이어만 감지)
+                int layerMaskTarget = 1 << LayerMask.NameToLayer("Player");
 
+                // 레이캐스트를 사용해 타겟 감지
+                RaycastHit2D hit = Physics2D.Raycast(
+                    transform.position, // 시작 위치
+                    direction, // 방향
+                    attackRange * 1.5f, // 거리 (공격 범위의 1.5배)
+                    layerMaskTarget // 대상 레이어 마스크
+                );
 
-                if (hit.collider != null && layerMaskTarget == (layerMaskTarget | (1 << hit.collider.gameObject.layer)))
+                // 레이캐스트 디버깅 (시각화)
+                Debug.DrawRay(transform.position, direction * attackRange * 1.5f, Color.red);
+
+                // 레이캐스트가 타겟을 감지한 경우
+                if (hit.collider != null && hit.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
                 {
-                    isAttacking = true;
-                    MoveMent(movementDirection);
+                    isAttacking = true; // 공격 상태로 변경
+                    Attack();
+                    MoveMent(movementDirection); // 공격 중 이동 (필요한 경우)
                 }
 
+                // 공격 중에는 이동 방향 초기화
                 movementDirection = Vector2.zero;
                 return;
             }
+
+            // 타겟이 추적 범위 내에 있지만 공격 범위 밖인 경우, 타겟을 향해 이동
             movementDirection = direction;
         }
     }
