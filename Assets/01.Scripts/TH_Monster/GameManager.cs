@@ -35,11 +35,12 @@ public class GameManager : MonoBehaviour
         enemyManager = GetComponentInChildren<EnemyManager>();
         enemyManager.Init(this);
 
-        design = GetComponentInChildren<MapDesign>();
+        
     }
 
     private void Start()
     {
+        design = GetComponentInChildren<MapDesign>();
         if (!isFirstLoading)
         {
             design.DrawMap();
@@ -49,6 +50,7 @@ public class GameManager : MonoBehaviour
         {
             isFirstLoading = false;
         }
+
     }
 
     public void StartGame()
