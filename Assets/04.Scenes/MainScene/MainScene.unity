@@ -281,7 +281,7 @@ MonoBehaviour:
   - {fileID: 6686194489726729802, guid: 43fc1108b64715a4eabb943f6727d1c7, type: 3}
   - {fileID: 6686194489726729802, guid: 2e996108112501a49b6f60d5ef0703f2, type: 3}
   - {fileID: 6686194489726729802, guid: 3b634c0b43b3ebc49971ad1a75012e9c, type: 3}
-  nextStageArea: {fileID: 0}
+  nextStageArea: {fileID: 1881038590371650831, guid: ab7d4d4f3c591b74fafcda62e1b0b2b3, type: 3}
 --- !u!4 &672490942
 Transform:
   m_ObjectHideFlags: 0
@@ -538,11 +538,11 @@ MonoBehaviour:
   currentWaveIndex: 0
   design: {fileID: 0}
   enemyPrefabs:
-  - {fileID: 2898466594723352262, guid: 8823df3cec8e0144f9eb549c749aa9a4, type: 3}
-  - {fileID: 6335177055578721425, guid: 4a25ead22de84d148b98e1b1c936d78d, type: 3}
-  - {fileID: 4452842820046348919, guid: 4d131bc63718d8443aeb1ef17655464a, type: 3}
-  - {fileID: 8273866081770108100, guid: 047ff68917a2c1f4387a9020c756c8a6, type: 3}
+  - {fileID: 1559404602828982386, guid: c19224356f7762c4c92c06bb88d018ef, type: 3}
   - {fileID: 860876182921614581, guid: 78a4dcacdbc968c41ab4c8baa2af28ee, type: 3}
+  - {fileID: 8273866081770108100, guid: 047ff68917a2c1f4387a9020c756c8a6, type: 3}
+  - {fileID: 4452842820046348919, guid: 4d131bc63718d8443aeb1ef17655464a, type: 3}
+  - {fileID: 5939137022834293167, guid: 1bd8cf285173679418d5db30f71a896a, type: 3}
   spawnAreas:
   - serializedVersion: 2
     x: -9

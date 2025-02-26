@@ -10,6 +10,10 @@ public class EnemyController : BaseController
     [SerializeField] private float followRange = 15f; // 적이 플레이어를 추적하는 범위
 
     // 적 초기화 (적 매니저와 타겟 설정)
+
+    public GameObject experiencePrefab; // 경험치 프리팹
+    public int experienceAmount = 10; // 몬스터가 주는 경험치 양
+
     public void Init(EnemyManager enemyManager, Transform target)
     {
         this.enemyManager = enemyManager;
@@ -81,6 +85,7 @@ public class EnemyController : BaseController
 
     public override void Death()
     {
+        SpawnExperience(); // 경험치 프리펩 생성
         base.Death();
         enemyManager.RemoveEnemyOnDeath(this);
     }
@@ -95,4 +100,22 @@ public class EnemyController : BaseController
         if (canMoveRight) return rightDirection;
         return Vector2.zero; // 이동할 수 없는 경우 정지
     }
+
+    private void SpawnExperience()
+    {
+        if (experiencePrefab)
+        {
+            int expCount = UnityEngine.Random.Range(2, 5); // 2~4개 랜덤 생성
+
+            for (int i = 0; i < expCount; i++)
+            {
+                Vector2 spawnOffset = UnityEngine.Random.insideUnitCircle * 0.5f; // 약간 퍼지는 효과
+                Vector2 spawnPosition = (Vector2)transform.position + spawnOffset;
+
+                GameObject expItem = Instantiate(experiencePrefab, spawnPosition, Quaternion.identity);
+                expItem.GetComponent<ExperienceItem>().experienceAmount = experienceAmount;
+            }
+        }
+    }
+
 }
