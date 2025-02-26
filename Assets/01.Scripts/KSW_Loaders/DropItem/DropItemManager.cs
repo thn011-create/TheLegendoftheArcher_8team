@@ -8,7 +8,6 @@ public class DropItemManager : MonoBehaviour
     [SerializeField] protected GameObject exp;
     private DropItem HealPack;
     private DropItem Exp;
-    
 
     public void Drop(Vector2 dropPosition)
     {

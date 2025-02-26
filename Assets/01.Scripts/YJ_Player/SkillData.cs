@@ -1,14 +1,20 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewSkill", menuName = "Skill System/Skill")]
-public class SkillData : ScriptableObject
+[Serializable]
+public class SkillData
 {
-    public string skillName;
-    public string description;
-    public Sprite icon;
-    //public int levelRequirement;
-    public SkillType type;
-    public int value; // 예: 공격력 증가량, 발사체 추가 개수 등
+    public int key;
+    public string Name;
+    public string Description;
+    public float Value;
+    public int MaxCount;
 
-    public enum SkillType { DamageUp, AttackSpeedUp,MoveSpeedUp , ExtraProjectile, Heal , Critical ,HeadShot , Evasion}
+}
+
+[Serializable]
+public class SkillList
+{
+    public List<SkillData> Items;
 }
