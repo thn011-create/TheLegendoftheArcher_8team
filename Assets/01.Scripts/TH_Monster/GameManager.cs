@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         enemyManager = GetComponentInChildren<EnemyManager>();
         enemyManager.Init(this);
 
-        design = GetComponent<MapDesign>();
+        design = GetComponentInChildren<MapDesign>();
     }
 
     private void Start()
