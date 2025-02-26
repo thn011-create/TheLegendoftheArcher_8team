@@ -70,9 +70,9 @@ public class GameManager : MonoBehaviour
 
     public void EndOfWave()
     {
-        //StartNextWave();
-        enemyManager.StopWave();
-        design.mapDoor.SetActive(false);
+        StartNextWave();
+        /*enemyManager.StopWave();
+        Destroy(design.mapDoor);*/
 
     }
 
