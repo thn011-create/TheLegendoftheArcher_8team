@@ -26,7 +26,7 @@ public class AnimationHandler : MonoBehaviour, IAnimationHandler
    
     public void Die()
     {
-        animator.SetBool(IsDying, true); ;
+        animator.SetBool(IsDying, true);
     }
 
 

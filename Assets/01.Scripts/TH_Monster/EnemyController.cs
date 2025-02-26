@@ -83,6 +83,7 @@ public class EnemyController : BaseController
     {
         base.Death();
         enemyManager.RemoveEnemyOnDeath(this);
+       
     }
     private Vector2 GetAlternativeDirection(Vector2 originalDirection)
     {

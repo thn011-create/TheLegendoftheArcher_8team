@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour
         enemyManager = GetComponentInChildren<EnemyManager>();
         enemyManager.Init(this);
 
-        
     }
 
     private void Start()
