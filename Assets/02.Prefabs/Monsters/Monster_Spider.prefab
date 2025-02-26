@@ -95,7 +95,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -160,6 +160,7 @@ MonoBehaviour:
   knockbackDuration: 0
   WeaponPrefab: {fileID: 1481014989831272378, guid: a31d21766b233444a904756e915d652b, type: 3}
   timeSinceLastAttack: 3.4028235e+38
+  attackRange: 2
   followRange: 5
 --- !u!114 &-8794588061431616146
 MonoBehaviour:

@@ -7,16 +7,17 @@ public class EnemyController : BaseController
 {
     private EnemyManager enemyManager;
     private Transform target;
-    private WeaponHandler _weaponHandler;
 
-    [SerializeField] private float followRange = 3f;
+    public int attackRange = 2;
 
-    public void Init(EnemyManager enemyManager, Transform target, WeaponHandler weaponHandler)
+    [SerializeField] private float followRange = 15f;
+
+    public void Init(EnemyManager enemyManager, Transform target)
     {
         this.enemyManager = enemyManager;
         this.target = target;
-        this._weaponHandler = weaponHandler;
     }
+
 
     protected float DistanceToTarget()
     {
@@ -27,7 +28,7 @@ public class EnemyController : BaseController
     {
         base.HandleAction();
 
-        if (base._weaponHandler == null || target == null)
+        if (target == null)
         {
             if (!movementDirection.Equals(Vector2.zero)) movementDirection = Vector2.zero;
             return;
@@ -41,11 +42,12 @@ public class EnemyController : BaseController
         {
             lookDirection = direction;
 
-            if (distance <= base._weaponHandler.AttackRange)
+            if (distance <= attackRange)
             {
-                int layerMaskTarget = base._weaponHandler.target;
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, base._weaponHandler.AttackRange * 1.5f,
-                    (1 << LayerMask.NameToLayer("Level")) | layerMaskTarget);
+                int layerMaskTarget = 2;
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, attackRange * 1.5f,
+                    (1 << LayerMask.NameToLayer("Player")) | layerMaskTarget);
+                
 
                 if (hit.collider != null && layerMaskTarget == (layerMaskTarget | (1 << hit.collider.gameObject.layer)))
                 {
