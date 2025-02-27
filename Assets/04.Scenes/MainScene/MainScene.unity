@@ -2961,6 +2961,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5507301999728358716, guid: 93743e099746ef34884c38c876c8506a, type: 3}
+      propertyPath: m_Text
+      value: Stage
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507301999728358716, guid: 93743e099746ef34884c38c876c8506a, type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 1
       objectReference: {fileID: 0}
