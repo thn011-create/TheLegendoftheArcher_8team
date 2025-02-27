@@ -2493,6 +2493,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 329214115698275847, guid: 93743e099746ef34884c38c876c8506a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 343854261001088910, guid: 93743e099746ef34884c38c876c8506a, type: 3}
       propertyPath: playerNameText
       value: 
@@ -2580,6 +2584,18 @@ PrefabInstance:
     - target: {fileID: 1795831114350941584, guid: 93743e099746ef34884c38c876c8506a, type: 3}
       propertyPath: m_Name
       value: UIManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2542419218026431887, guid: 93743e099746ef34884c38c876c8506a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2542419218026431887, guid: 93743e099746ef34884c38c876c8506a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2542419218026431887, guid: 93743e099746ef34884c38c876c8506a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 3442647889833823317, guid: 93743e099746ef34884c38c876c8506a, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2752,6 +2768,14 @@ PrefabInstance:
     - target: {fileID: 7014429181362160631, guid: 93743e099746ef34884c38c876c8506a, type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558670031040597433, guid: 93743e099746ef34884c38c876c8506a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558670031040597433, guid: 93743e099746ef34884c38c876c8506a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9003348711717958832, guid: 93743e099746ef34884c38c876c8506a, type: 3}
       propertyPath: m_Name
