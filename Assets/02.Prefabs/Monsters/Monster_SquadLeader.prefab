@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 5028720886317556334}
   - component: {fileID: 7265451151708033700}
   - component: {fileID: 2241133380339516336}
-  - component: {fileID: 3563089442101461440}
+  - component: {fileID: 1490399162612004720}
   m_Layer: 12
   m_Name: Monster_SquadLeader
   m_TagString: Enemy
@@ -629,7 +629,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.02049762, y: -0.010248825}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -640,7 +640,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6207936, y: 0.7130331}
   m_EdgeRadius: 0
 --- !u!114 &5028720886317556334
 MonoBehaviour:
@@ -670,9 +670,11 @@ MonoBehaviour:
   weaponPivot: {fileID: 9126315672071128847}
   knockback: {x: 0, y: 0}
   knockbackDuration: 0
-  WeaponPrefab: {fileID: 1481014989831272378, guid: a31d21766b233444a904756e915d652b, type: 3}
+  WeaponPrefab: {fileID: 5922578520239452610, guid: a98569ca2a2189a49be929746b28ab56, type: 3}
   timeSinceLastAttack: 3.4028235e+38
   followRange: 20
+  iAttack: 0
+  _animator: {fileID: 0}
   experiencePrefab: {fileID: 8784730493887903239, guid: 711121958ea1ab74dafee9eaf3b4a03e, type: 3}
   experienceAmount: 10
 --- !u!114 &2241133380339516336
@@ -689,7 +691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
   damageClip: {fileID: 0}
---- !u!114 &3563089442101461440
+--- !u!114 &1490399162612004720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -698,24 +700,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5939137022834293167}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faeefed0add851442ae87701fdf72436, type: 3}
+  m_Script: {fileID: 11500000, guid: b96f47b305ddcb4468e2e4b80b4f864b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: Player
+  enemyname: Monster_SquadLeader
   level: 1
   attackDamage: 10
-  attackSpeed: 1
   moveSpeed: 5
   currentHealth: 100
   maxHealth: 100
   experience: 0
-  experienceToNextLevel: 100
-  extraProjectiles: 0
-  criticalChance: 10
-  criticalDamage: 100
-  headShotRate: 0
-  recoveryRate: 0
-  bloodAbsorptionRate: 0
-  recoveryDropRate: 0
-  evasionRate: 0
-  skillUI: {fileID: 0}
+  attackSpeed: 1

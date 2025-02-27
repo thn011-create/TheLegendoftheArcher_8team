@@ -50,8 +50,10 @@ public class ProjectileController : MonoBehaviour
         // 투사체를 지정된 방향으로 이동시킴
         _rigidbody.velocity = direction * rangeWeaponHandler.Speed;
 
+
+        
         // 투사체 회전
-        if (rangeWeaponHandler.Key / 1000 != 5)
+        if (rangeWeaponHandler.Key / 1000 != 5 && rangeWeaponHandler.Key / 1000 != 9)
         {
             rotZ += Time.deltaTime * 1000;
             transform.localEulerAngles = new Vector3(0f, 0f, rotZ);
@@ -89,21 +91,10 @@ public class ProjectileController : MonoBehaviour
         // 투사체의 방향에 따라 피벗 회전 조정
         pivot.localEulerAngles += new Vector3(0, 180, 0);
 
-
+        
         // Sprite
         string imageName = "fantasy_bullet_";
         spriteRanderer.sprite = FindImage(imageName, rangeWeaponHandler.ImageIdx);
-
-        if (key == 9000)
-        {
-            imageName = "bullets\u002Bplasma_2";
-            spriteRanderer.sprite = FindImage(imageName);
-        }
-        else if (key == 9001)
-        {
-            imageName = "RPG-round_2";
-            spriteRanderer.sprite = FindImage(imageName);
-        }
 
         // 투사체 준비 완료
         isReady = true;
@@ -135,7 +126,6 @@ public class ProjectileController : MonoBehaviour
     {
         foreach (Sprite img in images)
         {
-            //Debug.Log(img.name);
             if ($"{name}{idx.ToString()}" == img.name)
             {
                 return img;
@@ -149,9 +139,9 @@ public class ProjectileController : MonoBehaviour
     {
         foreach (Sprite img in images)
         {
-            //Debug.Log(img.name);
             if (name == img.name)
             {
+                Debug.Log(img.name);
                 return img;
             }
         }
@@ -160,7 +150,6 @@ public class ProjectileController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.layer);
         // 레벨 충돌 레이어에 닿았는지 확인
         if (levelCollisionLayer.value ==
             (levelCollisionLayer.value | (1 << collision.gameObject.layer)))
@@ -170,14 +159,18 @@ public class ProjectileController : MonoBehaviour
         }
         // 공격 대상에 맞았는지 확인
         else if (rangeWeaponHandler.target.value ==
-            (rangeWeaponHandler.target.value | (1 << collision.gameObject.layer)))
+                 (rangeWeaponHandler.target.value | (1 << collision.gameObject.layer)))
         {
-            
-
             ResourceController resourceController = collision.GetComponent<ResourceController>();
             if (resourceController != null)
             {
-                resourceController.ChangeHealth(-rangeWeaponHandler.Damage);
+                // **대상이 플레이어인지 적인지 판별**
+                bool isPlayer = collision.GetComponent<PlayerStats>() != null;
+
+                // **체력 변경 (플레이어 또는 적)**
+                resourceController.ChangeHealth(-rangeWeaponHandler.Damage, isPlayer);
+
+                // 넉백 처리
                 if (rangeWeaponHandler.IsOnKnockback)
                 {
                     BaseController controller = collision.GetComponent<BaseController>();
@@ -188,9 +181,9 @@ public class ProjectileController : MonoBehaviour
                 }
             }
 
-
             // 충돌 위치에서 투사체 파괴
             DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestroy);
         }
     }
+
 }

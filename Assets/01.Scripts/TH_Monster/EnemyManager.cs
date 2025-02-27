@@ -76,22 +76,33 @@ public class EnemyManager : GameManager
         // 랜덤한 적 프리팹 선택
         GameObject randomPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
 
-        // 랜덤한 영역 선택
+        // 랜덤한 스폰 영역 선택
         Rect randomArea = spawnAreas[Random.Range(0, spawnAreas.Count)];
 
-        // Rect 영역 내부의 랜덤 위치 계산
+        // 랜덤한 위치 계산
         Vector2 randomPosition = new Vector2(
             Random.Range(randomArea.xMin, randomArea.xMax),
             Random.Range(randomArea.yMin, randomArea.yMax)
         );
 
-        // 적 생성 및 리스트에 추가
+        // 적 생성
         GameObject spawnedEnemy = Instantiate(randomPrefab, new Vector3(randomPosition.x, randomPosition.y), Quaternion.identity);
+
+        // EnemyController 설정
         EnemyController enemyController = spawnedEnemy.GetComponent<EnemyController>();
         enemyController.Init(this, gameManager.player.transform);
 
+        //  EnemyStats 가져와서 ResourceController에 등록
+        EnemyStats enemyStats = spawnedEnemy.GetComponent<EnemyStats>();
+        if (enemyStats != null)
+        {
+            FindObjectOfType<ResourceController>().SetEnemyStats(enemyStats);
+        }
+
+        // 활성 적 리스트에 추가
         activeEnemies.Add(enemyController);
     }
+
 
     // 기즈모를 그려 영역을 시각화 (선택된 경우에만 표시)
     private void OnDrawGizmosSelected()
