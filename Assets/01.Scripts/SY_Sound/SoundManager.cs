@@ -75,17 +75,17 @@ public class SoundManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-
+        PlayBGM(scene.buildIndex);
     }
     
 
-    public void playBGM(int sceneIdx)
+    public void PlayBGM(int sceneIdx)
     {
-        if (sceneIdx < bgmCilps.Length && bgmCilps[sceneIdx] != null)
-        {
-            StartCoroutine(ChangeBGM(bgmCilps[sceneIdx]));
-        }
-      
+        if (musicAudioSource.clip == bgmCilps[sceneIdx]) return; // 중복 재생 방지
+
+        musicAudioSource.Stop(); // 기존 BGM 정지
+        musicAudioSource.clip = bgmCilps[sceneIdx];
+        musicAudioSource.Play();
     }
 
     public static void PlayClip(AudioClip clip)
@@ -96,20 +96,9 @@ public class SoundManager : MonoBehaviour
     }
 
 
-    // BGM 페이드인/페이드아웃
-    private IEnumerator ChangeBGM(AudioClip clip) 
-    {
-        musicAudioSource.Stop();
-        musicAudioSource.clip = newClip;
-        musicAudioSource.Play();
-
-
-    }
-
-
     // 볼륨 //
 
-    // bgm 
+    // bgm 볼륨 저장
     public void SetMusicVolume(float volume)
     {
         musicVolume = volume;
@@ -117,7 +106,7 @@ public class SoundManager : MonoBehaviour
         PlayerPrefs.SetFloat("MusicVolume", volume);
         PlayerPrefs.Save();
     }
-    // sfx
+    // sfx 볼륨 저장
     public void SetSFXVolume(float volume)
     {
         soundEffectVolume = volume;
