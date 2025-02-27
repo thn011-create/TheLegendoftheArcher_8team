@@ -101,7 +101,7 @@ public class WeaponHandler : MonoBehaviour
         isOnKnockback = data.isOnKnockback;
         knockbackPower = data.KnockbackPower;
         knockbackTime = data.KnockbackTime;
-        bouncing = 5; //data.Bouncing;
+        bouncing = data.Bouncing;
 
         string imageName = "fantasy_weapons_pack1_noglow_";
         weaponRenderer.sprite = FindImage(imageName, imageIndex);
