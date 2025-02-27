@@ -13,7 +13,8 @@
       "KnockbackPower": 0.1,
       "KnockbackTime": 0.5,
       "SpriteIndex": 20,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 0
     },
     {
       "key": 1002,
@@ -28,7 +29,8 @@
       "KnockbackPower": 0.2,
       "KnockbackTime": 0.5,
       "SpriteIndex": 40,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 1
     },
     {
       "key": 1003,
@@ -43,7 +45,8 @@
       "KnockbackPower": 0.4,
       "KnockbackTime": 0.5,
       "SpriteIndex": 0,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 2
     },
     {
       "key": 1004,
@@ -58,7 +61,8 @@
       "KnockbackPower": 0.7,
       "KnockbackTime": 0.5,
       "SpriteIndex": 30,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 2
     },
     {
       "key": 1005,
@@ -73,7 +77,8 @@
       "KnockbackPower": 0.9,
       "KnockbackTime": 0.5,
       "SpriteIndex": 10,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 3
     },
     {
       "key": 2001,
@@ -88,7 +93,8 @@
       "KnockbackPower": 0.15,
       "KnockbackTime": 0.55,
       "SpriteIndex": 21,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 0
     },
     {
       "key": 2002,
@@ -103,7 +109,8 @@
       "KnockbackPower": 0.25,
       "KnockbackTime": 0.55,
       "SpriteIndex": 41,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 1
     },
     {
       "key": 2003,
@@ -118,7 +125,8 @@
       "KnockbackPower": 0.45,
       "KnockbackTime": 0.55,
       "SpriteIndex": 1,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 2
     },
     {
       "key": 2004,
@@ -133,7 +141,8 @@
       "KnockbackPower": 0.75,
       "KnockbackTime": 0.55,
       "SpriteIndex": 31,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 2
     },
     {
       "key": 2005,
@@ -148,7 +157,8 @@
       "KnockbackPower": 0.95,
       "KnockbackTime": 0.55,
       "SpriteIndex": 11,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 3
     },
     {
       "key": 3001,
@@ -163,7 +173,8 @@
       "KnockbackPower": 0.3,
       "KnockbackTime": 0.65,
       "SpriteIndex": 22,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 0
     },
     {
       "key": 3002,
@@ -178,7 +189,8 @@
       "KnockbackPower": 0.4,
       "KnockbackTime": 0.65,
       "SpriteIndex": 42,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 1
     },
     {
       "key": 3003,
@@ -193,7 +205,8 @@
       "KnockbackPower": 0.6,
       "KnockbackTime": 0.65,
       "SpriteIndex": 2,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 2
     },
     {
       "key": 3004,
@@ -208,7 +221,8 @@
       "KnockbackPower": 0.8,
       "KnockbackTime": 0.65,
       "SpriteIndex": 32,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 2
     },
     {
       "key": 3005,
@@ -223,7 +237,8 @@
       "KnockbackPower": 1.1,
       "KnockbackTime": 0.65,
       "SpriteIndex": 12,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 3
     },
     {
       "key": 4001,
@@ -238,7 +253,8 @@
       "KnockbackPower": 0,
       "KnockbackTime": 0,
       "SpriteIndex": 23,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 0
     },
     {
       "key": 4002,
@@ -253,7 +269,8 @@
       "KnockbackPower": 0,
       "KnockbackTime": 0,
       "SpriteIndex": 43,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 1
     },
     {
       "key": 4003,
@@ -268,7 +285,8 @@
       "KnockbackPower": 0,
       "KnockbackTime": 0,
       "SpriteIndex": 3,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 2
     },
     {
       "key": 4004,
@@ -283,7 +301,8 @@
       "KnockbackPower": 0,
       "KnockbackTime": 0,
       "SpriteIndex": 33,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 2
     },
     {
       "key": 4005,
@@ -298,7 +317,8 @@
       "KnockbackPower": 0,
       "KnockbackTime": 0,
       "SpriteIndex": 13,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 3
     },
     {
       "key": 5001,
@@ -313,7 +333,8 @@
       "KnockbackPower": 0.05,
       "KnockbackTime": 0.45,
       "SpriteIndex": 24,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 0
     },
     {
       "key": 5002,
@@ -328,7 +349,8 @@
       "KnockbackPower": 0.15,
       "KnockbackTime": 0.45,
       "SpriteIndex": 44,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 1
     },
     {
       "key": 5003,
@@ -343,7 +365,8 @@
       "KnockbackPower": 0.35,
       "KnockbackTime": 0.45,
       "SpriteIndex": 4,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 2
     },
     {
       "key": 5004,
@@ -358,7 +381,8 @@
       "KnockbackPower": 0.65,
       "KnockbackTime": 0.45,
       "SpriteIndex": 34,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 2
     },
     {
       "key": 5005,
@@ -373,7 +397,8 @@
       "KnockbackPower": 0.85,
       "KnockbackTime": 0.45,
       "SpriteIndex": 14,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 3
     },
     {
       "key": 6001,
@@ -388,7 +413,8 @@
       "KnockbackPower": 0,
       "KnockbackTime": 0,
       "SpriteIndex": 25,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 0
     },
     {
       "key": 6002,
@@ -403,7 +429,8 @@
       "KnockbackPower": 0,
       "KnockbackTime": 0,
       "SpriteIndex": 45,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 1
     },
     {
       "key": 6003,
@@ -418,7 +445,8 @@
       "KnockbackPower": 0,
       "KnockbackTime": 0,
       "SpriteIndex": 5,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 2
     },
     {
       "key": 6004,
@@ -433,7 +461,8 @@
       "KnockbackPower": 0,
       "KnockbackTime": 0,
       "SpriteIndex": 35,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 2
     },
     {
       "key": 6005,
@@ -448,7 +477,8 @@
       "KnockbackPower": 0,
       "KnockbackTime": 0,
       "SpriteIndex": 15,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 3
     },
     {
       "key": 7001,
@@ -463,7 +493,8 @@
       "KnockbackPower": 0.1,
       "KnockbackTime": 0.5,
       "SpriteIndex": 26,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 0
     },
     {
       "key": 7002,
@@ -478,7 +509,8 @@
       "KnockbackPower": 0.2,
       "KnockbackTime": 0.5,
       "SpriteIndex": 46,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 1
     },
     {
       "key": 7003,
@@ -493,7 +525,8 @@
       "KnockbackPower": 0.4,
       "KnockbackTime": 0.5,
       "SpriteIndex": 6,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 2
     },
     {
       "key": 7004,
@@ -508,7 +541,8 @@
       "KnockbackPower": 0.7,
       "KnockbackTime": 0.5,
       "SpriteIndex": 36,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 2
     },
     {
       "key": 7005,
@@ -523,7 +557,8 @@
       "KnockbackPower": 0.9,
       "KnockbackTime": 0.5,
       "SpriteIndex": 16,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 3
     },
     {
       "key": 9001,
@@ -538,7 +573,8 @@
       "KnockbackPower": 0.4,
       "KnockbackTime": 0.6,
       "SpriteIndex": 95,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 1
     },
     {
       "key": 9002,
@@ -553,7 +589,8 @@
       "KnockbackPower": 0.2,
       "KnockbackTime": 0.3,
       "SpriteIndex": 92,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 0
     },
     {
       "key": 9003,
@@ -568,7 +605,8 @@
       "KnockbackPower": 0.1,
       "KnockbackTime": 0.1,
       "SpriteIndex": 96,
-      "Equip": false
+      "Equip": false,
+      "Bouncing": 0
     }
   ]
 }
