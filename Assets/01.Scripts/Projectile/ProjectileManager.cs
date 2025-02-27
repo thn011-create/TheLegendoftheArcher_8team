@@ -8,7 +8,7 @@ public class ProjectileManager : MonoBehaviour
     public static ProjectileManager Instance { get { return instance; } }
 
     [SerializeField] GameObject projectilePrefab;
-           
+
 
     private void Awake()
     {
@@ -18,37 +18,25 @@ public class ProjectileManager : MonoBehaviour
 
 
     /// <summary>
-    /// ì´ì•Œì„ ë°œì‚¬í•˜ëŠ” í•¨ìˆ˜
+    /// ÃÑ¾ËÀ» ¹ß»çÇÏ´Â ÇÔ¼ö
     /// </summary>
-    /// <param name="rangeWeaponHandler">ë¬´ê¸°</param>
-    /// <param name="startPosition">ì‹œì‘ ìœ„ì¹˜</param>
-    /// <param name="direction">ë°©í–¥</param>
+    /// <param name="rangeWeaponHandler">¹«±â</param>
+    /// <param name="startPosition">½ÃÀÛ À§Ä¡</param>
+    /// <param name="direction">¹æÇâ</param>
     public void ShootBullet(RangeWeaponHandler rangeWeaponHandler, Vector2 startPosition, Vector2 direction, int key, int bouncing)
     {
-        // ë¬´ê¸° í•¸ë“¤ëŸ¬ì˜ íƒ„í™˜ ì¸ë±ìŠ¤ë¥¼ ì‚¬ìš©í•˜ì—¬ ë°œì‚¬í•  íƒ„í™˜ í”„ë¦¬íŒ¹ì„ ê°€ì ¸ì˜´
+        // ¹«±â ÇÚµé·¯ÀÇ ÅºÈ¯ ÀÎµ¦½º¸¦ »ç¿ëÇÏ¿© ¹ß»çÇÒ ÅºÈ¯ ÇÁ¸®ÆÕÀ» °¡Á®¿È
         GameObject origin = projectilePrefab;
 
-        // íƒ„í™˜ ì˜¤ë¸Œì íŠ¸ë¥¼ ìƒì„± (ìœ„ì¹˜: startPosition, íšŒì „: ì—†ìŒ)
+        // ÅºÈ¯ ¿ÀºêÁ§Æ®¸¦ »ı¼º (À§Ä¡: startPosition, È¸Àü: ¾øÀ½)
         GameObject obj = Instantiate(origin, startPosition, Quaternion.identity);
 
-        // ìƒì„±ëœ íƒ„í™˜ì˜ ProjectileController ì»´í¬ë„ŒíŠ¸ë¥¼ ê°€ì ¸ì˜´
+        // »ı¼ºµÈ ÅºÈ¯ÀÇ ProjectileController ÄÄÆ÷³ÍÆ®¸¦ °¡Á®¿È
         ProjectileController projectileController = obj.GetComponent<ProjectileController>();
 
-        // íƒ„í™˜ ì´ˆê¸°í™” (ì´ë™ ë°©í–¥ ë° ë¬´ê¸° í•¸ë“¤ëŸ¬ ì •ë³´ ì„¤ì •)
+        // ÅºÈ¯ ÃÊ±âÈ­ (ÀÌµ¿ ¹æÇâ ¹× ¹«±â ÇÚµé·¯ Á¤º¸ ¼³Á¤)
         projectileController.Init(direction, rangeWeaponHandler, this, key, bouncing, obj);
-
-        //// bouncingì´ ë‚¨ì•„ìˆë‹¤ë©´ ì¬ê·€ í˜¸ì¶œ
-        //if (bouncing > 0)
-        //{
-        //    // ë°˜ì‚¬ ë°©í–¥ì„ ê²°ì •í•˜ëŠ” ë¡œì§ (ì„ì‹œ ì˜ˆì œ)
-        //    Vector2 newDirection = Vector2.Reflect(direction, Vector2.right); // ì˜ˆì œ: ì˜¤ë¥¸ìª½ ë²½ì— ë°˜ì‚¬ë˜ëŠ” íš¨ê³¼
-
-        //    // ì¬ê·€ í˜¸ì¶œ (bouncing ê°’ì„ 1 ê°ì†Œì‹œí‚´)
-        //    ShootBullet(rangeWeaponHandler, obj.transform.position, newDirection, key, bouncing - 1);
-        //}
-
     }
 
 
 }
-

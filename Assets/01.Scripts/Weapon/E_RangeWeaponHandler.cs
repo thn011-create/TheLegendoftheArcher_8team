@@ -5,7 +5,7 @@ using UnityEngine;
 using static DesignEnums;
 
 /// <summary>
-/// ì›ê±°ë¦¬ ë¬´ê¸°
+/// ¿ø°Å¸® ¹«±â
 /// </summary>
 public class E_RangeWeaponHandler : RangeWeaponHandler
 {
@@ -18,32 +18,32 @@ public class E_RangeWeaponHandler : RangeWeaponHandler
         dataManager.Initialize();
     }
 
-    // ê³µê²©ì„ ì‹¤í–‰í•˜ëŠ” í•¨ìˆ˜ (ë¶€ëª¨ í´ë˜ìŠ¤ì˜ Attack()ì„ ì˜¤ë²„ë¼ì´ë“œ)
+    // °ø°İÀ» ½ÇÇàÇÏ´Â ÇÔ¼ö (ºÎ¸ğ Å¬·¡½ºÀÇ Attack()À» ¿À¹ö¶óÀÌµå)
     public override void Attack()
     {
-        // ë¶€ëª¨ í´ë˜ìŠ¤ì˜ Attack() í•¨ìˆ˜ ì‹¤í–‰
+        // ºÎ¸ğ Å¬·¡½ºÀÇ Attack() ÇÔ¼ö ½ÇÇà
         base.Attack();
 
-        // íˆ¬ì‚¬ì²´ ê°„ì˜ ê°ë„ ê°„ê²© ì„¤ì •
+        // Åõ»çÃ¼ °£ÀÇ °¢µµ °£°İ ¼³Á¤
         float projectileAngleSpace = MultipleProjectileAngle;
 
-        // í•œ ë²ˆì˜ ê³µê²©ì—ì„œ ë°œì‚¬í•  íˆ¬ì‚¬ì²´ ê°œìˆ˜ ì„¤ì •
+        // ÇÑ ¹øÀÇ °ø°İ¿¡¼­ ¹ß»çÇÒ Åõ»çÃ¼ °³¼ö ¼³Á¤
         int numberofProjectilePerShot = NumberofProjectilesPerShot;
 
-        // íˆ¬ì‚¬ì²´ê°€ í¼ì§€ëŠ” ìµœì†Œ ê°ë„ ê³„ì‚° (ì¤‘ì•™ì„ ê¸°ì¤€ìœ¼ë¡œ ë¶„ì‚°ë¨)
+        // Åõ»çÃ¼°¡ ÆÛÁö´Â ÃÖ¼Ò °¢µµ °è»ê (Áß¾ÓÀ» ±âÁØÀ¸·Î ºĞ»êµÊ)
         float minAngle = -(numberofProjectilePerShot / 2) * projectileAngleSpace;
 
-        // ì„¤ì •ëœ ê°œìˆ˜ë§Œí¼ íˆ¬ì‚¬ì²´ë¥¼ ìƒì„±
+        // ¼³Á¤µÈ °³¼ö¸¸Å­ Åõ»çÃ¼¸¦ »ı¼º
         for (int i = 0; i < numberofProjectilePerShot; i++)
         {
-            // í˜„ì¬ íˆ¬ì‚¬ì²´ì˜ ê°ë„ ê³„ì‚°
+            // ÇöÀç Åõ»çÃ¼ÀÇ °¢µµ °è»ê
             float angle = minAngle + projectileAngleSpace * i;
 
-            // ëœë¤í•œ í¼ì§(Spread) ê°’ì„ ì¶”ê°€í•˜ì—¬ íˆ¬ì‚¬ì²´ê°€ ìì—°ìŠ¤ëŸ½ê²Œ ë¶„ì‚°ë˜ë„ë¡ í•¨
+            // ·£´ıÇÑ ÆÛÁü(Spread) °ªÀ» Ãß°¡ÇÏ¿© Åõ»çÃ¼°¡ ÀÚ¿¬½º·´°Ô ºĞ»êµÇµµ·Ï ÇÔ
             float randomSpread = Random.Range(-Spread, Spread);
             angle += randomSpread;
 
-            // íˆ¬ì‚¬ì²´ ìƒì„±
+            // Åõ»çÃ¼ »ı¼º
             CreateProjectile(Controller.LookDirection.normalized, angle);
         }
     }
@@ -51,10 +51,10 @@ public class E_RangeWeaponHandler : RangeWeaponHandler
     protected override void LoadData(int key)
     {
         var data = dataManager.MonsterWeaponInfoLoader.GetByKey(key);
-        Debug.Assert(!(null == data), "í‚¤ ê°’ì„ í™•ì¸í•˜ì„¸ìš”.");
+        Debug.Assert(!(null == data), "Å° °ªÀ» È®ÀÎÇÏ¼¼¿ä.");
         ItemName = data.Name;
         Damage = data.Damage;
-        
+
         Delay = data.Delay;
         Speed = data.Speed;
         AttackRange = data.AttackRange;
