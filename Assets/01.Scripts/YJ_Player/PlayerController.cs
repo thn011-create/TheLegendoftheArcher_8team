@@ -9,8 +9,7 @@ public class PlayerController : BaseController
     private float lastAttackTime = 0.0f; // 마지막 공격 시간
    
 
-    //public LayerMask Etarget;
-    public Joystick joy;
+
     private Camera _camera;
     private GameManager gameManager;
 
@@ -22,9 +21,8 @@ public class PlayerController : BaseController
 
     protected override void HandleAction()
     {
-        // 1. 조이스틱 입력 처리
-        float h = joy.Horizontal;
-        float v = joy.Vertical;
+        float h = Input.GetAxisRaw("Horizontal"); // 좌우 이동 (A, D, 화살표 좌우)
+        float v = Input.GetAxisRaw("Vertical");   // 상하 이동 (W, S, 화살표 상하)
         movementDirection = new Vector2(h, v).normalized;
 
         if(Input.GetKeyDown(KeyCode.Space))
