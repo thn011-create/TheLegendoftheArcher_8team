@@ -20,6 +20,7 @@ public class PlayerStats : MonoBehaviour, ICharacter
     [SerializeField] private float recoveryDropRate = 0f; // È¸º¹µå¶ø·ü
     [SerializeField] private float evasionRate = 0f; //È¸ÇÇ·ü
     [SerializeField] private SkillUI skillUI;
+    [SerializeField] private GameOverUI GameOverUI;
     public string Name { get => playerName; set => playerName = value; }
     public int Level { get => level; set => level = value; }
     public float AttackDamage { get => attackDamage; set => attackDamage = value; }
@@ -45,6 +46,9 @@ public class PlayerStats : MonoBehaviour, ICharacter
     public void GainExperience(float amount)
     {
         experience += amount;
+
+        GameOverUI.gainedExpUI(amount);
+
         if (experience >= experienceToNextLevel)
         {
             LevelUp();

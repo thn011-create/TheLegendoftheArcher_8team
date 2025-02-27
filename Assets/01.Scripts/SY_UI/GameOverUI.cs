@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameOverUI : BaseUI
 {
     [SerializeField] Text bestStageText;
+    [SerializeField] Text rewardExpText;
     [SerializeField] Button closeBtn;
 
 
@@ -27,23 +28,12 @@ public class GameOverUI : BaseUI
             PlayerPrefs.Save();
         }
         bestStageText.text = "최고 기록: " + PlayerPrefs.GetInt("BestStage").ToString();
+        
     }
-    // 현재 스테이지 정보 가져오고, 저장
-    //void OnEnable()
-    //{
-    //    if (GameManager.instance == null)
-    //        Debug.LogError("GameManager.instance가 null입니다!");
-
-    //    int currentStage = GameManager.instance.currentWaveIndex;
-    //    int bestStage = PlayerPrefs.GetInt("BestStage");
-    //    if (currentStage > bestStage)
-    //    {
-    //        PlayerPrefs.SetInt("BestStage", currentStage);
-    //        PlayerPrefs.Save();
-    //    }
-
-    //    bestStageText.text = "최고 기록: " + PlayerPrefs.GetInt("BestStage").ToString();
-    //}
+   public void gainedExpUI(float amount)
+    {
+        rewardExpText.text = amount.ToString();
+    }
 
     public void OnCloseButtonClick()
     {
