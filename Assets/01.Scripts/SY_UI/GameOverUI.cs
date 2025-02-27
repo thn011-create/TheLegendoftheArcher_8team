@@ -15,11 +15,26 @@ public class GameOverUI : BaseUI
         uiState = UIState.GameOver;
 
         closeBtn.onClick.AddListener(OnCloseButtonClick);
+
+        if (GameManager.instance == null)
+            Debug.LogError("GameManager.instance가 null입니다!");
+
+        int currentStage = GameManager.instance.currentWaveIndex;
+        int bestStage = PlayerPrefs.GetInt("BestStage");
+        if (currentStage > bestStage)
+        {
+            PlayerPrefs.SetInt("BestStage", currentStage);
+            PlayerPrefs.Save();
+        }
+        bestStageText.text = "최고 기록: " + PlayerPrefs.GetInt("BestStage").ToString();
     }
     // 현재 스테이지 정보 가져오고, 저장
     //void OnEnable()
     //{
-    //    //int currentStage = GameManager.instance.currentWaveIndex;
+    //    if (GameManager.instance == null)
+    //        Debug.LogError("GameManager.instance가 null입니다!");
+
+    //    int currentStage = GameManager.instance.currentWaveIndex;
     //    int bestStage = PlayerPrefs.GetInt("BestStage");
     //    if (currentStage > bestStage)
     //    {
