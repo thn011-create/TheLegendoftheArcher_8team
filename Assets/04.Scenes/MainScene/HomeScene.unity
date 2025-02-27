@@ -2493,6 +2493,7 @@ MonoBehaviour:
   inventoryBtn: {fileID: 744660248}
   shopBtn: {fileID: 83023586}
   settingBtn: {fileID: 2068147243}
+  bestStageTxt: {fileID: 1343467573}
   settingUI: {fileID: 1024312277}
 --- !u!1 &1343467571
 GameObject:
@@ -2506,7 +2507,7 @@ GameObject:
   - component: {fileID: 1343467574}
   - component: {fileID: 1343467573}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: BestStageTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

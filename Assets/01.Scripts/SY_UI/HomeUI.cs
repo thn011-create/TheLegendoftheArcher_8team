@@ -8,22 +8,28 @@ using DG.Tweening; // DOTween 라이브러리를 사용 선언
 
 public class HomeUI : BaseUI
 {
+    // 버튼
     [SerializeField] Button startBtn;
     [SerializeField] Button inventoryBtn;
     [SerializeField] Button shopBtn;
     [SerializeField] Button settingBtn;
+
+    // 최고기록 텍스트
+    [SerializeField] Text bestStageTxt;
 
     public SettingUI settingUI;
 
     void Start()
     {
         startBtn.onClick.AddListener(OnClickStartBtn);
-        inventoryBtn.onClick.AddListener(OnClickInventoryBtn);
-        shopBtn.onClick.AddListener(OnClickShopBtn);
+        //inventoryBtn.onClick.AddListener(OnClickInventoryBtn);
+        //shopBtn.onClick.AddListener(OnClickShopBtn);
         settingBtn.onClick.AddListener(OnSettingBtn);
+
+        PlayerPrefs.GetInt("BestStage");
+        bestStageTxt.text = "최고 기록: " + PlayerPrefs.GetInt("BestStage").ToString();
     }
 
-    
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
@@ -40,9 +46,8 @@ public class HomeUI : BaseUI
     {
         settingUI.SettingOpen();
     }
-    public void OnClickInventoryBtn() 
-    { }
-    public void OnClickShopBtn() 
-    { }
-
+    //public void OnClickInventoryBtn() 
+    //{ }
+    //public void OnClickShopBtn() 
+    //{ }
 }
