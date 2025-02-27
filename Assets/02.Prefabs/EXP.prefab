@@ -134,3 +134,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experienceAmount: 10
+  ItemClip: {fileID: 8300000, guid: d91376fe206546b4dbaccc33c77962f7, type: 3}
