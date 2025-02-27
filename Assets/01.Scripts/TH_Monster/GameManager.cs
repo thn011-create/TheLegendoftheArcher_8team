@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public static bool isFirstLoading = true;
 
     public MapDesign design;
+    public InGameUI gameUI;
 
     [SerializeField] GameObject nextStageArea;
 

@@ -177,8 +177,8 @@ MonoBehaviour:
   level: 1
   attackDamage: 10
   moveSpeed: 5
-  currentHealth: 100
-  maxHealth: 100
+  currentHealth: 300
+  maxHealth: 300
   experience: 0
   attackSpeed: 1
 --- !u!1 &1740781880651859530
