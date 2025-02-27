@@ -3821,7 +3821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundEffectVolume: 1
-  soundEffectPitchVariance: 0.396
+  soundEffectPitchVariance: 0.2
   musicVolume: 0.5
   bgmCilps:
   - {fileID: 8300000, guid: 6ec95a311cdde7145a789fce2b5b3af7, type: 3}

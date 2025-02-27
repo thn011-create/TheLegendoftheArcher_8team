@@ -17,7 +17,7 @@ public class SoundSource : MonoBehaviour
         audioSource.clip = clip;
         audioSource.volume = sfxVolume;
         audioSource.Play();
-        //audioSource.pitch = 1f + Random.Range(-sfxPitchVariance, sfxPitchVariance);
+        audioSource.pitch = 1f + Random.Range(-sfxPitchVariance, sfxPitchVariance);
 
         Invoke("Disable", clip.length + 2);
     }
