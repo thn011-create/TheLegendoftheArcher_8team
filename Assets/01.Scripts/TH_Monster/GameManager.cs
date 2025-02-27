@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     private ResourceController _playerResourceController;
     
 
-    [SerializeField] private int currentWaveIndex = 0;
+    public int currentWaveIndex = 0;
 
     private EnemyManager enemyManager;
     private UIManager uiManager;
@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         StartNextWave();
+        uiManager.SetPlayGame();
     }
 
     void StartNextWave()
@@ -68,6 +69,7 @@ public class GameManager : MonoBehaviour
         design.GenerateMap();
 
         enemyManager.StartWave(1 + currentWaveIndex / 5);
+        uiManager.ChangeWave(currentWaveIndex);
     }
 
     public void EndOfWave()
@@ -80,7 +82,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         enemyManager.StopWave();
-        //uiManager.SetGameOver();
+        uiManager.SetGameOver();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
