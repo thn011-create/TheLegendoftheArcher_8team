@@ -89,6 +89,7 @@ public class ResourceController : MonoBehaviour
             if (CurrentHealth <= 0f)
             {
                 Death();
+                GameManager.instance.GameOver();
             }
         }
         else
