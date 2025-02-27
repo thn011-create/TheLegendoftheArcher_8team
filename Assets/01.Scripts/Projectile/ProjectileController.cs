@@ -50,8 +50,6 @@ public class ProjectileController : MonoBehaviour
         // 투사체를 지정된 방향으로 이동시킴
         _rigidbody.velocity = direction * rangeWeaponHandler.Speed;
 
-
-        Debug.LogError("무기 번호 이자식아"+rangeWeaponHandler.Key);
         // 투사체 회전
         if (rangeWeaponHandler.Key / 1000 != 5 && rangeWeaponHandler.Key / 1000 != 9)
         {
@@ -91,7 +89,6 @@ public class ProjectileController : MonoBehaviour
         // 투사체의 방향에 따라 피벗 회전 조정
         pivot.localEulerAngles += new Vector3(0, 180, 0);
 
-        Debug.LogError(rangeWeaponHandler.ImageIdx);
         // Sprite
         string imageName = "fantasy_bullet_";
         spriteRanderer.sprite = FindImage(imageName, rangeWeaponHandler.ImageIdx);
