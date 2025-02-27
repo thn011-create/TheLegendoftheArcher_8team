@@ -18,9 +18,14 @@ public class ProjectileController : MonoBehaviour
 
     public bool fxOnDestroy = true;
 
+    int bouncing;
+    int key;
     float rotZ = 0;
     float currentDuration = 0;
     ProjectileManager projectileManager;
+    Vector3 reflect_normal;
+
+    GameObject prefab;
 
     private void Awake()
     {
@@ -50,8 +55,6 @@ public class ProjectileController : MonoBehaviour
         // 투사체를 지정된 방향으로 이동시킴
         _rigidbody.velocity = direction * rangeWeaponHandler.Speed;
 
-
-        
         // 투사체 회전
         if (rangeWeaponHandler.Key / 1000 != 5 && rangeWeaponHandler.Key / 1000 != 9)
         {
@@ -69,15 +72,18 @@ public class ProjectileController : MonoBehaviour
     /// <param name="direction">방향</param>
     /// <param name="weaponHandler">무기</param>
     /// <param name="projectileManager">발사체 매니저</param>
-    public void Init(Vector2 direction, RangeWeaponHandler weaponHandler, ProjectileManager projectileManager, int key)
+    public void Init(Vector2 direction, RangeWeaponHandler weaponHandler, ProjectileManager projectileManager, int key, int bouncing, GameObject prefab)
     {
         this.projectileManager = projectileManager;
 
         // 무기 핸들러 정보 저장
-        rangeWeaponHandler = weaponHandler;
+        this.rangeWeaponHandler = weaponHandler;
 
         // 투사체 이동 방향 설정
         this.direction = direction;
+        this.bouncing = bouncing;
+        this.key = key;
+        this.prefab = prefab;
 
         // 투사체 크기 설정
         transform.localScale = Vector3.one * weaponHandler.BulletSize;
@@ -91,7 +97,6 @@ public class ProjectileController : MonoBehaviour
         // 투사체의 방향에 따라 피벗 회전 조정
         pivot.localEulerAngles += new Vector3(0, 180, 0);
 
-        
         // Sprite
         string imageName = "fantasy_bullet_";
         spriteRanderer.sprite = FindImage(imageName, rangeWeaponHandler.ImageIdx);
@@ -150,12 +155,39 @@ public class ProjectileController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //RaycastHit hit;
+        //Vector3 dir = (collision.transform.position - transform.position).normalized;
+
+        //// Raycast를 사용하여 충돌 표면의 법선 벡터 찾기
+        //if (Physics.Raycast(transform.position, dir, out hit))
+        //{
+        //    reflect_normal = hit.normal;
+        //}
+
+        // 충돌 표면의 법선 가져오기 (2D 전용)
+        ContactPoint2D[] contacts = new ContactPoint2D[1];
+        if (collision.TryGetComponent(out Rigidbody2D rb) && rb.GetContacts(contacts) > 0)
+        {
+            reflect_normal = contacts[0].normal; // 첫 번째 충돌 표면의 법선
+        }
+        else
+        {
+            reflect_normal = (transform.position - collision.transform.position).normalized; // 대체 법선 (비정상적인 경우)
+        }
+
+        Vector3 relect_dir = Vector3.Reflect(this.direction, reflect_normal).normalized;
+        Vector3 startPoint = transform.position + relect_dir * .5f;
+
         // 레벨 충돌 레이어에 닿았는지 확인
         if (levelCollisionLayer.value ==
             (levelCollisionLayer.value | (1 << collision.gameObject.layer)))
         {
             // 충돌 위치에서 투사체 파괴
             DestroyProjectile(collision.ClosestPoint(transform.position) - direction * .2f, fxOnDestroy);
+            if (bouncing != 0)
+            {
+                projectileManager.ShootBullet(rangeWeaponHandler, startPoint, relect_dir, this.key, bouncing - 1);
+            }
         }
         // 공격 대상에 맞았는지 확인
         else if (rangeWeaponHandler.target.value ==

@@ -6,37 +6,48 @@ public class MapDesign : MonoBehaviour
 {
     [SerializeField] GameObject mapEdge;
     [SerializeField] public GameObject mapDoor;
-    [SerializeField] List<GameObject> mapPrefabs;
+    [SerializeField] GameObject[] mapPrefabs;
 
+    public List<GameObject> currentTiles = new List<GameObject>();
 
-    public void SelectedMap(int minMapNum, int maxMapNum)
+    private bool IsFirstGenerate = true;
+
+    public void GenerateMap()
     {
-        Instantiate(mapPrefabs[Random.Range(minMapNum, maxMapNum)]);
+        if (IsFirstGenerate)
+        {
+            IsFirstGenerate = false;
+            DrawMap();
+            return;
+        }
+        ClearMap();
+        DrawMap();
+    }
+
+    public GameObject SelectedMap(int minMapNum, int maxMapNum)
+    {
+        return Instantiate(mapPrefabs[Random.Range(minMapNum, maxMapNum)]);
     }
     public void DrawMap()
     {
-        Instantiate(mapEdge);
-        Instantiate(mapDoor);
         for (int i = 1; i < 24; i+=3)
         {
-            SelectedMap(i - 1, i + 2);
+            currentTiles.Add(SelectedMap(i - 1, i + 2));
         }
+        currentTiles.Add(Instantiate(mapEdge));
+        currentTiles.Add(Instantiate(mapDoor));
+    }
+    public void DoorOpen()
+    {
+        Destroy(currentTiles[currentTiles.Count - 1]);
     }
 
-    private void Update()
+    private void ClearMap()
     {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision == null)
+        foreach (var tile in currentTiles)
         {
-            return;
+            Destroy(tile);
         }
-        if (collision.CompareTag("Player"))
-        {
-            GameManager.instance.StartGame();
-        }
-    }
+        currentTiles.Clear();
+    }    
 }

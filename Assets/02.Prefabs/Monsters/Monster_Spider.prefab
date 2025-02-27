@@ -349,7 +349,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.66, y: 0.66}
   m_EdgeRadius: 0
 --- !u!114 &4446620053497647867
 MonoBehaviour:
@@ -379,11 +379,11 @@ MonoBehaviour:
   weaponPivot: {fileID: 5344820948522139907}
   knockback: {x: 0, y: 0}
   knockbackDuration: 0
-  WeaponPrefab: {fileID: 0}
+  WeaponPrefab: {fileID: -8473237133364363256, guid: 546c941d8f97784428b136f5bfc187b7, type: 3}
   timeSinceLastAttack: 3.4028235e+38
   followRange: 20
   iAttack: 0
-  _animator: {fileID: 0}
+  _animator: {fileID: 4526760808044526456}
   experiencePrefab: {fileID: 8784730493887903239, guid: 711121958ea1ab74dafee9eaf3b4a03e, type: 3}
   experienceAmount: 10
 --- !u!114 &-4548496106840126001
