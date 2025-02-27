@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System;
+using UnityEngine;
 using Unity.Mathematics;
 
 public class ResourceController : MonoBehaviour
 {
-    [SerializeField] private float healthChangeDelay = .5f;
+    [SerializeField] private float healthChangeDelay = 0.5f;
 
     private BaseController baseController;
     private PlayerStats statHandler;
@@ -16,12 +14,10 @@ public class ResourceController : MonoBehaviour
     private float timeSinceLastChange = float.MaxValue;
 
     public float CurrentHealth { get; private set; }
-    public float MaxHealth => statHandler.CurrentHealth;
-    public float enemyCurrentHealth { get; private set; } //적 현재 체력
-
+    public float MaxHealth => statHandler.MaxHealth; // 항상 최신 상태 반영
+    public float enemyCurrentHealth { get; private set; } // 적 현재 체력
 
     public AudioClip damageClip;
-
     private Action<float, float> OnChangeHealth;
 
     private void Awake()
@@ -37,7 +33,6 @@ public class ResourceController : MonoBehaviour
         if (statHandler != null)
         {
             CurrentHealth = statHandler.CurrentHealth;
-            Debug.Log($"[Start] Evasionrate: {statHandler.Evasionrate}"); // 추가 디버깅
         }
         else if (enemyStats != null)
         {
@@ -48,7 +43,6 @@ public class ResourceController : MonoBehaviour
             Debug.LogWarning($"[{gameObject.name}] PlayerStats와 EnemyStats 둘 다 없습니다! 올바른 오브젝트인지 확인하세요.");
         }
     }
-
 
     private void Update()
     {
@@ -71,26 +65,26 @@ public class ResourceController : MonoBehaviour
 
         timeSinceLastChange = 0f;
 
-        System.Random random = new System.Random(); // 랜덤 객체 생성
+        System.Random random = new System.Random();
 
         if (isPlayer)
         {
-            // 플레이어 체력 변경 로직
-            Debug.Log($"Current Evasion Rate: {statHandler.Evasionrate}");
-
-            if (random.NextDouble() <= statHandler.Evasionrate) // 회피
+            if (random.NextDouble() <= statHandler.Evasionrate)
             {
-                Debug.Log(random.NextDouble());
                 animationHandler.Evasion();
-            }
-            else // 데미지
-            {
-                animationHandler.Damage();
-                CurrentHealth += change; // 마이너스이므로 체력 감소
+                return false;
             }
 
+            animationHandler.Damage();
+            CurrentHealth += change;
             CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth);
-            OnChangeHealth?.Invoke(CurrentHealth, MaxHealth);
+
+            // **PlayerHealth UI 업데이트 호출**
+            PlayerHealth playerHealth = GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.ForceUpdateHealthBar();
+            }
 
             if (CurrentHealth <= 0f)
             {
@@ -99,10 +93,9 @@ public class ResourceController : MonoBehaviour
         }
         else
         {
-            // 적 체력 변경 로직
             if (enemyStats == null)
             {
-                Debug.LogWarning("적 정보가 설정되지 않음!");
+                Debug.LogWarning("[ResourceController] 적 정보 없음!");
                 return false;
             }
 
@@ -118,15 +111,11 @@ public class ResourceController : MonoBehaviour
         return true;
     }
 
-
-
-
     public void SetEnemyStats(EnemyStats stats)
     {
         enemyStats = stats;
-        enemyCurrentHealth = enemyStats.MaxHealth; // 적의 체력을 초기화
+        enemyCurrentHealth = enemyStats.MaxHealth;
     }
-
 
     private void Death()
     {
@@ -142,5 +131,4 @@ public class ResourceController : MonoBehaviour
     {
         OnChangeHealth -= action;
     }
-
 }
