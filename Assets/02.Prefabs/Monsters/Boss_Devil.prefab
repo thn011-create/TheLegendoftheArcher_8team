@@ -185,8 +185,8 @@ MonoBehaviour:
   attackDamage: 10
   attackSpeed: 1
   moveSpeed: 5
-  currentHealth: 100
-  maxHealth: 100
+  currentHealth: 10000
+  maxHealth: 10000
   experience: 0
   experienceToNextLevel: 100
   extraProjectiles: 0
@@ -221,6 +221,8 @@ MonoBehaviour:
   _animator: {fileID: 0}
   experiencePrefab: {fileID: 0}
   experienceAmount: 10
+  damagePopupPrefab: {fileID: 0}
+  damagePopupSpawnPoint: {fileID: 0}
 --- !u!1 &8712865018381005841
 GameObject:
   m_ObjectHideFlags: 0
