@@ -7,11 +7,14 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: Assets/04.Scenes/SampleScene.unity
-    guid: 8f05254a9f705e54a97b4291785c6204
+    guid: 90c4986c830ce874b9d7ddc115cef932
   - enabled: 1
     path: Assets/04.Scenes/MainScene/HomeScene.unity
     guid: 819e96df46c714841b1d0a57989ad6eb
-  - enabled: 1
+  - enabled: 0
     path: Assets/04.Scenes/MainScene/UIScene.unity
     guid: 118b168de652b194ba93d1e90212f8eb
+  - enabled: 1
+    path: Assets/04.Scenes/MainScene/MainScene.unity
+    guid: d7c4ac068ba2cb44cb525ab0c3627e0a
   m_configObjects: {}

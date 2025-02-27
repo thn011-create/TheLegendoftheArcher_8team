@@ -74,7 +74,10 @@ public class RangeWeaponHandler : WeaponHandler
             this,  // 현재 무기 핸들러 전달
             projectileSpawnPosition.position,  // 투사체가 생성될 위치
             RotateVector2(_lookDir, angle),   // 방향을 회전시켜 적용
-            this.Key);
+            this.Key,
+            this.Bouncing
+            );
+
     }
 
     /// <summary>
