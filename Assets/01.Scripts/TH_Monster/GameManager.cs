@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     bool IsBoss = false;
 
+    public AudioClip stageClearClip; // 스테이지 클리어 SFX
+
     private void Awake()
     {
         if (instance == null)
@@ -82,6 +84,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Wave " + currentWaveIndex + " Ended");
         PlayerPrefs.SetInt("BestStage", currentWaveIndex);
         design.DoorOpen();
+        SoundManager.PlayClip(stageClearClip);
         enemyManager.StopWave();
     }
 

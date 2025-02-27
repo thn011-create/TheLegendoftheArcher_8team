@@ -994,6 +994,7 @@ MonoBehaviour:
   design: {fileID: 0}
   gameUI: {fileID: 0}
   nextStageArea: {fileID: 0}
+  stageClearClip: {fileID: 0}
   enemyPrefabs:
   - {fileID: 1559404602828982386, guid: c19224356f7762c4c92c06bb88d018ef, type: 3}
   - {fileID: 860876182921614581, guid: 78a4dcacdbc968c41ab4c8baa2af28ee, type: 3}
@@ -1125,6 +1126,7 @@ MonoBehaviour:
   design: {fileID: 672490941}
   gameUI: {fileID: 1601601432}
   nextStageArea: {fileID: 0}
+  stageClearClip: {fileID: 8300000, guid: 969fa194c0d03b84785603ae264f8eae, type: 3}
 --- !u!4 &1153479412
 Transform:
   m_ObjectHideFlags: 0
