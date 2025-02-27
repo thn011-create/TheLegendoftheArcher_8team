@@ -1898,6 +1898,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7359646093253187750, guid: cc77f51f81d794c4d9cd8a114fa9f898, type: 3}
+      propertyPath: DeathClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0c62d42d6f7950b49a74654faddc187a, type: 3}
+    - target: {fileID: 7359646093253187750, guid: cc77f51f81d794c4d9cd8a114fa9f898, type: 3}
       propertyPath: damageClip
       value: 
       objectReference: {fileID: 8300000, guid: c2aae460730f0e342bd5453533105ae8, type: 3}

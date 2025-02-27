@@ -19,6 +19,7 @@ public class ResourceController : MonoBehaviour
     public float enemyCurrentHealth { get; private set; } // 적 현재 체력
 
     public AudioClip damageClip;
+    public AudioClip DeathClip;
     private Action<float, float> OnChangeHealth;
 
     private void Awake()
@@ -94,6 +95,7 @@ public class ResourceController : MonoBehaviour
 
             if (CurrentHealth <= 0f)
             {
+                SoundManager.PlayClip(DeathClip);
                 Death();
                 GameManager.instance.GameOver();
             }
