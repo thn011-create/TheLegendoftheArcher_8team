@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyController : BaseController
 {
@@ -17,14 +19,23 @@ public class EnemyController : BaseController
     public GameObject experiencePrefab; // 경험치 프리팹
     public int experienceAmount = 10; // 몬스터가 주는 경험치 양
 
+    public GameObject damagePopupPrefab; // 데미지 텍스트 프리팹 
+    public Transform damagePopupSpawnPoint; // 데미지 텍스트 생성 위치
     public void Init(EnemyManager enemyManager, Transform target)
     {
         this.enemyManager = enemyManager;
         this.target = target;
         if (iAttack)
             _animator = GetComponentInParent<Animator>();
-    }
 
+    }
+    private void Start()
+    {
+        if (damagePopupPrefab != null)
+        {
+            damagePopupPrefab.SetActive(false); //처음에는 비활성화
+        }
+    }
     // 타겟과의 거리 계산
     protected float DistanceToTarget()
     {
@@ -121,6 +132,54 @@ public class EnemyController : BaseController
                 expItem.GetComponent<ExperienceItem>().experienceAmount = experienceAmount;
             }
         }
+    }
+
+    public void ShowDamage(float damage)
+    {
+        Debug.Log($"[ShowDamage] 표시할 데미지: {damage}");
+
+        if (damagePopupPrefab != null && damagePopupSpawnPoint != null)
+        {
+            GameObject damageTextObj = Instantiate(damagePopupPrefab, damagePopupSpawnPoint.position, Quaternion.identity);
+            damageTextObj.SetActive(true); // 🔥 활성화
+
+            TextMeshProUGUI damageText = damageTextObj.GetComponentInChildren<TextMeshProUGUI>();
+
+            if (damageText != null)
+            {
+                damageText.text = (-damage).ToString("F0"); // 🔥 음수 데미지를 양수로 변환
+                Debug.Log($"[ShowDamage] 최종 표시될 텍스트: {damageText.text}");
+            }
+            else
+            {
+                Debug.LogError("[ShowDamage] damageText가 할당되지 않음!");
+            }
+
+            // 🔥 위로 올라가는 모션 추가
+            StartCoroutine(HideDamageText(damageTextObj, 0.5f));
+        }
+        else
+        {
+            Debug.LogError("[ShowDamage] damagePopupPrefab 또는 damagePopupSpawnPoint가 없음!");
+        }
+    }
+
+    // 🔥 데미지 텍스트를 위로 이동시키면서 일정 시간 후 비활성화
+    private IEnumerator HideDamageText(GameObject damageTextObj, float delay)
+    {
+        float elapsedTime = 0f;
+        Vector3 startPosition = damageTextObj.transform.position;
+        Vector3 targetPosition = startPosition + new Vector3(0, 1f, 0); // 🔥 위로 1 단위 이동
+
+        while (elapsedTime < delay)
+        {
+            damageTextObj.transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / delay);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        damageTextObj.SetActive(false); // 일정 시간 후 비활성화
+        Destroy(damageTextObj); // 🔥 오브젝트 삭제 (비활성화 대신)
     }
 
 }

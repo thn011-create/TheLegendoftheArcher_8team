@@ -56,7 +56,7 @@ public class EnemyManager : GameManager
     {
         enemySpawnComplite = false;
         yield return new WaitForSeconds(timeBetweenWaves);
-        for (int i = 0; i < waveCount; i++)
+        for (int i = 0; i < waveCount+3; i++) //개수 증가
         {
             yield return new WaitForSeconds(timeBetweenSpawns);
             SpawnRandomEnemy();

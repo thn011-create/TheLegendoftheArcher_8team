@@ -41,9 +41,20 @@ public class RangeWeaponHandler : WeaponHandler
         // 투사체 간의 각도 간격 설정
         float projectileAngleSpace = multipleProjectileAngle;
 
-        // 한 번의 공격에서 발사할 투사체 개수 설정
-        int numberofProjectilePerShot = numberofProjectilesPerShot;
 
+        // 한 번의 공격에서 발사할 투사체 개수 설정
+        
+        PlayerStats playerProjectile = gameObject.GetComponentInParent<PlayerStats>();
+        int numberofProjectilePerShot;
+        if (playerProjectile != null)
+        {
+            numberofProjectilePerShot = numberofProjectilesPerShot + playerProjectile.ExtraProjectiles;
+        }
+        else
+        {
+            numberofProjectilePerShot = numberofProjectilesPerShot;
+        }
+        
         // 투사체가 퍼지는 최소 각도 계산 (중앙을 기준으로 분산됨)
         float minAngle = -(numberofProjectilePerShot / 2) * projectileAngleSpace;
 
