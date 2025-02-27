@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 6699817865523324098}
   - component: {fileID: 5730179585700695367}
   - component: {fileID: 4059563791064528766}
-  - component: {fileID: 1146420428085189441}
+  - component: {fileID: -9180992204481610771}
   m_Layer: 12
   m_Name: Monster_Grenadier
   m_TagString: Enemy
@@ -338,6 +338,8 @@ MonoBehaviour:
   WeaponPrefab: {fileID: 1481014989831272378, guid: a31d21766b233444a904756e915d652b, type: 3}
   timeSinceLastAttack: 3.4028235e+38
   followRange: 20
+  iAttack: 0
+  _animator: {fileID: 0}
   experiencePrefab: {fileID: 8784730493887903239, guid: 711121958ea1ab74dafee9eaf3b4a03e, type: 3}
   experienceAmount: 10
 --- !u!114 &4059563791064528766
@@ -354,7 +356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
   damageClip: {fileID: 0}
---- !u!114 &1146420428085189441
+--- !u!114 &-9180992204481610771
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -363,27 +365,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1559404602828982386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faeefed0add851442ae87701fdf72436, type: 3}
+  m_Script: {fileID: 11500000, guid: b96f47b305ddcb4468e2e4b80b4f864b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: Player
+  enemyname: 
   level: 1
   attackDamage: 10
-  attackSpeed: 1
   moveSpeed: 5
   currentHealth: 100
   maxHealth: 100
   experience: 0
-  experienceToNextLevel: 100
-  extraProjectiles: 0
-  criticalChance: 10
-  criticalDamage: 100
-  headShotRate: 0
-  recoveryRate: 0
-  bloodAbsorptionRate: 0
-  recoveryDropRate: 0
-  evasionRate: 0
-  skillUI: {fileID: 0}
+  attackSpeed: 1
 --- !u!1 &5721580891058276810
 GameObject:
   m_ObjectHideFlags: 0
