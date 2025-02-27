@@ -47,23 +47,15 @@ public class ResourceController : MonoBehaviour
 
     private void Update()
     {
-        if (gameObject.CompareTag("Enemy"))
-        {
-            return;
-        }
 
-        if (gameObject.CompareTag("Player"))
+        if (timeSinceLastChange < healthChangeDelay)
         {
-            if (timeSinceLastChange < healthChangeDelay)
+            timeSinceLastChange += Time.deltaTime;
+            if (timeSinceLastChange >= healthChangeDelay)
             {
-                timeSinceLastChange += Time.deltaTime;
-                if (timeSinceLastChange >= healthChangeDelay)
-                {
-                    animationHandler.InvincibilityEnd();
-                }
+                animationHandler.InvincibilityEnd();
             }
         }
-        
     }
 
     public bool ChangeHealth(float change, bool isPlayer)
