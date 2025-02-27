@@ -35,7 +35,7 @@ public class PauseUI : BaseUI
     void Start()
     {
         uiState = UIState.Pause;
-
+        Time.timeScale = 0f;
         continueBtn.onClick.AddListener(OnClickContinueButton);
         exitBtn.onClick.AddListener(OnClickExitButton);
 
@@ -47,11 +47,12 @@ public class PauseUI : BaseUI
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            UIManager.Instance.ChangeState(UIState.InGame);
-            Time.timeScale = 1f;
-        }
+        // ÆË¾÷ »óÅÂ¿¡¼­ ESC´©¸£¸é ÆË¾÷ ²¨Áü
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    UIManager.Instance.ChangeState(UIState.InGame);
+        //    Time.timeScale = 1f;
+        //}
 
     }
     private void OnEnable()
