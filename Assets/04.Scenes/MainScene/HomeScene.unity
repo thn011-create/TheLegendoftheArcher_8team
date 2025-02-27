@@ -3724,7 +3724,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3822,7 +3822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundEffectVolume: 1
   soundEffectPitchVariance: 0.396
-  musicVolume: 0.4
+  musicVolume: 0.5
   bgmCilps:
   - {fileID: 8300000, guid: 6ec95a311cdde7145a789fce2b5b3af7, type: 3}
   - {fileID: 8300000, guid: 0a06ca3f82fded943bab2fb12c8dfbe3, type: 3}
