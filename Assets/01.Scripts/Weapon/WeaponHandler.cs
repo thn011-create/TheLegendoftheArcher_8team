@@ -146,6 +146,8 @@ public class WeaponHandler : MonoBehaviour
     public virtual void Attack()
     {
         AttackAnimation();
+        if (attackSoundClip != null)
+            SoundManager.PlayClip(attackSoundClip);
     }
 
     public virtual void AttackAnimation()

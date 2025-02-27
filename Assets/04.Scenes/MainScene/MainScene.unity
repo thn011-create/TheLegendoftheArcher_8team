@@ -1897,6 +1897,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7359646093253187750, guid: cc77f51f81d794c4d9cd8a114fa9f898, type: 3}
+      propertyPath: damageClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c2aae460730f0e342bd5453533105ae8, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2950,7 +2954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6918288831190903658, guid: 93743e099746ef34884c38c876c8506a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7014429181362160631, guid: 93743e099746ef34884c38c876c8506a, type: 3}
       propertyPath: m_Color.b
