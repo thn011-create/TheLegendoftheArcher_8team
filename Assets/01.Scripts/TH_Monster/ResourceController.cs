@@ -12,6 +12,7 @@ public class ResourceController : MonoBehaviour
     private AnimationHandler animationHandler;
 
     private float timeSinceLastChange = float.MaxValue;
+    
 
     public float CurrentHealth { get; private set; }
     public float MaxHealth => statHandler.MaxHealth; // 항상 최신 상태 반영
@@ -46,18 +47,29 @@ public class ResourceController : MonoBehaviour
 
     private void Update()
     {
-        if (timeSinceLastChange < healthChangeDelay)
+        if (gameObject.CompareTag("Enemy"))
         {
-            timeSinceLastChange += Time.deltaTime;
-            if (timeSinceLastChange >= healthChangeDelay)
+            return;
+        }
+
+        if (gameObject.CompareTag("Player"))
+        {
+            if (timeSinceLastChange < healthChangeDelay)
             {
-                animationHandler.InvincibilityEnd();
+                timeSinceLastChange += Time.deltaTime;
+                if (timeSinceLastChange >= healthChangeDelay)
+                {
+                    animationHandler.InvincibilityEnd();
+                }
             }
         }
+        
     }
 
     public bool ChangeHealth(float change, bool isPlayer)
     {
+        
+        
         if (change == 0 || timeSinceLastChange < healthChangeDelay)
         {
             return false;
@@ -99,8 +111,18 @@ public class ResourceController : MonoBehaviour
                 Debug.LogWarning("[ResourceController] 적 정보 없음!");
                 return false;
             }
-
+            //if(random.NextDouble() <= statHandler.CriticalChance)
+            //{
+            //    change *= (1.5f + statHandler.CriticalDamage);
+            //} 크리티컬 데미지 
             enemyCurrentHealth += change;
+
+
+            EnemyController enemyController = GetComponent<EnemyController>();
+            if (enemyController != null)
+            {
+                enemyController.ShowDamage(change);
+            }
             enemyCurrentHealth = Mathf.Clamp(enemyCurrentHealth, 0, enemyStats.MaxHealth);
 
             if (enemyCurrentHealth <= 0f)

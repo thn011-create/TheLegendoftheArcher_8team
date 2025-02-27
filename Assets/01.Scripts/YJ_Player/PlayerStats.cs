@@ -11,9 +11,9 @@ public class PlayerStats : MonoBehaviour, ICharacter
     [SerializeField] private float maxHealth = 100; // 최대 체력
     [SerializeField] private float experience = 0f; // 경험치
     [SerializeField] private float experienceToNextLevel = 100f; // 다음 레벨 경험치
-    [SerializeField] private int extraProjectiles = 0; // 추가 발사체
+    [SerializeField] private int extraProjectiles = 1; // 추가 발사체
     [SerializeField] private float criticalChance = 10; //크리티컬 확률
-    [SerializeField] private float criticalDamage = 100; // 크리티컬 데미지
+    [SerializeField] private float criticalDamage = 0; // 크리티컬 데미지
     [SerializeField] private float headShotRate = 0f; // 즉사확률
     [SerializeField] private float recoveryRate = 0f; // 추가 회복률
     [SerializeField] private float bloodAbsorptionRate = 0f; //흡혈률

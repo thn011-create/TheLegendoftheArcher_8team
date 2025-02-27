@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour
     // UI µÒº≈≥ ∏Æ
     private Dictionary<UIState, BaseUI> uiDictionary = new Dictionary<UIState, BaseUI>();
 
-    InGameUI InGameUI;
+    public InGameUI InGameUI;
 
     public static UIManager Instance
     {
@@ -113,6 +113,7 @@ public class UIManager : MonoBehaviour
     // ¥Ÿ¿Ω ø˛¿Ã∫Í
     public void ChangeWave(int currentWaveIndex)
     {
+        InGameUI = GetComponentInChildren<InGameUI>();
         InGameUI.UpdateWaveText(currentWaveIndex);
     }
 
