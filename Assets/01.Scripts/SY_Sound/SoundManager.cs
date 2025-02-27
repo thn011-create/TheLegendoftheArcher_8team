@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
 
+
+    // 오디오믹스 - 사운드 조절 
+    [SerializeField] private AudioMixer audioMixer;
+    
     // audio clip 담는 배열
     [SerializeField] AudioClip[] bgms;
     [SerializeField] AudioClip[] sfxs;
@@ -13,6 +18,12 @@ public class SoundManager : MonoBehaviour
     // 플레이하는 audio source
     [SerializeField] AudioSource playbgm;
     [SerializeField] AudioSource playsfx;
+
+    public enum SoundType
+    {
+        BGM,
+        SFX
+    }
 
     public enum Bgm
     {
@@ -52,4 +63,11 @@ public class SoundManager : MonoBehaviour
     {
         playbgm.Stop();
     }
+
+    // 소리 볼륨 조절 - 옵션
+    public void SetVolume(SoundType type, float value)
+    {
+        audioMixer.SetFloat(type.ToString(), value);
+    }
+   
 }
