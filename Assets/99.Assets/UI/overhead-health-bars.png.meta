@@ -202,10 +202,10 @@ TextureImporter:
       name: overhead-health-bars_3
       rect:
         serializedVersion: 2
-        x: 34
-        y: 22
-        width: 12
-        height: 4
+        x: 35
+        y: 23
+        width: 10
+        height: 2
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,6 +240,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: overhead-health-bars_5
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 25
+        width: 4
+        height: 1
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a751130765ca5994fa7dc459042f765c
+      internalID: -1392506433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -256,6 +277,7 @@ TextureImporter:
       overhead-health-bars_2: -38733212
       overhead-health-bars_3: 1886205728
       overhead-health-bars_4: -2100445165
+      overhead-health-bars_5: -1392506433
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
