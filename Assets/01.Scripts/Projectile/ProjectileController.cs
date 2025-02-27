@@ -199,14 +199,18 @@ public class ProjectileController : MonoBehaviour
         }
         // 공격 대상에 맞았는지 확인
         else if (rangeWeaponHandler.target.value ==
-            (rangeWeaponHandler.target.value | (1 << collision.gameObject.layer)))
+                 (rangeWeaponHandler.target.value | (1 << collision.gameObject.layer)))
         {
-            
-
             ResourceController resourceController = collision.GetComponent<ResourceController>();
             if (resourceController != null)
             {
-                resourceController.ChangeHealth(-rangeWeaponHandler.Damage);
+                // **대상이 플레이어인지 적인지 판별**
+                bool isPlayer = collision.GetComponent<PlayerStats>() != null;
+
+                // **체력 변경 (플레이어 또는 적)**
+                resourceController.ChangeHealth(-rangeWeaponHandler.Damage, isPlayer);
+
+                // 넉백 처리
                 if (rangeWeaponHandler.IsOnKnockback)
                 {
                     BaseController controller = collision.GetComponent<BaseController>();
@@ -217,9 +221,9 @@ public class ProjectileController : MonoBehaviour
                 }
             }
 
-
             // 충돌 위치에서 투사체 파괴
             DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestroy);
         }
     }
+
 }

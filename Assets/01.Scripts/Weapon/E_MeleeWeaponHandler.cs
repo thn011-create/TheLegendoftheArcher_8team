@@ -18,7 +18,7 @@ public class E_MeleeWeaponHandler : WeaponHandler
     public override void Attack()
     {
         base.Attack();
-                
+
         RaycastHit2D hit = Physics2D.BoxCast(
             transform.position + (Vector3)Controller.LookDirection * collideBoxSize.x,
             collideBoxSize, 0, Vector2.zero, 0, target);
@@ -28,7 +28,13 @@ public class E_MeleeWeaponHandler : WeaponHandler
             ResourceController resourceController = hit.collider.GetComponent<ResourceController>();
             if (resourceController != null)
             {
-                resourceController.ChangeHealth(-Damage);
+                // **대상이 플레이어인지 적인지 판별**
+                bool isPlayer = hit.collider.GetComponent<PlayerStats>() != null;
+
+                // **체력 변경 (플레이어 또는 적)**
+                resourceController.ChangeHealth(-Damage, isPlayer);
+
+                // 애니메이션 & 넉백 처리
                 if (IsOnKnockback)
                 {
                     BaseController controller = hit.collider.GetComponent<BaseController>();
@@ -41,6 +47,7 @@ public class E_MeleeWeaponHandler : WeaponHandler
             }
         }
     }
+
 
     public override void Rotate(bool isLeft)
     {
