@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     public PlayerController player { get; private set; }
     private ResourceController _playerResourceController;
+    
 
     [SerializeField] private int currentWaveIndex = 0;
 
@@ -38,7 +39,6 @@ public class GameManager : MonoBehaviour
         enemyManager = GetComponentInChildren<EnemyManager>();
         enemyManager.Init(this);
 
-        
     }
 
     private void Start()

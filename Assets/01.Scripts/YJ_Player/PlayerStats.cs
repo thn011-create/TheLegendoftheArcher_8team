@@ -37,6 +37,11 @@ public class PlayerStats : MonoBehaviour, ICharacter
     public float RecoveryDropRate { get => recoveryDropRate; set => recoveryDropRate = value; }
     public float Evasionrate { get => evasionRate; set => evasionRate = value; }
 
+    private void Start()
+    {
+        Debug.Log($"[PlayerStats Start] Evasionrate: {Evasionrate}");
+    }
+
     public void GainExperience(float amount)
     {
         experience += amount;
