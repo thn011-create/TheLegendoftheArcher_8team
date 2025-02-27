@@ -40,8 +40,16 @@ public class HomeUI : BaseUI
 
     public void OnClickStartBtn() 
     {
+        StartCoroutine(WaitTimeforNextScene());
+        
+    }
+
+    public IEnumerator WaitTimeforNextScene()
+    {
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("MainScene"); // æ¿ ¿Ã∏ß 
     }
+
     public void OnSettingBtn() 
     {
         settingUI.SettingOpen();

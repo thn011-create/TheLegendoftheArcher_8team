@@ -4160,7 +4160,7 @@ GameObject:
   - component: {fileID: 1658797464}
   - component: {fileID: 1658797463}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: StartTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4884,8 +4884,9 @@ GameObject:
   - component: {fileID: 2037793890}
   - component: {fileID: 2037793889}
   - component: {fileID: 2037793888}
+  - component: {fileID: 2037793891}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: StartBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4993,6 +4994,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037793886}
   m_CullTransparentMesh: 1
+--- !u!114 &2037793891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037793886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1df17f5830dd0a49aa3e69b7ccd5376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 4bfe759830bed2a4e90745e58d44bd66, type: 3}
+  soundBtn: {fileID: 2037793888}
 --- !u!1 &2068147241
 GameObject:
   m_ObjectHideFlags: 0
