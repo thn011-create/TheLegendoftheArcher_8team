@@ -15,16 +15,23 @@ public class RangeWeaponHandler : WeaponHandler
     [SerializeField] float multipleProjectileAngle;
     [SerializeField] Color projectileColor;
 
+
     public float BulletSize { get { return bulletSize; } }
     public float Spread { get { return spread; } }
     public int NumberofProjectilesPerShot { get { return numberofProjectilesPerShot; } }
     public float MultipleProjectileAngle { get { return multipleProjectileAngle; } }
     public Color ProjectileColor { get { return projectileColor; } }
-
+    public SpriteRenderer _weaponRenderer;
 
 
 
     protected ProjectileManager projectileManager;
+
+
+    private void Awake()
+    {
+        _weaponRenderer = GetComponent<SpriteRenderer>();
+    }
 
     protected override void Start()
     {

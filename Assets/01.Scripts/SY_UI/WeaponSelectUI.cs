@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class WeaponSelectUI : MonoBehaviour
@@ -9,6 +10,7 @@ public class WeaponSelectUI : MonoBehaviour
     [SerializeField] WeaponHandler weaponHandler;
     [SerializeField] PlayerController player;
     [SerializeField] Button weaponSlot;
+
 
     [SerializeField] List<Sprite> images;
 
@@ -76,5 +78,6 @@ public class WeaponSelectUI : MonoBehaviour
             Debug.LogError("Player or WeaponPrefab is not assigned!");
         }
     }
+
 
 }

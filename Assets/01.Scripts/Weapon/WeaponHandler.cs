@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +28,16 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField, ReadOnly(false)] float attackRange;
     [SerializeField, ReadOnly(false)] int bouncing = 0;
 
-    public int Key { get => key; set => key = value; }
+    public int Key
+    {
+        get => key;
+        set
+        {
+            key = value;
+            LoadData(Key);
+        }
+    }
+
     public int ImageIdx { get => imageIndex; set => imageIndex = value; }
     public string ItemName { get => itemName; set => itemName = value; }
     public Grade Grade { get => grade; set => grade = value; }
@@ -38,6 +48,7 @@ public class WeaponHandler : MonoBehaviour
     public float Speed { get => speed; set => speed = value; }
     public float AttackRange { get => attackRange; set => attackRange = value; }
     public int Bouncing { get => bouncing; set => bouncing = value; }
+    public Sprite _Sprite { get; set; }
 
     public LayerMask target;
 
@@ -86,6 +97,11 @@ public class WeaponHandler : MonoBehaviour
 
     protected virtual void LoadData(int key)
     {
+        weaponRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        dataManager = DataManager.Instance;
+        dataManager.Initialize();
+
         var data = dataManager.WeaponInfoLoader.GetByKey(key);
         Debug.Assert(!(null == data), "키 값을 확인하세요.");
 
@@ -143,6 +159,11 @@ public class WeaponHandler : MonoBehaviour
 
         float scaleX = isFlip ? -1f : 1f;
         flip.localScale = new Vector3(scaleX, 1f, 1f);
+    }
+
+    public void GetImage(int key)
+    {
+
     }
 
 }
