@@ -11,13 +11,16 @@ public class HomeUI : BaseUI
     [SerializeField] Button startBtn;
     [SerializeField] Button inventoryBtn;
     [SerializeField] Button shopBtn;
+    [SerializeField] Button settingBtn;
 
+    public SettingUI settingUI;
 
     void Start()
     {
         startBtn.onClick.AddListener(OnClickStartBtn);
         inventoryBtn.onClick.AddListener(OnClickInventoryBtn);
         shopBtn.onClick.AddListener(OnClickShopBtn);
+        settingBtn.onClick.AddListener(OnSettingBtn);
     }
 
     
@@ -31,10 +34,15 @@ public class HomeUI : BaseUI
 
     public void OnClickStartBtn() 
     {
-        SceneManager.LoadScene("UIScene"); // æ¿ ¿Ã∏ß ∫Ø∞Êøπ¡§
+        SceneManager.LoadScene("MainScene"); // æ¿ ¿Ã∏ß 
+    }
+    public void OnSettingBtn() 
+    {
+        settingUI.SettingOpen();
     }
     public void OnClickInventoryBtn() 
     { }
     public void OnClickShopBtn() 
     { }
+
 }
