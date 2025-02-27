@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -42,10 +43,10 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        design = GetComponentInChildren<MapDesign>();
+        
         if (!isFirstLoading)
         {
-            design.DrawMap();
+            
             StartGame();
         }
         else
@@ -57,23 +58,23 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        //uiManager.SetPlayGame();
         StartNextWave();
     }
 
     void StartNextWave()
     {
         currentWaveIndex += 1;
-        //uiManager.ChangeWave(currentWaveIndex);
+        Debug.Log("Wave " + currentWaveIndex + " Started");
+        design.GenerateMap();
+
         enemyManager.StartWave(1 + currentWaveIndex / 5);
     }
 
     public void EndOfWave()
     {
-        StartNextWave();
-        /*enemyManager.StopWave();
-        Destroy(design.mapDoor);*/
-
+        Debug.Log("Wave " + currentWaveIndex + " Ended");
+        design.DoorOpen();
+        enemyManager.StopWave();
     }
 
     public void GameOver()
@@ -82,17 +83,18 @@ public class GameManager : MonoBehaviour
         //uiManager.SetGameOver();
     }
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision == null)
         {
             return;
         }
-        if (collision.CompareTag("Player"))
+        else if (collision.tag == "Player")
         {
-            StartGame();
+            collision.transform.position = Vector3.zero;
+            StartNextWave();
         }
     }
+
 }
 

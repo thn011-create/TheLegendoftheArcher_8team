@@ -10,6 +10,7 @@ using System;
 [System.Serializable]
 public class GameSave
 {
+
     private readonly string saveDirectory;
     private readonly string saveFile;
     private readonly string globalDataFile;  // 글로벌 데이터 파일
