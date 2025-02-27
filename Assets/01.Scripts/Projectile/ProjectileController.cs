@@ -182,15 +182,10 @@ public class ProjectileController : MonoBehaviour
         if (levelCollisionLayer.value ==
             (levelCollisionLayer.value | (1 << collision.gameObject.layer)))
         {
-            if (bouncing == 0)
-            {   // 충돌 위치에서 투사체 파괴
-                DestroyProjectile(collision.ClosestPoint(transform.position) - direction * .2f, fxOnDestroy);
-            }
-            else
+            // 충돌 위치에서 투사체 파괴
+            DestroyProjectile(collision.ClosestPoint(transform.position) - direction * .2f, fxOnDestroy);
+            if (bouncing != 0)
             {
-                // 충돌 위치에서 투사체 파괴
-                DestroyProjectile(collision.ClosestPoint(transform.position) - direction * .2f, fxOnDestroy);
-
                 projectileManager.ShootBullet(rangeWeaponHandler, startPoint, relect_dir, this.key, bouncing - 1);
             }
         }
