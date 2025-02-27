@@ -71,6 +71,11 @@ public class WeaponInfo
     /// </summary>
     public bool Equip;
 
+    /// <summary>
+    /// 튕기는 횟수
+    /// </summary>
+    public int Bouncing;
+
 }
 public class WeaponInfoLoader
 {

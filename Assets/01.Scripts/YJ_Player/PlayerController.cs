@@ -7,6 +7,7 @@ public class PlayerController : BaseController
     private Transform target; // 공격할 타겟(적)
     private float attackCooldown = 1.0f; // 공격 쿨다운
     private float lastAttackTime = 0.0f; // 마지막 공격 시간
+   
 
     //public LayerMask Etarget;
     public Joystick joy;
@@ -67,6 +68,12 @@ public class PlayerController : BaseController
 
         foreach (GameObject enemy in enemies)
         {
+            EnemyStats enemyStats = enemy.GetComponent<EnemyStats>();
+            if (enemyStats == null || enemyStats.CurrentHealth <= 0)
+            {
+                continue; // 체력이 0이면 타겟 후보에서 제외
+            }
+
             float distance = Vector2.Distance(transform.position, enemy.transform.position);
             if (distance < minDistance)
             {
