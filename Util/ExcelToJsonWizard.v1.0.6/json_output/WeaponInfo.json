@@ -607,6 +607,22 @@
       "SpriteIndex": 96,
       "Equip": false,
       "Bouncing": 0
+    },
+    {
+      "key": 9004,
+      "Name": "GrenadierWeapon",
+      "Grade": 0,
+      "Damage": 15,
+      "Description": "몬스터가 쓰는 무기인 것 같다 버리고 가자.",
+      "Delay": 0.5,
+      "Speed": 5,
+      "AttackRange": 7,
+      "isOnKnockback": true,
+      "KnockbackPower": 0.7,
+      "KnockbackTime": 0.5,
+      "SpriteIndex": 97,
+      "Equip": false,
+      "Bouncing": 0
     }
   ]
 }

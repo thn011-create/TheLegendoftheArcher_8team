@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject nextStageArea;
 
+    bool IsBoss = false;
+
     private void Awake()
     {
         if (instance == null)
@@ -66,8 +68,10 @@ public class GameManager : MonoBehaviour
     {
         currentWaveIndex += 1;
         Debug.Log("Wave " + currentWaveIndex + " Started");
-        design.GenerateMap();
-
+        if (currentWaveIndex == 10)
+            IsBoss = true;
+        design.GenerateMap(IsBoss);
+        IsBoss = false;
         enemyManager.StartWave(1 + currentWaveIndex / 5);
         uiManager.ChangeWave(currentWaveIndex);
     }

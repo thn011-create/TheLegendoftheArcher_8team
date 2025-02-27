@@ -34,7 +34,7 @@
       "isOnKnockback": true,
       "KnockbackPower": 0.1,
       "KnockbackTime": 0.1,
-      "SpriteName": ""
+      "SpriteName": "."
     }
   ]
 }

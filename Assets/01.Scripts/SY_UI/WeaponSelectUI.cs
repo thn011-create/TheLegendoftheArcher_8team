@@ -38,7 +38,7 @@ public class WeaponSelectUI : MonoBehaviour
 
     void PopulateGrid()
     {
-        PlayerPrefs.SetInt("BestStage", 11);
+        PlayerPrefs.SetInt("BestStage", 0);
         for (int i = 0; i < 35; i++)
         {
             weaponSlot = Instantiate(prefab, gridContainer).GetComponent<Button>();
