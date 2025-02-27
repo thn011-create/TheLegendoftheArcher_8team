@@ -3090,7 +3090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundEffectVolume: 0
   soundEffectPitchVariance: 0
-  musicVolume: 0.578
+  musicVolume: 0.4
   bgmCilps:
   - {fileID: 8300000, guid: 6ec95a311cdde7145a789fce2b5b3af7, type: 3}
   - {fileID: 8300000, guid: 0a06ca3f82fded943bab2fb12c8dfbe3, type: 3}
