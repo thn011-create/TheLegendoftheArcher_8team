@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class SoundManager : MonoBehaviour
     //[SerializeField] AudioSource playbgm;
     //[SerializeField] AudioSource playsfx;
 
-    public  AudioClip musicCilp;
+    public  AudioClip[] bgmCilps; // 씬별 bgm
     private AudioSource musicAudioSource;
 
     // 사운드소스 프리팹
@@ -61,21 +62,30 @@ public class SoundManager : MonoBehaviour
         musicAudioSource.volume = PlayerPrefs.GetFloat("MusicVolume", musicVolume);
         musicAudioSource.loop = true;
 
+        // scene 변경되는지 사운드매니저에서 확인
+        SceneManager.sceneLoaded += OnSceneLoaded; 
+
     }
 
-    private void Start()
+    // 파괴
+    private void OnDestroy()
     {
-        ChangeBackGroundMusic(musicCilp);
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+
+    }
     
-    public void ChangeBackGroundMusic(AudioClip clip)
-    {
-        if (musicAudioSource.clip == clip) return; // 중복재생 방지
 
-        musicAudioSource.Stop();
-        musicAudioSource.clip = clip;
-        musicAudioSource.Play();
+    public void playBGM(int sceneIdx)
+    {
+        if (sceneIdx < bgmCilps.Length && bgmCilps[sceneIdx] != null)
+        {
+            StartCoroutine(ChangeBGM(bgmCilps[sceneIdx]));
+        }
+      
     }
 
     public static void PlayClip(AudioClip clip)
@@ -84,6 +94,18 @@ public class SoundManager : MonoBehaviour
         SoundSource soundSource = obj.GetComponent<SoundSource>();
         soundSource.Play(clip, instance.soundEffectVolume, instance.soundEffectPitchVariance);
     }
+
+
+    // BGM 페이드인/페이드아웃
+    private IEnumerator ChangeBGM(AudioClip clip) 
+    {
+        musicAudioSource.Stop();
+        musicAudioSource.clip = newClip;
+        musicAudioSource.Play();
+
+
+    }
+
 
     // 볼륨 //
 
