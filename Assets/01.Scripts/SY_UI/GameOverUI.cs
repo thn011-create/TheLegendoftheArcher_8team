@@ -32,7 +32,13 @@ public class GameOverUI : BaseUI
 
     public void OnCloseButtonClick()
     {
-        SceneManager.LoadScene("HomeScene");
+        StartCoroutine(WaitTimeforNextScene());
+        
+    }
+    public IEnumerator WaitTimeforNextScene()
+    {
+        yield return new WaitForSeconds(2.2f);
+        SceneManager.LoadScene("HomeScene"); // æ¿ ¿Ã∏ß 
     }
 
 
