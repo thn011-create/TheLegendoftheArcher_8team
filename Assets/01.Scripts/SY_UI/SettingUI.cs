@@ -27,8 +27,18 @@ public class SettingUI : MonoBehaviour
         settingCanvasGroup.interactable = false;  // 비활성화
 
         closeButton.onClick.AddListener(OnCloseButtonClick); // no 버튼
-        saveButton.onClick.AddListener(OnSaveButtonClick); // 닫기 버튼
+        saveButton.onClick.AddListener(OnSaveButtonClick); // 저장버튼
+
+        // 볼륨 슬라이더
+        bgmSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
+        sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", 0.5f);
+
+        bgmSlider.onValueChanged.AddListener(SetMusicVolume);
+        sfxSlider.onValueChanged.AddListener(SetSFXVolume);
     }
+    
+    public void SetSFXVolume(float volume) { SoundManager.instance.SetSFXVolume(volume); }
+    public void SetMusicVolume(float volume) { SoundManager.instance.SetMusicVolume(volume); } 
 
 
     void Update()

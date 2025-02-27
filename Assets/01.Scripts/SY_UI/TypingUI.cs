@@ -12,7 +12,7 @@ public class TypingUI : MonoBehaviour
     {
         titelTxt.DOKill();
         titelTxt.text = "";
-        titelTxt.DOText("궁수의 전설", 2.0f).SetEase(Ease.Linear)
+        titelTxt.DOText("라스트 투척의 전설", 2.0f).SetEase(Ease.Linear)
         .OnComplete(() => ShakeText());
     }
     private void ShakeText()
