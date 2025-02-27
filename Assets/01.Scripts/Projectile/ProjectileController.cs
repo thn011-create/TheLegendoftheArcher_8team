@@ -30,32 +30,32 @@ public class ProjectileController : MonoBehaviour
     private void Awake()
     {
         currentDuration = 0;
-        // ìì‹ ì˜¤ë¸Œì íŠ¸ì—ì„œ SpriteRenderer ì»´í¬ë„ŒíŠ¸ë¥¼ ê°€ì ¸ì˜´
+        // ÀÚ½Ä ¿ÀºêÁ§Æ®¿¡¼­ SpriteRenderer ÄÄÆ÷³ÍÆ®¸¦ °¡Á®¿È
         spriteRanderer = GetComponentInChildren<SpriteRenderer>();
 
-        // Rigidbody2D ì»´í¬ë„ŒíŠ¸ë¥¼ ê°€ì ¸ì™€ ë¬¼ë¦¬ ì²˜ë¦¬ë¥¼ ë‹´ë‹¹
+        // Rigidbody2D ÄÄÆ÷³ÍÆ®¸¦ °¡Á®¿Í ¹°¸® Ã³¸®¸¦ ´ã´ç
         _rigidbody = GetComponent<Rigidbody2D>();
 
-        // ì²« ë²ˆì§¸ ìì‹ ì˜¤ë¸Œì íŠ¸ë¥¼ í”¼ë²—ìœ¼ë¡œ ì„¤ì •
+        // Ã¹ ¹øÂ° ÀÚ½Ä ¿ÀºêÁ§Æ®¸¦ ÇÇ¹şÀ¸·Î ¼³Á¤
         pivot = transform.GetChild(0);
     }
 
     private void Update()
     {
-        // ì˜¤ë¸Œì íŠ¸ê°€ ì¤€ë¹„ë˜ì§€ ì•Šì•˜ë‹¤ë©´ ì‹¤í–‰í•˜ì§€ ì•ŠìŒ
+        // ¿ÀºêÁ§Æ®°¡ ÁØºñµÇÁö ¾Ê¾Ò´Ù¸é ½ÇÇàÇÏÁö ¾ÊÀ½
         if (!isReady) return;
 
         currentDuration += Time.deltaTime;
-        //íˆ¬ì‚¬ì²´ì˜ ìµœëŒ€ ì§€ì† ì‹œê°„ì´ ì´ˆê³¼ë˜ë©´ íŒŒê´´
+        //Åõ»çÃ¼ÀÇ ÃÖ´ë Áö¼Ó ½Ã°£ÀÌ ÃÊ°úµÇ¸é ÆÄ±«
         if (currentDuration > 10f)//.Duration)
         {
             DestroyProjectile(transform.position, false);
         }
 
-        // íˆ¬ì‚¬ì²´ë¥¼ ì§€ì •ëœ ë°©í–¥ìœ¼ë¡œ ì´ë™ì‹œí‚´
+        // Åõ»çÃ¼¸¦ ÁöÁ¤µÈ ¹æÇâÀ¸·Î ÀÌµ¿½ÃÅ´
         _rigidbody.velocity = direction * rangeWeaponHandler.Speed;
 
-        // íˆ¬ì‚¬ì²´ íšŒì „
+        // Åõ»çÃ¼ È¸Àü
         if (rangeWeaponHandler.Key / 1000 != 5 && rangeWeaponHandler.Key / 1000 != 9)
         {
             rotZ += Time.deltaTime * 1000;
@@ -63,50 +63,50 @@ public class ProjectileController : MonoBehaviour
             return;
         }
 
-        
+
     }
 
     /// <summary>
-    /// íˆ¬ì‚¬ì²´ ì´ˆê¸°í™” í•¨ìˆ˜
+    /// Åõ»çÃ¼ ÃÊ±âÈ­ ÇÔ¼ö
     /// </summary>
-    /// <param name="direction">ë°©í–¥</param>
-    /// <param name="weaponHandler">ë¬´ê¸°</param>
-    /// <param name="projectileManager">ë°œì‚¬ì²´ ë§¤ë‹ˆì €</param>
+    /// <param name="direction">¹æÇâ</param>
+    /// <param name="weaponHandler">¹«±â</param>
+    /// <param name="projectileManager">¹ß»çÃ¼ ¸Å´ÏÀú</param>
     public void Init(Vector2 direction, RangeWeaponHandler weaponHandler, ProjectileManager projectileManager, int key, int bouncing, GameObject prefab)
     {
         this.projectileManager = projectileManager;
 
-        // ë¬´ê¸° í•¸ë“¤ëŸ¬ ì •ë³´ ì €ì¥
+        // ¹«±â ÇÚµé·¯ Á¤º¸ ÀúÀå
         this.rangeWeaponHandler = weaponHandler;
 
-        // íˆ¬ì‚¬ì²´ ì´ë™ ë°©í–¥ ì„¤ì •
+        // Åõ»çÃ¼ ÀÌµ¿ ¹æÇâ ¼³Á¤
         this.direction = direction;
         this.bouncing = bouncing;
         this.key = key;
         this.prefab = prefab;
 
-        // íˆ¬ì‚¬ì²´ í¬ê¸° ì„¤ì •
+        // Åõ»çÃ¼ Å©±â ¼³Á¤
         transform.localScale = Vector3.one * weaponHandler.BulletSize;
 
-        // íˆ¬ì‚¬ì²´ ìƒ‰ìƒ ì„¤ì •
+        // Åõ»çÃ¼ »ö»ó ¼³Á¤
         spriteRanderer.color = weaponHandler.ProjectileColor;
 
-        // íˆ¬ì‚¬ì²´ê°€ ì´ë™í•˜ëŠ” ë°©í–¥ìœ¼ë¡œ íšŒì „
+        // Åõ»çÃ¼°¡ ÀÌµ¿ÇÏ´Â ¹æÇâÀ¸·Î È¸Àü
         transform.right = this.direction;
 
-        // íˆ¬ì‚¬ì²´ì˜ ë°©í–¥ì— ë”°ë¼ í”¼ë²— íšŒì „ ì¡°ì •
+        // Åõ»çÃ¼ÀÇ ¹æÇâ¿¡ µû¶ó ÇÇ¹ş È¸Àü Á¶Á¤
         pivot.localEulerAngles += new Vector3(0, 180, 0);
 
         // Sprite
         string imageName = "fantasy_bullet_";
         spriteRanderer.sprite = FindImage(imageName, rangeWeaponHandler.ImageIdx);
 
-        // íˆ¬ì‚¬ì²´ ì¤€ë¹„ ì™„ë£Œ
+        // Åõ»çÃ¼ ÁØºñ ¿Ï·á
         isReady = true;
     }
 
     /// <summary>
-    /// íˆ¬ì‚¬ì²´ë¥¼ ì œê±°í•˜ëŠ” í•¨ìˆ˜
+    /// Åõ»çÃ¼¸¦ Á¦°ÅÇÏ´Â ÇÔ¼ö
     /// </summary>
     /// <param name="position"></param>
     /// <param name="createFx"></param>
@@ -117,15 +117,15 @@ public class ProjectileController : MonoBehaviour
         //    projectileManager.CreateImpactParticlesAtPosition(position, rangeWeaponHandler);
         //}
 
-        // í˜„ì¬ ì˜¤ë¸Œì íŠ¸ë¥¼ ì‚­ì œ
+        // ÇöÀç ¿ÀºêÁ§Æ®¸¦ »èÁ¦
         Destroy(this.gameObject);
     }
 
     /// <summary>
-    /// ë¬´ê¸° ì´ë¯¸ì§€ ì°¾ëŠ” í•¨ìˆ˜
+    /// ¹«±â ÀÌ¹ÌÁö Ã£´Â ÇÔ¼ö
     /// </summary>
-    /// <param name="name">íŒŒì¼ ì´ë¦„</param>
-    /// <param name="idx">ì´ë¯¸ì§€ ì¸ë±ìŠ¤</param>
+    /// <param name="name">ÆÄÀÏ ÀÌ¸§</param>
+    /// <param name="idx">ÀÌ¹ÌÁö ÀÎµ¦½º</param>
     /// <returns></returns>
     protected Sprite FindImage(string name, int idx)
     {
@@ -158,51 +158,51 @@ public class ProjectileController : MonoBehaviour
         //RaycastHit hit;
         //Vector3 dir = (collision.transform.position - transform.position).normalized;
 
-        //// Raycastë¥¼ ì‚¬ìš©í•˜ì—¬ ì¶©ëŒ í‘œë©´ì˜ ë²•ì„  ë²¡í„° ì°¾ê¸°
+        //// Raycast¸¦ »ç¿ëÇÏ¿© Ãæµ¹ Ç¥¸éÀÇ ¹ı¼± º¤ÅÍ Ã£±â
         //if (Physics.Raycast(transform.position, dir, out hit))
         //{
         //    reflect_normal = hit.normal;
         //}
 
-        // ì¶©ëŒ í‘œë©´ì˜ ë²•ì„  ê°€ì ¸ì˜¤ê¸° (2D ì „ìš©)
+        // Ãæµ¹ Ç¥¸éÀÇ ¹ı¼± °¡Á®¿À±â (2D Àü¿ë)
         ContactPoint2D[] contacts = new ContactPoint2D[1];
         if (collision.TryGetComponent(out Rigidbody2D rb) && rb.GetContacts(contacts) > 0)
         {
-            reflect_normal = contacts[0].normal; // ì²« ë²ˆì§¸ ì¶©ëŒ í‘œë©´ì˜ ë²•ì„ 
+            reflect_normal = contacts[0].normal; // Ã¹ ¹øÂ° Ãæµ¹ Ç¥¸éÀÇ ¹ı¼±
         }
         else
         {
-            reflect_normal = (transform.position - collision.transform.position).normalized; // ëŒ€ì²´ ë²•ì„  (ë¹„ì •ìƒì ì¸ ê²½ìš°)
+            reflect_normal = (transform.position - collision.transform.position).normalized; // ´ëÃ¼ ¹ı¼± (ºñÁ¤»óÀûÀÎ °æ¿ì)
         }
 
         Vector3 relect_dir = Vector3.Reflect(this.direction, reflect_normal).normalized;
         Vector3 startPoint = transform.position + relect_dir * .5f;
 
-        // ë ˆë²¨ ì¶©ëŒ ë ˆì´ì–´ì— ë‹¿ì•˜ëŠ”ì§€ í™•ì¸
+        // ·¹º§ Ãæµ¹ ·¹ÀÌ¾î¿¡ ´ê¾Ò´ÂÁö È®ÀÎ
         if (levelCollisionLayer.value ==
             (levelCollisionLayer.value | (1 << collision.gameObject.layer)))
         {
-            // ì¶©ëŒ ìœ„ì¹˜ì—ì„œ íˆ¬ì‚¬ì²´ íŒŒê´´
+            // Ãæµ¹ À§Ä¡¿¡¼­ Åõ»çÃ¼ ÆÄ±«
             DestroyProjectile(collision.ClosestPoint(transform.position) - direction * .2f, fxOnDestroy);
             if (bouncing != 0)
             {
                 projectileManager.ShootBullet(rangeWeaponHandler, startPoint, relect_dir, this.key, bouncing - 1);
             }
         }
-        // ê³µê²© ëŒ€ìƒì— ë§ì•˜ëŠ”ì§€ í™•ì¸
+        // °ø°İ ´ë»ó¿¡ ¸Â¾Ò´ÂÁö È®ÀÎ
         else if (rangeWeaponHandler.target.value ==
                  (rangeWeaponHandler.target.value | (1 << collision.gameObject.layer)))
         {
             ResourceController resourceController = collision.GetComponent<ResourceController>();
             if (resourceController != null)
             {
-                // **ëŒ€ìƒì´ í”Œë ˆì´ì–´ì¸ì§€ ì ì¸ì§€ íŒë³„**
+                // **´ë»óÀÌ ÇÃ·¹ÀÌ¾îÀÎÁö ÀûÀÎÁö ÆÇº°**
                 bool isPlayer = collision.GetComponent<PlayerStats>() != null;
 
-                // **ì²´ë ¥ ë³€ê²½ (í”Œë ˆì´ì–´ ë˜ëŠ” ì )**
+                // **Ã¼·Â º¯°æ (ÇÃ·¹ÀÌ¾î ¶Ç´Â Àû)**
                 resourceController.ChangeHealth(-rangeWeaponHandler.Damage, isPlayer);
 
-                // ë„‰ë°± ì²˜ë¦¬
+                // ³Ë¹é Ã³¸®
                 if (rangeWeaponHandler.IsOnKnockback)
                 {
                     BaseController controller = collision.GetComponent<BaseController>();
@@ -213,7 +213,7 @@ public class ProjectileController : MonoBehaviour
                 }
             }
 
-            // ì¶©ëŒ ìœ„ì¹˜ì—ì„œ íˆ¬ì‚¬ì²´ íŒŒê´´
+            // Ãæµ¹ À§Ä¡¿¡¼­ Åõ»çÃ¼ ÆÄ±«
             DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestroy);
         }
     }

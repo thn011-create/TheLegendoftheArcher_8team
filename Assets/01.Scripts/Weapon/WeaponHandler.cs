@@ -9,13 +9,13 @@ using static DesignEnums;
 
 public class WeaponHandler : MonoBehaviour
 {
-    [Header("ì´ë¯¸ì§€ë“¤")]
+    [Header("ÀÌ¹ÌÁöµé")]
     [SerializeField] protected List<Sprite> images;
 
-    [Header("Keyê°’")]
+    [Header("Key°ª")]
     [SerializeField] int key;
 
-    [Header("Weapon Info - ìë™ ì…ë ¥")]
+    [Header("Weapon Info - ÀÚµ¿ ÀÔ·Â")]
     [SerializeField, ReadOnly(false)] int imageIndex;
     [SerializeField, ReadOnly(false)] string itemName;
     [SerializeField, ReadOnly(false)] Grade grade;
@@ -52,7 +52,7 @@ public class WeaponHandler : MonoBehaviour
 
     public LayerMask target;
 
-    [Header("Knockback Info - ìë™ ì…ë ¥")]
+    [Header("Knockback Info - ÀÚµ¿ ÀÔ·Â")]
     [SerializeField, ReadOnly(false)] bool isOnKnockback = false;
     [SerializeField, ReadOnly(false)] float knockbackPower = 0.1f;
     [SerializeField, ReadOnly(false)] float knockbackTime = 0.5f;
@@ -103,7 +103,7 @@ public class WeaponHandler : MonoBehaviour
         dataManager.Initialize();
 
         var data = dataManager.WeaponInfoLoader.GetByKey(key);
-        Debug.Assert(!(null == data), "í‚¤ ê°’ì„ í™•ì¸í•˜ì„¸ìš”.");
+        Debug.Assert(!(null == data), "Å° °ªÀ» È®ÀÎÇÏ¼¼¿ä.");
 
         imageIndex = data.SpriteIndex;
         itemName = data.Name;
@@ -124,10 +124,10 @@ public class WeaponHandler : MonoBehaviour
     }
 
     /// <summary>
-    /// ë¬´ê¸° ì´ë¯¸ì§€ ì°¾ëŠ” í•¨ìˆ˜
+    /// ¹«±â ÀÌ¹ÌÁö Ã£´Â ÇÔ¼ö
     /// </summary>
-    /// <param name="name">íŒŒì¼ ì´ë¦„</param>
-    /// <param name="idx">ì´ë¯¸ì§€ ì¸ë±ìŠ¤</param>
+    /// <param name="name">ÆÄÀÏ ÀÌ¸§</param>
+    /// <param name="idx">ÀÌ¹ÌÁö ÀÎµ¦½º</param>
     /// <returns></returns>
     protected Sprite FindImage(string name, int idx)
     {

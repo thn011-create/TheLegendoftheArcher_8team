@@ -9,6 +9,8 @@ public enum UIState
     //Game Scene
     //GameMission, // 클리어 조건
     //SelectSkill, // 능력 선택
+    
+    WeaponSelect, // 무기 선택
     InGame, // 인게임
     Pause, // 게임 일시정지
     GameOver, // 게임오버
@@ -54,7 +56,7 @@ public class UIManager : MonoBehaviour
                 Debug.Log($"등록된 UI: {ui.uiState}");
             }
 
-            currentState = UIState.InGame;
+            currentState = UIState.WeaponSelect;
 
             if (uiDictionary.ContainsKey(UIState.InGame))
             {
@@ -106,8 +108,7 @@ public class UIManager : MonoBehaviour
     public void SetPlayGame()
     {
         Debug.Log("[SetPlayGame] 호출됨!");
-        ChangeState(UIState.InGame);
-        
+        ChangeState(UIState.WeaponSelect);
     }
 
     // 다음 웨이브

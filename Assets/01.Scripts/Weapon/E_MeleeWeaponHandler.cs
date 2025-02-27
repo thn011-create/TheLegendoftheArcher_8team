@@ -28,13 +28,13 @@ public class E_MeleeWeaponHandler : WeaponHandler
             ResourceController resourceController = hit.collider.GetComponent<ResourceController>();
             if (resourceController != null)
             {
-                // **ëŒ€ìƒì´ í”Œë ˆì´ì–´ì¸ì§€ ì ì¸ì§€ íŒë³„**
+                // **´ë»óÀÌ ÇÃ·¹ÀÌ¾îÀÎÁö ÀûÀÎÁö ÆÇº°**
                 bool isPlayer = hit.collider.GetComponent<PlayerStats>() != null;
 
-                // **ì²´ë ¥ ë³€ê²½ (í”Œë ˆì´ì–´ ë˜ëŠ” ì )**
+                // **Ã¼·Â º¯°æ (ÇÃ·¹ÀÌ¾î ¶Ç´Â Àû)**
                 resourceController.ChangeHealth(-Damage, isPlayer);
 
-                // ì• ë‹ˆë©”ì´ì…˜ & ë„‰ë°± ì²˜ë¦¬
+                // ¾Ö´Ï¸ŞÀÌ¼Ç & ³Ë¹é Ã³¸®
                 if (IsOnKnockback)
                 {
                     BaseController controller = hit.collider.GetComponent<BaseController>();
@@ -61,7 +61,7 @@ public class E_MeleeWeaponHandler : WeaponHandler
     protected override void LoadData(int key)
     {
         var data = dataManager.WeaponInfoLoader.GetByKey(key);
-        Debug.Assert(!(null == data), "í‚¤ ê°’ì„ í™•ì¸í•˜ì„¸ìš”.");
+        Debug.Assert(!(null == data), "Å° °ªÀ» È®ÀÎÇÏ¼¼¿ä.");
         ItemName = data.Name;
         Damage = data.Damage;
 

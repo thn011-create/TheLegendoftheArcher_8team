@@ -5,12 +5,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class WeaponSelectUI : MonoBehaviour
+public class WeaponSelectUI : BaseUI
 {
     [SerializeField] WeaponHandler weaponHandler;
     [SerializeField] PlayerController player;
     [SerializeField] Button weaponSlot;
 
+    [SerializeField] Button confirmBtn;
 
     [SerializeField] List<Sprite> images;
 
@@ -29,10 +30,18 @@ public class WeaponSelectUI : MonoBehaviour
         15,16,17,18,19,20,21,
         20,21,22,23,24,25,26
     };
+    public void Awake()
+    {
+        uiState = UIState.WeaponSelect;
+        Time.timeScale = 0f;
+        
+    }
 
     void Start()
     {
         PopulateGrid();
+        //confirmBtn.onClick.AddListener(() => UIManager.Instance.ChangeState(UIState.InGame));
+        confirmBtn.onClick.AddListener(OnConfirmBtn);
     }
 
 
@@ -77,6 +86,12 @@ public class WeaponSelectUI : MonoBehaviour
         {
             Debug.LogError("Player or WeaponPrefab is not assigned!");
         }
+    }
+
+    void OnConfirmBtn()
+    {
+        Time.timeScale = 1f;
+        UIManager.Instance.ChangeState(UIState.InGame);
     }
 
 
