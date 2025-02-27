@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour
     public void EndOfWave()
     {
         Debug.Log("Wave " + currentWaveIndex + " Ended");
+        PlayerPrefs.SetInt("BestStage", currentWaveIndex);
         design.DoorOpen();
         enemyManager.StopWave();
     }
