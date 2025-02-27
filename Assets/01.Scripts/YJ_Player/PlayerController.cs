@@ -53,7 +53,24 @@ public class PlayerController : BaseController
         }
     }
 
+    public override void HandleAttackDelay()
+    {
+        if (_weaponHandler == null)
+            return;
+        if (timeSinceLastAttack <= (1f / (_weaponHandler.Delay 
+            * gameManager.player.statHandler.AttackSpeed)))
+        {
+            timeSinceLastAttack += Time.deltaTime;
+        }
+        if (isAttacking && timeSinceLastAttack > (1f / (_weaponHandler.Delay 
+            * gameManager.player.statHandler.AttackSpeed)))
+        {
+            timeSinceLastAttack = 0;
+            Attack();
+        }
+    }
 
+    
     // 가장 가까운 적 찾기
     private void FindNearestTarget()
     {
