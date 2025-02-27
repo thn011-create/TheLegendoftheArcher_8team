@@ -58,6 +58,8 @@ public class ResourceController : MonoBehaviour
 
     public bool ChangeHealth(float change, bool isPlayer)
     {
+        
+        
         if (change == 0 || timeSinceLastChange < healthChangeDelay)
         {
             return false;
@@ -98,8 +100,18 @@ public class ResourceController : MonoBehaviour
                 Debug.LogWarning("[ResourceController] 적 정보 없음!");
                 return false;
             }
-
+            //if(random.NextDouble() <= statHandler.CriticalChance)
+            //{
+            //    change *= (1.5f + statHandler.CriticalDamage);
+            //} 크리티컬 데미지 
             enemyCurrentHealth += change;
+
+
+            EnemyController enemyController = GetComponent<EnemyController>();
+            if (enemyController != null)
+            {
+                enemyController.ShowDamage(change);
+            }
             enemyCurrentHealth = Mathf.Clamp(enemyCurrentHealth, 0, enemyStats.MaxHealth);
 
             if (enemyCurrentHealth <= 0f)
