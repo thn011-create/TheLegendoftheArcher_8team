@@ -80,6 +80,8 @@ public class ResourceController : MonoBehaviour
             }
 
             animationHandler.Damage();
+            if (damageClip != null)
+                SoundManager.PlayClip(damageClip);
             CurrentHealth += change;
             CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth);
 
