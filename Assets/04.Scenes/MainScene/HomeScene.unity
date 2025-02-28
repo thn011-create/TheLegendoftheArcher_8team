@@ -3820,7 +3820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f93920422a9df4eab19273abdcf2b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffectVolume: 1
+  soundEffectVolume: 0.35
   soundEffectPitchVariance: 0.2
   musicVolume: 0.5
   bgmCilps:

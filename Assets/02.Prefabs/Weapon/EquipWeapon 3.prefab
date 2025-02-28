@@ -356,7 +356,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 644f0252e9263bd4b8a1134102fad563, type: 3}
   - {fileID: 21300000, guid: 2bc9bc049d035f244a757bacb250bd45, type: 3}
   - {fileID: 21300000, guid: 8b3d1567b3f094b40b38103a07392eca, type: 3}
-  key: 9003
+  key: 9004
   imageIndex: 0
   itemName: 
   grade: 0
@@ -381,3 +381,4 @@ MonoBehaviour:
   numberofProjectilesPerShot: 1
   multipleProjectileAngle: 3
   projectileColor: {r: 1, g: 1, b: 1, a: 1}
+  _weaponRenderer: {fileID: 0}
