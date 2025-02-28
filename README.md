@@ -83,3 +83,7 @@ Unity에서 프로젝트를 열고 실행 버튼을 눌러 게임을 시작합�
 ## 문의
 
 추가 문의 사항은 GitHub Issues 또는 팀원에게 연락 주세요.
+
+## 플레이하기
+https://ksyksy.itch.io/last-throw-god
+
