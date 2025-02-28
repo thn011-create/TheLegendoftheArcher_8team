@@ -438,7 +438,7 @@ MonoBehaviour:
   weaponPivot: {fileID: 2728736344961676907}
   knockback: {x: 0, y: 0}
   knockbackDuration: 0
-  WeaponPrefab: {fileID: 5922578520239452610, guid: a98569ca2a2189a49be929746b28ab56, type: 3}
+  WeaponPrefab: {fileID: 5922578520239452610, guid: 19f4389970e450d459fe0f7b944744bc, type: 3}
   timeSinceLastAttack: 3.4028235e+38
   followRange: 20
   iAttack: 0
@@ -461,6 +461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
   damageClip: {fileID: 0}
+  DeathClip: {fileID: 0}
 --- !u!114 &-9180992204481610771
 MonoBehaviour:
   m_ObjectHideFlags: 0
