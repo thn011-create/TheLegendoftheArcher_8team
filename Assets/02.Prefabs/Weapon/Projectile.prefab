@@ -189,6 +189,7 @@ MonoBehaviour:
   - {fileID: -1561812095, guid: f1e1ca47199c759409150239c21d6226, type: 3}
   - {fileID: -1940726509, guid: a5dafcd5fd911ea4899b8518eeab4f34, type: 3}
   - {fileID: 21300000, guid: 35f8d21f7dcc6db498e0ae04b1fe598e, type: 3}
+  - {fileID: -1646953644, guid: 27df7f6d5ff381c4697697f2465b8868, type: 3}
   fxOnDestroy: 1
 --- !u!50 &2556941021345203254
 Rigidbody2D:
