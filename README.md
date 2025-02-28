@@ -48,21 +48,31 @@ cd last-throw-god
 
 Unity에서 프로젝트를 열고 실행 버튼을 눌러 게임을 시작합니다.
 
+
+
+### 번외
+
+https://ksyksy.itch.io/last-throw-god (PW: 1234)
+
+
+
 ## 와이어 프레임
 
-![image-20250228111648193](assets/image-20250228111648193.png)
+![image-20250228111648193](Assets/image-20250228111648193.png)
 
 ## 게임 화면
 
-![image-20250228111713028](assets/image-20250228111713028.png)
-
-![image-20250228111742897](assets/image-20250228111742897.png)
-
-![image-20250228111758952](assets/image-20250228111758952.png)
 
 
+![image-20250228111713028](Assets/image-20250228111713028.png)
 
-![image-20250228111814150](assets/image-20250228111814150.png)
+![image-20250228111742897](Assets/image-20250228111742897.png)
+
+![image-20250228111758952](Assets/image-20250228111758952.png)
+
+
+
+![image-20250228111814150](Assets/image-20250228111814150.png)
 
 ## 기여 방법
 
@@ -73,9 +83,12 @@ Unity에서 프로젝트를 열고 실행 버튼을 눌러 게임을 시작합�
 
 - 활: [링크](https://spartacodingclub.kr/blog/618cbaaf94295eb6f7fff0f2)
 - 무기 에셋: [링크](https://babysamurai.itch.io/super-epic-fantasy-weapons-pack)
-- UI 에셋: [링크](https://wenrexa.itch.io/kit-nesia2), [링크](https://srtoasty.itch.io/ui-assets-pack-2)
-- 맵 디자인: [링크](https://mattwalkden.itch.io/free-robot-warfare-pack)
+- UI 에셋: [링크](https://wenrexa.itch.io/kit-nesia2), [링크](https://srtoasty.itch.io/ui-assets-pack-2), [링크](https://mounirtohami.itch.io/pixel-art-gui-elements)
+- 맵 디자인, 몬스터: [링크](https://mattwalkden.itch.io/free-robot-warfare-pack)
 - 아이템: [링크](https://ghostpixxells.itch.io/pixel-mart)
+- 캐릭터: [링크](https://merchant-shade.itch.io/16x16-puny-characters-plus-sprites)
+- BGM: [링크](https://www.youtube.com/watch?v=RTklWVvsiC8), Suno Ai로 제작
+- SFX: 소연님 제작
 
 ## 문의
 
