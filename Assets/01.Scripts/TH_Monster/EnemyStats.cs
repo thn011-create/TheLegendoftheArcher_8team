@@ -6,8 +6,8 @@ public class EnemyStats : MonoBehaviour, ICharacter
 {
     [SerializeField] private string enemyname;
     [SerializeField] private int level = 1;
-    [SerializeField] private float attackDamage = 10;
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float attackDamage = 5;
+    [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private float currentHealth = 100;
     [SerializeField] private float maxHealth = 100;
     [SerializeField] private float experience = 0;
