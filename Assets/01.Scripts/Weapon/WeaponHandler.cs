@@ -65,7 +65,7 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField] protected Transform flip;
 
     [Header("AudioClip")]
-    public AudioClip attackSoundClip;
+    public AudioClip[] attackSoundClip;
 
     private static readonly int IsAttack = Animator.StringToHash("IsAttack");
 
@@ -159,8 +159,14 @@ public class WeaponHandler : MonoBehaviour
     public virtual void Attack()
     {
         AttackAnimation();
-        if (attackSoundClip != null)
-            SoundManager.PlayClip(attackSoundClip);
+
+        if (attackSoundClip == null || attackSoundClip.Length == 0) { return; }
+            int randomIndex = Random.Range(0, attackSoundClip.Length); // ·£´ý ÀÎµ¦½º ¼±ÅÃ
+        AudioClip randomClip = attackSoundClip[randomIndex];
+        if (randomClip != null) 
+        {
+            SoundManager.PlayClip(randomClip);
+        }
     }
 
     public virtual void AttackAnimation()

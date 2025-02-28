@@ -375,7 +375,11 @@ MonoBehaviour:
   knockbackPower: 0
   knockbackTime: 0
   flip: {fileID: 1434420041343362543}
-  attackSoundClip: {fileID: 8300000, guid: d037913b2f4f91244a244679dc1e6859, type: 3}
+  attackSoundClip:
+  - {fileID: 8300000, guid: d037913b2f4f91244a244679dc1e6859, type: 3}
+  - {fileID: 8300000, guid: e38d8de95c40a3749a0daf4d0405688b, type: 3}
+  - {fileID: 8300000, guid: 3aa49fcae1b56eb4cb4178ca947270ca, type: 3}
+  - {fileID: 8300000, guid: d11f88f6bb39004428f29956e52ca68c, type: 3}
   projectileSpawnPosition: {fileID: 2846834772869152055}
   bulletSize: 1
   spread: 1
