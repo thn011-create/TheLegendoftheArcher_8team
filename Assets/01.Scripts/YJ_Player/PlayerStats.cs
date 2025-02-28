@@ -37,10 +37,11 @@ public class PlayerStats : MonoBehaviour, ICharacter
     public float BloodAbsorptionRate { get => bloodAbsorptionRate; set => bloodAbsorptionRate = value; }
     public float RecoveryDropRate { get => recoveryDropRate; set => recoveryDropRate = value; }
     public float Evasionrate { get => evasionRate; set => evasionRate = value; }
-
+    private WeaponHandler weaponHandler;
     private void Start()
     {
-        Debug.Log($"[PlayerStats Start] Evasionrate: {Evasionrate}");
+        weaponHandler = GetComponentInChildren<WeaponHandler>(); // 자식 오브젝트에서 무기 찾기
+        UpdateWeaponDamage();
     }
 
     public void GainExperience(float amount)
@@ -62,4 +63,13 @@ public class PlayerStats : MonoBehaviour, ICharacter
         experienceToNextLevel *= 1.2f; // 다음 레벨업 필요 경험치 증가
         SkillUI.Instance.ShowSkillSelection();
     }
+
+    public void UpdateWeaponDamage()
+    {
+        if (weaponHandler != null)
+        {
+            weaponHandler.UpdateDamage();
+        }
+    }
+
 }

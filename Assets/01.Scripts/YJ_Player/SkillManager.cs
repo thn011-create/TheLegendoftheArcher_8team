@@ -64,6 +64,7 @@ public class SkillManager : MonoBehaviour
         {
             case DesignEnums.SkillType.DamageUp: // 공격력 증가
                 player.AttackDamage += skill.Value;
+                player.UpdateWeaponDamage(); // 무기 데미지 갱신
                 break;
             case DesignEnums.SkillType.AttackSpeedUp: // 공격 속도 증가
                 player.AttackSpeed += skill.Value;
