@@ -20,7 +20,7 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField, ReadOnly(false)] string itemName;
     [SerializeField, ReadOnly(false)] Grade grade;
     [SerializeField, ReadOnly(false)] bool equip;
-    [SerializeField, ReadOnly(false)] int damage;
+    [SerializeField, ReadOnly(false)] float damage;
     [SerializeField, ReadOnly(false)] string description;
 
     [SerializeField, ReadOnly(false)] float delay;
@@ -42,7 +42,7 @@ public class WeaponHandler : MonoBehaviour
     public string ItemName { get => itemName; set => itemName = value; }
     public Grade Grade { get => grade; set => grade = value; }
     public bool Equipe { get => equip; set => equip = value; }
-    public int Damage { get => damage; set => damage = value; }
+    public float Damage { get => damage; set => damage = value; }
     public string Description { get => description; set => description = value; }
     public float Delay { get => delay; set => delay = value; }
     public float Speed { get => speed; set => speed = value; }
@@ -65,7 +65,7 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField] protected Transform flip;
 
     [Header("AudioClip")]
-    public AudioClip attackSoundClip;
+    public AudioClip[] attackSoundClip;
 
     private static readonly int IsAttack = Animator.StringToHash("IsAttack");
 
@@ -76,6 +76,11 @@ public class WeaponHandler : MonoBehaviour
     public BaseController Controller { get; private set; }
 
 
+
+    private PlayerStats playerStats;
+    private float baseDamage; // 무기의 기본 데미지 저장
+
+    public float playerDamage { get; private set; } // 실제 무기 데미지
 
     protected virtual void Awake()
     {
@@ -92,9 +97,17 @@ public class WeaponHandler : MonoBehaviour
 
 
         LoadData(key);
-
+        playerStats = GetComponentInParent<PlayerStats>(); // 부모에서 플레이어 찾기
+        baseDamage = damage; // 기본 무기 데미지를 `damage` 값으로 설정
+        UpdateDamage();
     }
-
+    public void UpdateDamage()
+    {
+        if (playerStats != null)
+        {
+            Damage = baseDamage + playerStats.AttackDamage; // 무기 기본 데미지 + 플레이어 공격력
+        }
+    }
     protected virtual void LoadData(int key)
     {
         weaponRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -146,8 +159,14 @@ public class WeaponHandler : MonoBehaviour
     public virtual void Attack()
     {
         AttackAnimation();
-        if (attackSoundClip != null)
-            SoundManager.PlayClip(attackSoundClip);
+
+        if (attackSoundClip == null || attackSoundClip.Length == 0) { return; }
+            int randomIndex = Random.Range(0, attackSoundClip.Length); // 랜덤 인덱스 선택
+        AudioClip randomClip = attackSoundClip[randomIndex];
+        if (randomClip != null) 
+        {
+            SoundManager.PlayClip(randomClip);
+        }
     }
 
     public virtual void AttackAnimation()
